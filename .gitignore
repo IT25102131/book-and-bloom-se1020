@@ -1,0 +1,32 @@
+# Maven & Java Build Artifacts
+**/target/
+*.class
+*.war
+*.jar
+*.ear
+
+# IDE & Editor Files
+.idea/
+*.iml
+.vscode/
+.settings/
+.project
+.classpath
+*.ipr
+*.iws
+
+# Environment, Temp & Runtime Files
+.local/
+*.log
+*.tmp
+**/scratch/
+data/*.lock
+data/store.lock
+
+# OS Generated Files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Empty legacy duplicate folder
+Book and Bloom/

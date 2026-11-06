@@ -1,0 +1,299 @@
+<%@ page pageEncoding="UTF-8" %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Book & Bloom — Sri Lanka's Premier Online Bookstore. Inspired by Sarasavi Bookshop. Thousands of books, bestsellers, academic texts and digital editions with islandwide delivery.">
+  <title>Book &amp; Bloom | Sri Lanka's Premier Online Bookstore</title>
+  <link rel="icon" href="${pageContext.request.contextPath}/images/botanical.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css?v=20261106_06">
+  <script src="${pageContext.request.contextPath}/js/app.js?v=20261106_06" defer></script>
+</head>
+<body data-page="${pageName}" data-base="${pageContext.request.contextPath}">
+  <a class="skip" href="#main">Skip to main content</a>
+
+  <!-- Sarasavi-Style Top Bar with Dynamic Announcement Ticker -->
+  <div class="top-bar">
+    <div class="top-bar-inner">
+      <div class="announcement-ticker" id="announcement-ticker" aria-live="polite">
+        <div class="ticker-item active">
+          <span class="ticker-badge ticker-badge-delivery">FREE DELIVERY</span>
+          <span class="ticker-text">Islandwide Express Courier · Free on orders over LKR 5,000</span>
+        </div>
+        <div class="ticker-item">
+          <span class="ticker-badge ticker-badge-heritage">LITERARY HERITAGE</span>
+          <span class="ticker-text">Original Classics by Martin Wickramasinghe, Shehan Karunatilaka &amp; Sybil Wettasinghe</span>
+        </div>
+        <div class="ticker-item">
+          <span class="ticker-badge ticker-badge-discount">15% SAVINGS</span>
+          <span class="ticker-text">Special Offers on Bestsellers, University Textbooks &amp; E-Books</span>
+        </div>
+        <div class="ticker-item">
+          <span class="ticker-badge ticker-badge-payment">CASH ON DELIVERY</span>
+          <span class="ticker-text">Islandwide Doorstep Cash &amp; Card Payments Accepted</span>
+        </div>
+        <div class="ticker-item">
+          <span class="ticker-badge ticker-badge-hotline">24/7 HELPLINE</span>
+          <span class="ticker-text">Direct Hotline: <strong>+94 11 282 0820</strong> · Open 7 Days a Week</span>
+        </div>
+      </div>
+      <div class="top-bar-right">
+        <a href="${pageContext.request.contextPath}/orders" class="top-link"><svg class="top-icon" viewBox="0 0 24 24"><path d="M21 10V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16v-2"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg> Track Order</a>
+        <span class="top-divider">|</span>
+        <a href="${pageContext.request.contextPath}/#branches" class="top-link"><svg class="top-icon" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Nugegoda · Colombo · Kandy · Galle</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sarasavi-Style Main Header -->
+  <header class="header">
+    <div class="nav-wrap">
+      <!-- Brand Logo -->
+      <a class="brand" href="${pageContext.request.contextPath}/" aria-label="Book and Bloom Sarasavi Home">
+        <div class="brand-crest">
+          <svg viewBox="0 0 36 36" fill="none" class="crest-svg" xmlns="http://www.w3.org/2000/svg">
+            <rect width="36" height="36" rx="8" fill="#0A2540"/>
+            <path d="M18 10C15 8 10 8 8 10V26C10 24 15 24 18 26M18 10C21 8 26 8 28 10V26C26 24 21 24 18 26M18 10V26" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M18 6L18 9" stroke="#E65100" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="18" cy="4" r="1.5" fill="#E65100"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-main">BOOK <i>&amp;</i> BLOOM</span>
+          <span class="brand-sub">THE BOOKSHOP · SRI LANKA</span>
+        </div>
+      </a>
+
+      <!-- Central Sarasavi Search Bar -->
+      <div class="header-search">
+        <form class="header-search-form" id="header-search-form" action="${pageContext.request.contextPath}/catalog" method="GET">
+          <div class="search-category-select">
+            <span>All Categories</span>
+          </div>
+          <input type="search" name="q" id="header-search-input" placeholder="Search by Book Title, Author, ISBN, Publisher..." aria-label="Search bookstore catalog" autocomplete="off">
+          <button type="submit" class="search-submit-btn" aria-label="Search books">
+            <svg class="search-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            <span class="search-btn-label">Search</span>
+          </button>
+        </form>
+      </div>
+
+      <!-- Action Items (Account & Bag) -->
+      <div class="nav-actions">
+        <a href="${pageContext.request.contextPath}/catalog" aria-label="Search books" class="icon-link d-mobile-search" id="search-link"></a>
+        <a href="${pageContext.request.contextPath}/orders" class="header-action-btn d-none-md" title="My Orders">
+          <svg class="action-icon" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <div class="action-info">
+            <small>Track</small>
+            <strong>Orders</strong>
+          </div>
+        </a>
+        <a href="${pageContext.request.contextPath}/login" aria-label="Sign in" class="header-action-btn" id="account-link">
+          <svg class="action-icon" viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/></svg>
+          <div class="action-info">
+            <small>Welcome</small>
+            <strong id="account-status-label">Sign In</strong>
+          </div>
+        </a>
+        <a href="${pageContext.request.contextPath}/cart" class="header-cart-btn" id="bag-link" aria-label="View shopping bag">
+          <div class="cart-icon-wrap">
+            <svg class="cart-icon" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span class="cart-badge" id="bag-count">0</span>
+          </div>
+          <div class="cart-text">
+            <small>My Bag</small>
+            <strong id="bag-total">LKR 0.00</strong>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Sarasavi Navy Category Navigation Bar -->
+    <div class="category-navbar">
+      <div class="category-navbar-inner">
+        <a href="${pageContext.request.contextPath}/catalog" class="all-categories-btn">
+          <svg class="nav-icon" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          <span>ALL CATEGORIES</span>
+        </a>
+        <nav class="main-nav" aria-label="Main bookstore navigation">
+          <a href="${pageContext.request.contextPath}/" class="nav-item ${pageName == 'home' ? 'active' : ''}">Home</a>
+          <a href="${pageContext.request.contextPath}/catalog" class="nav-item ${pageName == 'catalog' ? 'active' : ''}">Browse Books</a>
+          <a href="${pageContext.request.contextPath}/catalog?filter=featured" class="nav-item"><span class="badge-fire">★</span> Best Sellers</a>
+          <a href="${pageContext.request.contextPath}/catalog?filter=new" class="nav-item">New Arrivals</a>
+          <a href="${pageContext.request.contextPath}/catalog?category=CAT-1" class="nav-item">Fiction &amp; Novels</a>
+          <a href="${pageContext.request.contextPath}/catalog?category=CAT-2" class="nav-item">Personal Growth</a>
+          <a href="${pageContext.request.contextPath}/catalog?category=CAT-3" class="nav-item">Nature &amp; Travel</a>
+          <a href="${pageContext.request.contextPath}/catalog?format=EBOOK" class="nav-item">E-Books</a>
+          <a href="${pageContext.request.contextPath}/orders" class="nav-item ${pageName == 'orders' ? 'active' : ''}">Orders</a>
+        </nav>
+        <div class="navbar-right-promo">
+          <a href="${pageContext.request.contextPath}/catalog?filter=featured" class="hotline-tag">
+            <span class="pulse-dot"></span> Special Offers Available
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main View Content -->
+  <main id="main" tabindex="-1">
+    <div class="loading">
+      <div class="sarasavi-loader"></div>
+      <p>Loading Book &amp; Bloom Bookstore…</p>
+    </div>
+  </main>
+
+  <!-- Sarasavi-Style Comprehensive Mega Footer -->
+  <footer class="footer">
+    <!-- Value Proposition Banner Above Footer -->
+    <div class="footer-trust-banner">
+      <div class="trust-container">
+        <div class="trust-card">
+          <div class="trust-icon-box">
+            <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </div>
+          <div class="trust-text">
+            <strong>Islandwide Delivery</strong>
+            <small>Delivered safely to your doorstep across Sri Lanka</small>
+          </div>
+        </div>
+        <div class="trust-card">
+          <div class="trust-icon-box">
+            <svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <div class="trust-text">
+            <strong>Cash on Delivery</strong>
+            <small>Pay upon package arrival with cash or card</small>
+          </div>
+        </div>
+        <div class="trust-card">
+          <div class="trust-icon-box">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+          </div>
+          <div class="trust-text">
+            <strong>100% Genuine Publications</strong>
+            <small>Guaranteed original books directly from publishers</small>
+          </div>
+        </div>
+        <div class="trust-card">
+          <div class="trust-icon-box">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div class="trust-text">
+            <strong>Reader Helpline</strong>
+            <small>Dedicated support: +94 11 282 0820</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Footer Grid -->
+    <div class="footer-main">
+      <div class="footer-inner">
+        <!-- Col 1: About Bookstore -->
+        <div class="footer-col col-about">
+          <div class="footer-brand">
+            <span class="footer-brand-title">BOOK &amp; BLOOM</span>
+            <small class="footer-brand-tagline">THE BOOKSHOP · SRI LANKA</small>
+          </div>
+          <p class="footer-desc">
+            Sri Lanka's leading online bookstore network. We bring literature, knowledge, and educational excellence right to your doorstep with love and care.
+          </p>
+          <div class="footer-contact-info">
+            <div class="contact-row"><svg class="footer-icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> <span>Hotline: +94 11 282 0820</span></div>
+            <div class="contact-row"><svg class="footer-icon" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> <span>Email: orders@bookbloom.lk</span></div>
+            <div class="contact-row"><svg class="footer-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> <span>Mon - Sat: 8:30 AM - 7:00 PM</span></div>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="${pageContext.request.contextPath}/catalog">Browse All Books</a></li>
+            <li><a href="${pageContext.request.contextPath}/catalog?filter=featured">Best Sellers</a></li>
+            <li><a href="${pageContext.request.contextPath}/catalog?filter=new">New Arrivals</a></li>
+            <li><a href="${pageContext.request.contextPath}/catalog?format=EBOOK">E-Book Editions</a></li>
+            <li><a href="${pageContext.request.contextPath}/cart">My Shopping Bag</a></li>
+            <li><a href="${pageContext.request.contextPath}/orders">Order Status &amp; Tracking</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Categories -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Book Categories</h4>
+          <ul class="footer-links">
+            <li><a href="${pageContext.request.contextPath}/catalog?category=CAT-1">Fiction &amp; Literature</a></li>
+            <li><a href="${pageContext.request.contextPath}/catalog?category=CAT-2">Personal Growth &amp; Mindset</a></li>
+            <li><a href="${pageContext.request.contextPath}/catalog?category=CAT-3">Nature, Travel &amp; Heritage</a></li>
+            <li><a href="${pageContext.request.contextPath}/catalog?category=CAT-4">Design, Tech &amp; Innovation</a></li>
+            <li><a href="${pageContext.request.contextPath}/catalog">Sinhala &amp; English Novels</a></li>
+            <li><a href="${pageContext.request.contextPath}/catalog">Academic &amp; Reference</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Branches & Delivery -->
+        <div class="footer-col" id="branches">
+          <h4 class="footer-heading">Islandwide Branches</h4>
+          <div class="branch-list">
+            <div class="branch-item">
+              <strong>Nugegoda Super Branch</strong>
+              <span>No. 30, Stanley Thilakarathne Mawatha, Nugegoda</span>
+            </div>
+            <div class="branch-item">
+              <strong>Colombo Branch</strong>
+              <span>No. 24, Galle Road, Colombo 03</span>
+            </div>
+            <div class="branch-item">
+              <strong>Kandy City Centre</strong>
+              <span>Dalada Veediya, Kandy</span>
+            </div>
+            <div class="branch-item">
+              <strong>Galle Fort Branch</strong>
+              <span>Main Street, Galle</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom & Payments -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-inner">
+        <div class="footer-copyright">
+          <span>&copy; 2026 Book &amp; Bloom Bookshop (Pvt) Ltd. All Rights Reserved.</span>
+          <span class="footer-academic-credit">SE1020 Academic Demonstration Project · Inspired by Sarasavi Bookshop (sarasavi.lk) · No Real Transactions Charged</span>
+        </div>
+        <div class="footer-payment-badges">
+          <span class="pay-badge">CASH ON DELIVERY</span>
+          <span class="pay-badge">VISA</span>
+          <span class="pay-badge">MASTERCARD</span>
+          <span class="pay-badge">PROMPT EXPRESS</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Container -->
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <!-- Accessible Dialog Modal -->
+  <dialog id="modal" aria-labelledby="modal-title"><div id="modal-content"></div></dialog>
+
+  <!-- Smooth Luxury Highlight Halo Cursor -->
+  <div class="luxury-cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+  <div class="luxury-cursor-ring" id="cursor-ring" aria-hidden="true"></div>
+
+  <!-- Floating Back to Top Button -->
+  <button id="back-to-top" class="back-to-top" aria-label="Scroll back to top" title="Scroll to top">
+    <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <!-- No JavaScript fallback -->
+  <noscript><div class="noscript">Please enable JavaScript in your browser to browse the bookstore catalog and place orders.</div></noscript>
+</body>
+</html>

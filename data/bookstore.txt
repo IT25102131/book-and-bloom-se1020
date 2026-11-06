@@ -1,0 +1,285 @@
+{
+  "schemaVersion" : 1,
+  "books" : [ {
+    "type" : "PRINTED",
+    "id" : "BK-001",
+    "title" : "The Art of Slowing Down",
+    "authorId" : "AUT-2",
+    "categoryId" : "CAT-2",
+    "isbn" : "978-955-100-001",
+    "price" : 1850.00,
+    "stock" : 12,
+    "description" : "A thoughtful companion for finding room to breathe. Through small rituals and considered reflections, discover how a slower pace can make life feel richer.",
+    "coverColor" : "#e7b471",
+    "featured" : true,
+    "pages" : 224
+  }, {
+    "type" : "PRINTED",
+    "id" : "BK-002",
+    "title" : "Where the Light Falls",
+    "authorId" : "AUT-1",
+    "categoryId" : "CAT-1",
+    "isbn" : "978-955-100-002",
+    "price" : 2400.00,
+    "stock" : 14,
+    "description" : "When a letter arrives at an old Colombo house, three generations revisit a story they thought was finished. A warm novel of home, memory and second chances.",
+    "coverColor" : "#2e514e",
+    "featured" : true,
+    "pages" : 312
+  }, {
+    "type" : "PRINTED",
+    "id" : "BK-003",
+    "title" : "Wild Ceylon",
+    "authorId" : "AUT-3",
+    "categoryId" : "CAT-3",
+    "isbn" : "978-955-100-003",
+    "price" : 3200.00,
+    "stock" : 18,
+    "description" : "From misty highlands to sunlit coastlines, explore the island through the eyes of a naturalist. An illustrated journey into remarkable places and the life they hold.",
+    "coverColor" : "#9fa878",
+    "featured" : true,
+    "pages" : 280
+  }, {
+    "type" : "PRINTED",
+    "id" : "BK-004",
+    "title" : "A Little More Wonder",
+    "authorId" : "AUT-4",
+    "categoryId" : "CAT-1",
+    "isbn" : "978-955-100-004",
+    "price" : 1950.00,
+    "stock" : 21,
+    "description" : "A bookseller inherits a box of unfinished letters and begins a journey across her city. A charming story about curiosity, kindness and finding your people.",
+    "coverColor" : "#b77966",
+    "featured" : true,
+    "pages" : 256
+  }, {
+    "type" : "EBOOK",
+    "id" : "BK-005",
+    "title" : "Make Room for Ideas",
+    "authorId" : "AUT-5",
+    "categoryId" : "CAT-4",
+    "isbn" : "978-955-100-005",
+    "price" : 1650.00,
+    "stock" : 24,
+    "description" : "A practical guide to creative work, from the first untidy thought to the finished thing. Friendly exercises help you build a sustainable creative practice.",
+    "coverColor" : "#587e98",
+    "featured" : false,
+    "fileFormat" : "EPUB"
+  }, {
+    "type" : "PRINTED",
+    "id" : "BK-006",
+    "title" : "The Long Way Home",
+    "authorId" : "AUT-6",
+    "categoryId" : "CAT-3",
+    "isbn" : "978-955-100-006",
+    "price" : 2750.00,
+    "stock" : 27,
+    "description" : "Choose the scenic route. Follow unhurried train rides and winding coastal roads in this collection of travel essays about the joy of paying attention.",
+    "coverColor" : "#ba934e",
+    "featured" : false,
+    "pages" : 296
+  }, {
+    "type" : "PRINTED",
+    "id" : "BK-007",
+    "title" : "The Quiet Garden",
+    "authorId" : "AUT-4",
+    "categoryId" : "CAT-1",
+    "isbn" : "978-955-100-007",
+    "price" : 2100.00,
+    "stock" : 30,
+    "description" : "Behind a locked gate, a forgotten garden brings unlikely neighbours together. A gentle novel about new beginnings and the things we choose to grow.",
+    "coverColor" : "#8c9b7a",
+    "featured" : false,
+    "pages" : 304
+  }, {
+    "type" : "EBOOK",
+    "id" : "BK-008",
+    "title" : "Everyday Courage",
+    "authorId" : "AUT-2",
+    "categoryId" : "CAT-2",
+    "isbn" : "978-955-100-008",
+    "price" : 1450.00,
+    "stock" : 33,
+    "description" : "Courage is often a collection of small choices. These grounded reflections invite you to begin before you feel ready and make space for a more intentional life.",
+    "coverColor" : "#c88870",
+    "featured" : false,
+    "fileFormat" : "EPUB"
+  }, {
+    "type" : "PRINTED",
+    "id" : "BK-009",
+    "title" : "Designing with Purpose",
+    "authorId" : "AUT-5",
+    "categoryId" : "CAT-4",
+    "isbn" : "978-955-100-009",
+    "price" : 3600.00,
+    "stock" : 36,
+    "description" : "A clear introduction to thoughtful design. Learn to ask better questions, understand people and turn complex problems into useful, approachable experiences.",
+    "coverColor" : "#363f56",
+    "featured" : false,
+    "pages" : 340
+  }, {
+    "type" : "PRINTED",
+    "id" : "BK-010",
+    "title" : "Letters from Galle",
+    "authorId" : "AUT-1",
+    "categoryId" : "CAT-1",
+    "isbn" : "978-955-100-010",
+    "price" : 2250.00,
+    "stock" : 39,
+    "description" : "Two strangers exchange letters from opposite sides of an old fort. A lyrical story of friendship, discovery and the places that stay with us.",
+    "coverColor" : "#d6aa72",
+    "featured" : false,
+    "pages" : 288
+  }, {
+    "type" : "PRINTED",
+    "id" : "BK-011",
+    "title" : "Beyond the Tea Hills",
+    "authorId" : "AUT-3",
+    "categoryId" : "CAT-3",
+    "isbn" : "978-955-100-011",
+    "price" : 2900.00,
+    "stock" : 42,
+    "description" : "Walk the paths beyond the familiar viewpoints and meet the people who call the hills home. Nature writing and travel notes come together in this island journey.",
+    "coverColor" : "#608c82",
+    "featured" : false,
+    "pages" : 268
+  }, {
+    "type" : "PRINTED",
+    "id" : "BK-012",
+    "title" : "Begin Again",
+    "authorId" : "AUT-2",
+    "categoryId" : "CAT-2",
+    "isbn" : "978-955-100-012",
+    "price" : 1750.00,
+    "stock" : 45,
+    "description" : "A fresh start can be smaller than you think. Thoughtful prompts and short essays help you reconnect with what matters and build habits that leave room for living.",
+    "coverColor" : "#a59bb3",
+    "featured" : false,
+    "pages" : 208
+  } ],
+  "users" : [ {
+    "kind" : "ADMIN",
+    "id" : "USR-ADMIN",
+    "name" : "Store Administrator",
+    "email" : "admin@bookbloom.lk",
+    "passwordHash" : "210000:v86oKeiKv+nyXJH+p1rQFw==:B70Hdtb2czB1wHpXjvpFgb+uBGQnVEO0QyamqTprA/0=",
+    "address" : "",
+    "createdAt" : "2026-10-14T03:44:06.593167500Z"
+  }, {
+    "kind" : "CUSTOMER",
+    "id" : "USR-DEMO",
+    "name" : "Nethmi Perera",
+    "email" : "reader@bookbloom.lk",
+    "passwordHash" : "210000:vMHWBPnt1hoYVAcL3KVHKw==:uNuCqSSngl+LMJiS2LUZozs6IjArwq9xYqOtmR9dYA0=",
+    "address" : "24 Flower Road, Colombo 07",
+    "createdAt" : "2026-10-14T03:44:07.119510Z"
+  } ],
+  "authors" : [ {
+    "id" : "AUT-1",
+    "name" : "Maya Senanayake",
+    "bio" : "A Colombo-based storyteller exploring belonging, family and the everyday magic of island life. Her prose captures the subtleties of modern urban Sri Lankan identity with gentle intimacy.",
+    "nationality" : "Sri Lankan",
+    "primaryGenre" : "Contemporary Fiction & Family Sagas",
+    "accolades" : "State Literary Award Nominee · Gratiaen Prize Shortlist",
+    "bornYear" : "1982 – Present",
+    "photoUrl" : ""
+  }, {
+    "id" : "AUT-2",
+    "name" : "Elliot Reed",
+    "bio" : "An essayist writing about attention, creativity and a gentler approach to meaningful work. Reed advocates for intentional living in an increasingly accelerated digital world.",
+    "nationality" : "British",
+    "primaryGenre" : "Philosophy & Personal Growth",
+    "accolades" : "Sunday Times Bestselling Essayist · Royal Society Fellow",
+    "bornYear" : "1978 – Present",
+    "photoUrl" : ""
+  }, {
+    "id" : "AUT-3",
+    "name" : "Arun Fernando",
+    "bio" : "A naturalist and field conservationist documenting the lush landscapes, endemic avifauna, and quiet highland forests of Sri Lanka across three decades of fieldwork.",
+    "nationality" : "Sri Lankan",
+    "primaryGenre" : "Natural History & Wilderness Memoirs",
+    "accolades" : "Ceylon Biodiversity Medal · Wildlife Heritage Laureate",
+    "bornYear" : "1971 – Present",
+    "photoUrl" : ""
+  }, {
+    "id" : "AUT-4",
+    "name" : "Clara Bennett",
+    "bio" : "A novelist fascinated by colonial architecture, preserved family correspondences, and unexpected historical reconciliations across coastal maritime communities.",
+    "nationality" : "Australian",
+    "primaryGenre" : "Historical Mystery & Cultural Heritage",
+    "accolades" : "Miles Franklin Longlist · Commonwealth Writers Finalist",
+    "bornYear" : "1985 – Present",
+    "photoUrl" : ""
+  }, {
+    "id" : "AUT-5",
+    "name" : "Samira Khan",
+    "bio" : "A human-centered designer and educator bridging software ergonomics, thoughtful typography, and creative workflows for modern craftspeople and engineering teams.",
+    "nationality" : "Canadian-Sri Lankan",
+    "primaryGenre" : "Design Systems & Technological Innovation",
+    "accolades" : "Global Creative Director of the Year (2021) · FastCo Design Honoree",
+    "bornYear" : "1989 – Present",
+    "photoUrl" : ""
+  }, {
+    "id" : "AUT-6",
+    "name" : "Oliver Hayes",
+    "bio" : "A travel essayist tracing scenic rail tracks, traditional spice markets, and coastal harbor kitchens across South and Southeast Asia.",
+    "nationality" : "American",
+    "primaryGenre" : "Travel Literature & Culinary Memoirs",
+    "accolades" : "James Beard Journalism Award · NatGeo Travel Contributor",
+    "bornYear" : "1975 – Present",
+    "photoUrl" : ""
+  }, {
+    "id" : "AUT-7",
+    "name" : "Martin Wickramasinghe",
+    "bio" : "Revered as the father of modern Sinhala literature, Martin Wickramasinghe pioneered realistic social fiction exploring changing rural and urban social dynamics in 20th-century Sri Lanka.",
+    "nationality" : "Sri Lankan",
+    "primaryGenre" : "Sinhala Realism & Social Epics",
+    "accolades" : "Father of Modern Sinhala Literature · Sahitya Ratna",
+    "bornYear" : "1890 – 1976",
+    "photoUrl" : ""
+  }, {
+    "id" : "AUT-8",
+    "name" : "Shehan Karunatilaka",
+    "bio" : "Winner of the prestigious Booker Prize 2022 for 'The Seven Moons of Maali Almeida', known for his biting wit, surrealist narratives, and profound commentary on contemporary Sri Lanka.",
+    "nationality" : "Sri Lankan",
+    "primaryGenre" : "Magical Realism & Satirical Fiction",
+    "accolades" : "Winner of the Booker Prize 2022 · Commonwealth Book Prize",
+    "bornYear" : "1975 – Present",
+    "photoUrl" : ""
+  } ],
+  "categories" : [ {
+    "id" : "CAT-1",
+    "name" : "Fiction",
+    "description" : "Lose yourself in a different world."
+  }, {
+    "id" : "CAT-2",
+    "name" : "Personal Growth",
+    "description" : "Small steps. Fresh perspectives."
+  }, {
+    "id" : "CAT-3",
+    "name" : "Nature & Travel",
+    "description" : "Stories for the curious explorer."
+  }, {
+    "id" : "CAT-4",
+    "name" : "Design & Technology",
+    "description" : "Ideas to make something wonderful."
+  } ],
+  "orders" : [ {
+    "id" : "ORD-4032696b-c6f",
+    "userId" : "USR-DEMO",
+    "lines" : [ {
+      "bookId" : "BK-002",
+      "title" : "Where the Light Falls",
+      "unitPrice" : 2400.00,
+      "quantity" : 1,
+      "shipping" : true
+    } ],
+    "subtotal" : 2400.00,
+    "deliveryFee" : 350.00,
+    "total" : 2750.00,
+    "status" : "COMPLETED",
+    "address" : "24 Flower Road, Colombo 07",
+    "createdAt" : "2026-10-14T04:34:56.300623600Z"
+  } ],
+  "reviews" : [ ]
+}

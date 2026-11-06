@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Book and Bloom - Website (Correct Folder)" type="Application" factoryName="Application" allowRunningInParallel="false">
+    <option name="MAIN_CLASS_NAME" value="lk.bookbloom.BookBloomApplication" />
+    <module name="book-and-bloom" />
+    <option name="INCLUDE_PROVIDED_SCOPE" value="true" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Book-and-Bloom" />
+    <option name="PROGRAM_PARAMETERS" value="--bookbloom.open-browser=true --bookbloom.data-dir=&quot;$PROJECT_DIR$/data&quot;" />
+    <method v="2"><option name="Make" enabled="true" /></method>
+  </configuration>
+</component>

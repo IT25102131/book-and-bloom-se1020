@@ -1,0 +1,230 @@
+{
+  "schemaVersion": 1,
+  "users": [],
+  "authors": [
+    {
+      "id": "AUT-1",
+      "name": "Maya Senanayake",
+      "bio": "A Colombo-based storyteller exploring belonging, family and the everyday magic of island life."
+    },
+    {
+      "id": "AUT-2",
+      "name": "Elliot Reed",
+      "bio": "An essayist writing about attention, creativity and a gentler approach to meaningful work."
+    },
+    {
+      "id": "AUT-3",
+      "name": "Arun Fernando",
+      "bio": "A naturalist and writer documenting the landscapes and quiet corners of Sri Lanka."
+    },
+    {
+      "id": "AUT-4",
+      "name": "Clara Bennett",
+      "bio": "A novelist fascinated by old houses, hidden histories and unexpected friendships."
+    },
+    {
+      "id": "AUT-5",
+      "name": "Samira Khan",
+      "bio": "A designer and educator who makes technology and creative practice approachable."
+    },
+    {
+      "id": "AUT-6",
+      "name": "Oliver Hayes",
+      "bio": "A travel writer following slow journeys, good food and the stories between destinations."
+    }
+  ],
+  "categories": [
+    {
+      "id": "CAT-1",
+      "name": "Fiction",
+      "description": "Lose yourself in a different world."
+    },
+    {
+      "id": "CAT-2",
+      "name": "Personal Growth",
+      "description": "Small steps. Fresh perspectives."
+    },
+    {
+      "id": "CAT-3",
+      "name": "Nature & Travel",
+      "description": "Stories for the curious explorer."
+    },
+    {
+      "id": "CAT-4",
+      "name": "Design & Technology",
+      "description": "Ideas to make something wonderful."
+    }
+  ],
+  "orders": [],
+  "reviews": [],
+  "books": [
+    {
+      "id": "BK-001",
+      "title": "The Art of Slowing Down",
+      "authorId": "AUT-2",
+      "categoryId": "CAT-2",
+      "isbn": "978-955-100-001",
+      "price": "1850.00",
+      "stock": 12,
+      "description": "A thoughtful companion for finding room to breathe. Through small rituals and considered reflections, discover how a slower pace can make life feel richer.",
+      "coverColor": "#e7b471",
+      "featured": true,
+      "type": "PRINTED",
+      "pages": 224
+    },
+    {
+      "id": "BK-002",
+      "title": "Where the Light Falls",
+      "authorId": "AUT-1",
+      "categoryId": "CAT-1",
+      "isbn": "978-955-100-002",
+      "price": "2400.00",
+      "stock": 15,
+      "description": "When a letter arrives at an old Colombo house, three generations revisit a story they thought was finished. A warm novel of home, memory and second chances.",
+      "coverColor": "#2e514e",
+      "featured": true,
+      "type": "PRINTED",
+      "pages": 312
+    },
+    {
+      "id": "BK-003",
+      "title": "Wild Ceylon",
+      "authorId": "AUT-3",
+      "categoryId": "CAT-3",
+      "isbn": "978-955-100-003",
+      "price": "3200.00",
+      "stock": 18,
+      "description": "From misty highlands to sunlit coastlines, explore the island through the eyes of a naturalist. An illustrated journey into remarkable places and the life they hold.",
+      "coverColor": "#9fa878",
+      "featured": true,
+      "type": "PRINTED",
+      "pages": 280
+    },
+    {
+      "id": "BK-004",
+      "title": "A Little More Wonder",
+      "authorId": "AUT-4",
+      "categoryId": "CAT-1",
+      "isbn": "978-955-100-004",
+      "price": "1950.00",
+      "stock": 21,
+      "description": "A bookseller inherits a box of unfinished letters and begins a journey across her city. A charming story about curiosity, kindness and finding your people.",
+      "coverColor": "#b77966",
+      "featured": true,
+      "type": "PRINTED",
+      "pages": 256
+    },
+    {
+      "id": "BK-005",
+      "title": "Make Room for Ideas",
+      "authorId": "AUT-5",
+      "categoryId": "CAT-4",
+      "isbn": "978-955-100-005",
+      "price": "1650.00",
+      "stock": 24,
+      "description": "A practical guide to creative work, from the first untidy thought to the finished thing. Friendly exercises help you build a sustainable creative practice.",
+      "coverColor": "#587e98",
+      "featured": false,
+      "type": "EBOOK",
+      "fileFormat": "EPUB"
+    },
+    {
+      "id": "BK-006",
+      "title": "The Long Way Home",
+      "authorId": "AUT-6",
+      "categoryId": "CAT-3",
+      "isbn": "978-955-100-006",
+      "price": "2750.00",
+      "stock": 27,
+      "description": "Choose the scenic route. Follow unhurried train rides and winding coastal roads in this collection of travel essays about the joy of paying attention.",
+      "coverColor": "#ba934e",
+      "featured": false,
+      "type": "PRINTED",
+      "pages": 296
+    },
+    {
+      "id": "BK-007",
+      "title": "The Quiet Garden",
+      "authorId": "AUT-4",
+      "categoryId": "CAT-1",
+      "isbn": "978-955-100-007",
+      "price": "2100.00",
+      "stock": 30,
+      "description": "Behind a locked gate, a forgotten garden brings unlikely neighbours together. A gentle novel about new beginnings and the things we choose to grow.",
+      "coverColor": "#8c9b7a",
+      "featured": false,
+      "type": "PRINTED",
+      "pages": 304
+    },
+    {
+      "id": "BK-008",
+      "title": "Everyday Courage",
+      "authorId": "AUT-2",
+      "categoryId": "CAT-2",
+      "isbn": "978-955-100-008",
+      "price": "1450.00",
+      "stock": 33,
+      "description": "Courage is often a collection of small choices. These grounded reflections invite you to begin before you feel ready and make space for a more intentional life.",
+      "coverColor": "#c88870",
+      "featured": false,
+      "type": "EBOOK",
+      "fileFormat": "EPUB"
+    },
+    {
+      "id": "BK-009",
+      "title": "Designing with Purpose",
+      "authorId": "AUT-5",
+      "categoryId": "CAT-4",
+      "isbn": "978-955-100-009",
+      "price": "3600.00",
+      "stock": 36,
+      "description": "A clear introduction to thoughtful design. Learn to ask better questions, understand people and turn complex problems into useful, approachable experiences.",
+      "coverColor": "#363f56",
+      "featured": false,
+      "type": "PRINTED",
+      "pages": 340
+    },
+    {
+      "id": "BK-010",
+      "title": "Letters from Galle",
+      "authorId": "AUT-1",
+      "categoryId": "CAT-1",
+      "isbn": "978-955-100-010",
+      "price": "2250.00",
+      "stock": 39,
+      "description": "Two strangers exchange letters from opposite sides of an old fort. A lyrical story of friendship, discovery and the places that stay with us.",
+      "coverColor": "#d6aa72",
+      "featured": false,
+      "type": "PRINTED",
+      "pages": 288
+    },
+    {
+      "id": "BK-011",
+      "title": "Beyond the Tea Hills",
+      "authorId": "AUT-3",
+      "categoryId": "CAT-3",
+      "isbn": "978-955-100-011",
+      "price": "2900.00",
+      "stock": 42,
+      "description": "Walk the paths beyond the familiar viewpoints and meet the people who call the hills home. Nature writing and travel notes come together in this island journey.",
+      "coverColor": "#608c82",
+      "featured": false,
+      "type": "PRINTED",
+      "pages": 268
+    },
+    {
+      "id": "BK-012",
+      "title": "Begin Again",
+      "authorId": "AUT-2",
+      "categoryId": "CAT-2",
+      "isbn": "978-955-100-012",
+      "price": "1750.00",
+      "stock": 45,
+      "description": "A fresh start can be smaller than you think. Thoughtful prompts and short essays help you reconnect with what matters and build habits that leave room for living.",
+      "coverColor": "#a59bb3",
+      "featured": false,
+      "type": "PRINTED",
+      "pages": 208
+    }
+  ]
+}

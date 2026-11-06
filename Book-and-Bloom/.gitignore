@@ -1,0 +1,12 @@
+target/
+.idea/
+*.iml
+data/
+.tools/
+tmp/
+*.log
+output/*.zip
+output/*.sha256
+.DS_Store
+
+.local/

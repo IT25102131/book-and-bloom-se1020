@@ -1,0 +1,8 @@
+# Copy to .local/application-local.properties and fill in your own credentials.
+# .local is ignored by Git and excluded from shared packages.
+bookbloom.storage=mysql
+bookbloom.mysql.url=jdbc:mysql://127.0.0.1:3306/book_bloom
+bookbloom.mysql.username=root
+bookbloom.mysql.password=YOUR_LOCAL_DATABASE_PASSWORD
+# Optional: one-time import into an entirely empty DB. Use forward slashes.
+# bookbloom.mysql.import-file=C:/path/to/your/backup/bookstore.txt

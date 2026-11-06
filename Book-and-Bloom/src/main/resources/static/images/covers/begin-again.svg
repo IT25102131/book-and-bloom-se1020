@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#581C87"/>
+      <stop offset="100%" stop-color="#2E1065"/>
+    </linearGradient>
+    <linearGradient id="spine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.5"/>
+      <stop offset="25%" stop-color="#FFFFFF" stop-opacity="0.28"/>
+      <stop offset="50%" stop-color="#000000" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="400" height="600" fill="url(#bg)"/>
+  
+  <!-- Subtle Texture Grid -->
+  <rect width="400" height="600" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1" stroke-dasharray="4,4"/>
+
+  <!-- Ornate Decorative Frame -->
+  <rect x="20" y="20" width="360" height="560" rx="4" fill="none" stroke="#E9D5FF" stroke-width="1.5" stroke-opacity="0.4"/>
+  <rect x="25" y="25" width="350" height="550" rx="2" fill="none" stroke="#E9D5FF" stroke-width="0.75" stroke-opacity="0.25"/>
+
+  <!-- Top Ribbon Banner -->
+  <g transform="translate(40, 42)">
+    <rect x="0" y="0" width="320" height="24" rx="12" fill="rgba(0,0,0,0.35)"/>
+    <text x="160" y="16" fill="#E9D5FF" font-family="Segoe UI, sans-serif" font-size="9.5" font-weight="800" letter-spacing="2" text-anchor="middle">MINDFULNESS &amp; REFLECTION</text>
+  </g>
+
+  <!-- Title & Subtitle Block -->
+  <g transform="translate(200, 112)" text-anchor="middle">
+    <text y="0" fill="#FFFFFF" font-family="'Playfair Display', Georgia, serif" font-size="26" font-weight="800" letter-spacing="-0.5" filter="url(#shadow)">BEGIN AGAIN</text>
+       <text y="28" fill="rgba(255,255,255,0.88)" font-family="Segoe UI, sans-serif" font-size="11.5" font-weight="600" letter-spacing="0.5">Building Habits That Leave Room for Living</text>
+  </g>
+
+  <!-- Center Artwork -->
+  <g transform="translate(200, 310)">
+    <circle cx="0" cy="0" r="75" fill="rgba(255,255,255,0.06)" stroke="#E9D5FF" stroke-width="1.5"/>
+          <path d="M0,-40 C25,-10 35,20 0,40 C-35,20 -25,-10 0,-40 Z" fill="#C084FC" opacity="0.8"/>
+          <circle cx="0" cy="0" r="8" fill="#FDE047"/>
+  </g>
+
+  <!-- Bottom Author Banner -->
+  <g transform="translate(200, 520)" text-anchor="middle">
+    <line x1="-100" y1="0" x2="100" y2="0" stroke="#E9D5FF" stroke-width="1" stroke-opacity="0.4"/>
+    <circle cx="0" cy="0" r="3" fill="#E9D5FF"/>
+    <text y="24" fill="#E9D5FF" font-family="Segoe UI, sans-serif" font-size="12" font-weight="800" letter-spacing="2.5">ELLIOT REED</text>
+    <text y="40" fill="rgba(255,255,255,0.65)" font-family="Segoe UI, sans-serif" font-size="8.5" font-weight="600" letter-spacing="1.5">SARASAVI · BOOK &amp; BLOOM PRESS</text>
+  </g>
+
+  <!-- 3D Spine Crease Highlight -->
+  <rect x="0" y="0" width="20" height="600" fill="url(#spine)"/>
+  
+  <!-- Right Page Edge -->
+  <rect x="394" y="4" width="4" height="592" fill="#E2E8F0" opacity="0.6"/>
+</svg>
