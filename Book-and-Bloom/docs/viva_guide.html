@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Book & Bloom — SE1020 Final Project Evaluation & Viva Master Guide</title>
+<style>
+  @page {
+    size: A4;
+    margin: 18mm 15mm 18mm 15mm;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #1e293b;
+    line-height: 1.55;
+    font-size: 11pt;
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+  }
+  .header-card {
+    background: linear-gradient(135deg, #0a2540 0%, #1e3a8a 100%);
+    color: #ffffff;
+    padding: 24px 28px;
+    border-radius: 10px;
+    margin-bottom: 24px;
+  }
+  .header-card h1 {
+    margin: 0 0 6px 0;
+    font-size: 20pt;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+  }
+  .header-card p {
+    margin: 4px 0;
+    font-size: 10pt;
+    opacity: 0.9;
+  }
+  .meta-tag {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 9pt;
+    font-weight: 600;
+    margin-right: 6px;
+    margin-top: 6px;
+  }
+  h2 {
+    font-size: 14pt;
+    font-weight: 800;
+    color: #0a2540;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 6px;
+    margin-top: 26px;
+    margin-bottom: 14px;
+    page-break-after: avoid;
+  }
+  h3 {
+    font-size: 12pt;
+    font-weight: 700;
+    color: #1e3a8a;
+    margin-top: 18px;
+    margin-bottom: 8px;
+    page-break-after: avoid;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0;
+    font-size: 9.5pt;
+  }
+  th, td {
+    padding: 8px 10px;
+    border: 1px solid #cbd5e1;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: #f1f5f9;
+    color: #0f172a;
+    font-weight: 700;
+  }
+  tr:nth-child(even) td {
+    background: #f8fafc;
+  }
+  .member-card {
+    border: 1px solid #e2e8f0;
+    border-left: 5px solid #0056b3;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-bottom: 22px;
+    background: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+    page-break-inside: avoid;
+  }
+  .member-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+  }
+  .member-title {
+    font-size: 13pt;
+    font-weight: 800;
+    color: #0a2540;
+  }
+  .member-badge {
+    background: #e0f2fe;
+    color: #0369a1;
+    font-size: 9pt;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 6px;
+  }
+  .qa-box {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin: 8px 0;
+  }
+  .qa-q {
+    font-weight: 700;
+    color: #0a2540;
+    font-size: 10pt;
+    margin-bottom: 4px;
+  }
+  .qa-a {
+    color: #334155;
+    font-size: 9.5pt;
+    line-height: 1.5;
+  }
+  .badge-fail {
+    background: #fee2e2;
+    color: #991b1b;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 8.5pt;
+  }
+  .badge-success {
+    background: #dcfce7;
+    color: #166534;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 8.5pt;
+  }
+  .page-break {
+    page-break-before: always;
+  }
+</style>
+</head>
+<body>
+
+<div class="header-card">
+  <h1>Book & Bloom — SE1020 Final Evaluation Guide</h1>
+  <p><strong>SLIIT — SE1020 Object Oriented Programming Prorata Project</strong></p>
+  <p>A Complete Member-by-Member Technical Preparation & Viva Defense Manual</p>
+  <div>
+    <span class="meta-tag">100/100 Marks Preparation</span>
+    <span class="meta-tag">6 Members Allocated</span>
+    <span class="meta-tag">MySQL 8.0 & Atomic File Persistence</span>
+    <span class="meta-tag">GitHub Verified</span>
+  </div>
+</div>
+
+<h2>🏆 1. Official SE1020 Evaluation Rubric (100 Marks Breakdown)</h2>
+<p>Every single mark in the marking sheet is allocated to the following 7 criteria. Ensure all 6 members can demonstrate their part:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="width:50%">Assessment Criteria</th>
+      <th style="width:18%">Marks</th>
+      <th style="width:32%">What You Must Show Miss / Evaluators</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Functionality of Assigned CRUD Operations</strong></td>
+      <td><strong>30 Marks</strong></td>
+      <td>Complete Create, Read, Update, Delete for your assigned entity with live input validation and database updates.</td>
+    </tr>
+    <tr>
+      <td><strong>Application of OOP Concepts</strong></td>
+      <td><strong>20 Marks</strong></td>
+      <td>Encapsulation (private fields), Inheritance (super/subclasses), Polymorphism (dynamic dispatch), Abstraction, Information Hiding.</td>
+    </tr>
+    <tr>
+      <td><strong>File Handling & Persistence Implementation</strong></td>
+      <td><strong>10 Marks</strong></td>
+      <td>Safe atomic file persistence (`bookstore.txt`) and MySQL relational persistence (`book_bloom` schema).</td>
+    </tr>
+    <tr>
+      <td><strong>User Interface Design & Usability</strong></td>
+      <td><strong>10 Marks</strong></td>
+      <td>Clean, responsive web UI with minimum 3 UI states per module, modal editors, live search, and error banners.</td>
+    </tr>
+    <tr>
+      <td><strong>Individual Contribution & GitHub Commits</strong></td>
+      <td><strong>10 Marks</strong></td>
+      <td>Individual Git branch (`feature/...-IT...`) with commit history under your own SLIIT email address.</td>
+    </tr>
+    <tr>
+      <td><strong>Presentation & Viva Performance</strong></td>
+      <td><strong>10 Marks</strong></td>
+      <td>Confident technical walkthrough of code, answering theoretical OOP questions, and demonstrating rejected edge-cases.</td>
+    </tr>
+    <tr>
+      <td><strong>Documentation & Class Diagrams</strong></td>
+      <td><strong>10 Marks</strong></td>
+      <td>Accurate UML Class Diagram, complete report, and documentation mapping to your actual Java classes.</td>
+    </tr>
+    <tr style="background:#f1f5f9;font-weight:bold">
+      <td>TOTAL ALLOCATION</td>
+      <td>100 Marks</td>
+      <td>Target: Grade A+ (Full 100/100)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>🌐 2. Core Architecture Questions (Asked from ANY Team Member)</h2>
+
+<div class="qa-box">
+  <div class="qa-q">Q1: Explain the High-Level Architecture of Book & Bloom.</div>
+  <div class="qa-a">Book & Bloom follows an Object-Oriented Three-Tier MVC Architecture: (1) <strong>Presentation Tier:</strong> JSP pages and responsive HTML5/CSS/JavaScript. (2) <strong>Application / Business Tier:</strong> An explicit Jakarta <code>ApiServlet</code> handles routing, session tokens, and CSRF protection before calling Domain Services (<code>UserService</code>, <code>BookService</code>, etc.). (3) <strong>Persistence Tier:</strong> Decoupled behind the <code>StoreRepository</code> interface supporting both atomic file storage (<code>bookstore.txt</code>) and MySQL relational storage (<code>MysqlStoreRepository</code>).</div>
+</div>
+
+<div class="qa-box">
+  <div class="qa-q">Q2: Why did you use Spring Boot with an explicit Jakarta Servlet together?</div>
+  <div class="qa-a">Spring Boot manages dependency injection, configuration, and the embedded Tomcat server. We wrote an explicit <code>ApiServlet</code> extending <code>HttpServlet</code> to demonstrate core Java Enterprise and Servlet fundamentals: manual HTTP method handling, Jackson JSON serialization, and explicit session / CSRF security lifecycle control.</div>
+</div>
+
+<div class="qa-box">
+  <div class="qa-q">Q3: Why is `BigDecimal` used for prices instead of `double` or `float`?</div>
+  <div class="qa-a">Binary floating-point types (<code>double</code>/<code>float</code>) cause precision loss due to base-2 representation (e.g. 0.1 + 0.2 = 0.30000000000000004). Financial systems require absolute precision, so Java's <code>BigDecimal</code> is used across all prices, subtotals, and delivery fee calculations.</div>
+</div>
+
+<div class="qa-box">
+  <div class="qa-q">Q4: How does Concurrency and Data Safety work?</div>
+  <div class="qa-a">Every mutation in <code>StoreRepository.transaction()</code> is thread-synchronized in memory. File operations use an OS <code>FileLock</code> (<code>store.lock</code>) and write to a <code>.tmp</code> file before executing an atomic move (<code>ATOMIC_MOVE</code>). In MySQL mode, relational transactions are managed under InnoDB with ACID transactions.</div>
+</div>
+
+<div class="page-break"></div>
+
+<h2>👥 3. Member-by-Member Viva Defense & Question Bank</h2>
+
+<!-- MEMBER 1 -->
+<div class="member-card">
+  <div class="member-header">
+    <span class="member-title">Member 1: IT25102131 — User Management & Authentication</span>
+    <span class="member-badge">Branch: feature/user-management-IT25102131</span>
+  </div>
+  <p><strong>Core Java Classes:</strong> <code>lk.bookbloom.model.User</code>, <code>Customer</code>, <code>AdminUser</code>, <code>UserService</code>, <code>Passwords</code></p>
+  
+  <p><strong>Assigned CRUD Operations:</strong></p>
+  <ul>
+    <li><strong>Create:</strong> Customer account registration (<code>/register</code> ➔ <code>UserService.register()</code>).</li>
+    <li><strong>Read:</strong> Customer profile view (<code>/account</code>), Admin customer table (<code>/admin</code> ➔ Users tab).</li>
+    <li><strong>Update:</strong> Address, name, and contact details update (<code>UserService.updateProfile()</code>).</li>
+    <li><strong>Delete:</strong> Delete customer account with order constraint check (<code>UserService.delete()</code>).</li>
+  </ul>
+
+  <p><strong>3 UI States:</strong> (1) Registration page with live validation, (2) Profile editor at <code>/account</code>, (3) Admin user list with search & roles.</p>
+
+  <p><strong><span class="badge-fail">Demonstrate Rejected Action</span>:</strong> Try registering with an existing email (e.g. <code>admin@bookbloom.lk</code>). The system blocks it: <em>"A customer with this email already exists."</em></p>
+
+  <div class="qa-box">
+    <div class="qa-q">Q: Where is Inheritance and Information Hiding in your module?</div>
+    <div class="qa-a"><code>Customer</code> and <code>AdminUser</code> both inherit from <code>abstract class User</code>, overriding <code>user.role()</code> polymorphically. Information hiding is enforced in <code>User.publicProfile()</code>, which strips out the sensitive <code>passwordHash</code> before JSON serialization.</div>
+  </div>
+  <div class="qa-box">
+    <div class="qa-q">Q: How are passwords secured?</div>
+    <div class="qa-a">Handled by <code>Passwords.java</code> using <strong>PBKDF2WithHmacSHA256</strong> with a secure 16-byte random salt and 210,000 iterations. Passwords are never stored in plaintext.</div>
+  </div>
+</div>
+
+<!-- MEMBER 2 -->
+<div class="member-card">
+  <div class="member-header">
+    <span class="member-title">Member 2: IT25102114 — Book & Inventory Management</span>
+    <span class="member-badge">Branch: feature/book-management-IT25102114</span>
+  </div>
+  <p><strong>Core Java Classes:</strong> <code>lk.bookbloom.model.Book</code>, <code>PrintedBook</code>, <code>EBook</code>, <code>BookService</code></p>
+  
+  <p><strong>Assigned CRUD Operations:</strong></p>
+  <ul>
+    <li><strong>Create:</strong> Add Printed Book or Digital E-Book (<code>/admin</code> ➔ Books tab ➔ "+ Add Book").</li>
+    <li><strong>Read:</strong> Catalog search/filter (<code>/catalog</code>), Book detail page (<code>/book?id=...</code>), Admin inventory list.</li>
+    <li><strong>Update:</strong> Update book title, price, stock, description, format, and cover color.</li>
+    <li><strong>Delete:</strong> Delete title with active orders constraint protection.</li>
+  </ul>
+
+  <p><strong>3 UI States:</strong> (1) Catalog grid with search, (2) Book detail with interactive <strong>"📖 Look Inside / Sample Read"</strong> modal, (3) Admin book modal with dynamic Printed vs E-Book inputs.</p>
+
+  <p><strong><span class="badge-fail">Demonstrate Rejected Action</span>:</strong> Try saving a book with a negative price (e.g. <code>-500</code>). <code>Rules.positive()</code> blocks it.</p>
+
+  <div class="qa-box">
+    <div class="qa-q">Q: Where is Polymorphism in the Book module?</div>
+    <div class="qa-a">In <code>Book.requiresShipping()</code>. <code>PrintedBook</code> overrides it to return <code>true</code> (requires physical courier delivery), while <code>EBook</code> overrides it to return <code>false</code>. <code>OrderService</code> calls <code>b.requiresShipping()</code> polymorphically to calculate delivery fees!</div>
+  </div>
+</div>
+
+<!-- MEMBER 3 -->
+<div class="member-card">
+  <div class="member-header">
+    <span class="member-title">Member 3: IT25102130 — Order, Checkout & Delivery Management</span>
+    <span class="member-badge">Branch: feature/order-management-IT25102130</span>
+  </div>
+  <p><strong>Core Java Classes:</strong> <code>lk.bookbloom.model.Order</code>, <code>OrderLine</code>, <code>OrderService</code>, <code>DeliveryFeePolicy</code></p>
+  
+  <p><strong>Assigned CRUD Operations:</strong></p>
+  <ul>
+    <li><strong>Create:</strong> Shopping bag checkout (<code>/cart</code> ➔ <code>OrderService.create()</code>).</li>
+    <li><strong>Read:</strong> Customer order history (<code>/orders</code>), Admin dispatch dashboard (<code>/admin</code> ➔ Orders tab).</li>
+    <li><strong>Update:</strong> Lifecycle transitions: <code>PLACED</code> ➔ <code>PROCESSING</code> ➔ <code>COMPLETED</code>, or <code>CANCELLED</code>.</li>
+    <li><strong>Delete:</strong> Permanent deletion of cancelled orders (<code>OrderService.delete()</code>).</li>
+  </ul>
+
+  <p><strong>3 UI States:</strong> (1) Cart page with Free Delivery progress meter, (2) Order history with live courier tracking stepper, (3) Official Printable Tax Invoice with barcode.</p>
+
+  <p><strong><span class="badge-fail">Demonstrate Rejected Action</span>:</strong> Try cancelling an already cancelled order. The state machine rejects it, guaranteeing stock is not restocked twice.</p>
+
+  <div class="qa-box">
+    <div class="qa-q">Q: How does atomic order cancellation restock inventory?</div>
+    <div class="qa-a">In <code>OrderService.updateStatus()</code>, when marked <code>CANCELLED</code>, each order line restores the book's stock: <code>b.setStock(b.getStock() + line.getQuantity())</code>. Both order state and inventory update inside the same synchronized transaction.</div>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- MEMBER 4 -->
+<div class="member-card" style="border-left-color:#b45309">
+  <div class="member-header">
+    <span class="member-title">Member 4: IT25101966 — Author Management (Miss's Enhanced Module)</span>
+    <span class="member-badge" style="background:#fef3c7;color:#92400e">Branch: feature/author-management-IT25101966</span>
+  </div>
+  <p><strong>Core Java Classes:</strong> <code>lk.bookbloom.model.Author</code>, <code>AuthorService</code>, <code>MysqlStoreRepository</code></p>
+  
+  <p><strong>Assigned CRUD Operations:</strong></p>
+  <ul>
+    <li><strong>Create:</strong> Add Author with rich domain attributes (Name, Era, Nationality, Genre, Accolades, Photo URL, Bio).</li>
+    <li><strong>Read:</strong> Admin author table; Book detail "Author Spotlight" card; Catalog filter by author.</li>
+    <li><strong>Update:</strong> Edit biography, honors, nationality, primary genre, era, or photo URL.</li>
+    <li><strong>Delete:</strong> Safe author deletion with published books referential constraint.</li>
+  </ul>
+
+  <p><strong>3 UI States:</strong> (1) Admin 2-column responsive Author modal, (2) Admin Author table with era/nationality/awards crests, (3) Book Detail <strong>"About the Author · ලේඛකයා පිළිබඳ විස්තරය" Spotlight Box</strong>.</p>
+
+  <p><strong><span class="badge-fail">Demonstrate Rejected Action</span>:</strong> Try deleting Martin Wickramasinghe. The system blocks it: <em>"Reassign or remove this author's books first."</em></p>
+
+  <div class="qa-box">
+    <div class="qa-q">Q: What improvements did you make based on Miss's feedback?</div>
+    <div class="qa-a"><em>"Originally, the Author entity only had Name and Biography. Miss pointed out that this was too basic. In response, I expanded the <code>Author</code> OOP model with <code>nationality</code>, <code>primaryGenre</code>, <code>accolades</code> (literary awards), <code>bornYear</code> (active era), and <code>photoUrl</code>. I upgraded the Admin modal to a 2-column grid and built an 'About the Author' Spotlight Card on the book detail page."</em></div>
+  </div>
+  <div class="qa-box">
+    <div class="qa-q">Q: Where is Encapsulation in the Author model?</div>
+    <div class="qa-a">All attributes are declared <code>private</code>. Public getters and setters enforce null-safety (e.g. returning empty strings instead of null) and prevent direct mutable access from external classes.</div>
+  </div>
+</div>
+
+<!-- MEMBER 5 -->
+<div class="member-card">
+  <div class="member-header">
+    <span class="member-title">Member 5: IT25102132 — Category Management & Navigation</span>
+    <span class="member-badge">Branch: feature/category-management-IT25102132</span>
+  </div>
+  <p><strong>Core Java Classes:</strong> <code>lk.bookbloom.model.Category</code>, <code>CategoryService</code></p>
+  
+  <p><strong>Assigned CRUD Operations:</strong></p>
+  <ul>
+    <li><strong>Create:</strong> Add new category (<code>/admin</code> ➔ Categories tab ➔ "+ Add Category").</li>
+    <li><strong>Read:</strong> Category cards on homepage, Category filter chips on catalog, Admin categories table.</li>
+    <li><strong>Update:</strong> Edit category name and description.</li>
+    <li><strong>Delete:</strong> Delete category with referential check (must contain 0 books).</li>
+  </ul>
+
+  <p><strong>3 UI States:</strong> (1) Popular Category cards on homepage, (2) Filter chips on catalog with active state, (3) Admin Category table with live titles counter.</p>
+
+  <p><strong><span class="badge-fail">Demonstrate Rejected Action</span>:</strong> Try deleting the "Fiction" category. The system blocks it: <em>"Reassign or remove books in this category first."</em></p>
+
+  <div class="qa-box">
+    <div class="qa-q">Q: What is the relationship between Category and Book?</div>
+    <div class="qa-a">It is a <strong>One-to-Many Association</strong> (<code>Category</code> 1 ──── * <code>Book</code>). One category holds many books, but each book belongs to one category via <code>book.getCategoryId()</code>.</div>
+  </div>
+</div>
+
+<!-- MEMBER 6 -->
+<div class="member-card">
+  <div class="member-header">
+    <span class="member-title">Member 6: IT25102519 — Review & Rating Management</span>
+    <span class="member-badge">Branch: feature/review-management-IT25102519</span>
+  </div>
+  <p><strong>Core Java Classes:</strong> <code>lk.bookbloom.model.Review</code>, <code>ReviewService</code></p>
+  
+  <p><strong>Assigned CRUD Operations:</strong></p>
+  <ul>
+    <li><strong>Create:</strong> Post verified review with 1-5 star rating (<code>/book?id=...</code> ➔ <code>ReviewService.submit()</code>).</li>
+    <li><strong>Read:</strong> Book reviews list, average star calculation, customer testimonials on homepage.</li>
+    <li><strong>Update:</strong> Edit existing review rating and comment by the review author.</li>
+    <li><strong>Delete:</strong> Customer deleting own review, or Administrator moderating inappropriate reviews.</li>
+  </ul>
+
+  <p><strong>3 UI States:</strong> (1) Interactive star rating selector on book page, (2) Verified reader review cards with dates, (3) Admin review moderation dashboard.</p>
+
+  <p><strong><span class="badge-fail">Demonstrate Rejected Action</span>:</strong> Try submitting a second review for the same book from the same account. The system blocks it: <em>"You have already reviewed this title."</em></p>
+
+  <div class="qa-box">
+    <div class="qa-q">Q: How does Authorization work in the Review module?</div>
+    <div class="qa-a">In <code>ReviewService.delete()</code>, an Administrator can delete any review for moderation. Regular customers can only edit or delete reviews matching their own <code>userId</code> (<code>require(r.getUserId().equals(actor))</code>).</div>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<h2>🎯 4. Live Presentation Walkthrough Sequence</h2>
+
+<ol style="font-size:10pt;line-height:1.7">
+  <li><strong>Start Server:</strong> Double click <code>start-bookstore.cmd</code> on Desktop. Show Tomcat starting on port 8080 in under 5 seconds.</li>
+  <li><strong>Customer Flow:</strong> Open <code>http://127.0.0.1:8080</code>. Show the cinematic hero, botanical banners, and popular categories.</li>
+  <li><strong>Interactive Sample Read:</strong> Open <em>Gamperaliya</em> or <em>Atomic Habits</em> ➔ Click <strong>"📖 Look Inside / Sample Read"</strong> modal.</li>
+  <li><strong>Cart & Free Delivery:</strong> Add books to bag to exceed LKR 5,000. Show the Free Delivery progress bar hit 100%. Click Checkout.</li>
+  <li><strong>Tax Invoice:</strong> On order confirmation, click <strong>"🖨️ Print Official Tax Invoice"</strong> to show the printable receipt with barcode.</li>
+  <li><strong>Courier Stepper:</strong> Open <code>/orders</code> to demonstrate live order tracking stepper.</li>
+  <li><strong>Admin Dashboard:</strong> Log in as <code>admin@bookbloom.lk</code> / <code>BloomAdmin!2026</code>. Show Books, Categories, Orders, Customers, and Reviews tabs.</li>
+  <li><strong>Author Spotlight (Miss's Part):</strong> Show Authors tab ➔ Open 2-column modal (show Era, Nationality, Genre, Accolades) ➔ Show Book Detail Author Spotlight box!</li>
+  <li><strong>Live MySQL Database Proof:</strong> Open MySQL Workbench or CMD ➔ Run <code>USE book_bloom; SELECT * FROM authors;</code> to prove real-time persistence!</li>
+  <li><strong>GitHub Branches:</strong> Open <code>https://github.com/IT25102131/book-and-bloom-se1020</code> ➔ Show the 6 student branches and commits.</li>
+</ol>
+
+<div style="background:#f1f5f9;border:1px solid #cbd5e1;padding:14px;border-radius:8px;margin-top:20px;font-size:9pt">
+  <strong>💡 Tip for Full Marks (Grade A+):</strong> Stay calm, know your specific module flow (UI ➔ ApiServlet ➔ Service ➔ Repository ➔ MySQL), and demonstrate that one rejected edge-case to prove that your backend validates business rules properly!
+</div>
+
+</body>
+</html>
