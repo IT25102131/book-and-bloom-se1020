@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+<meta charset="UTF-8">
+<title>Book & Bloom — SE1020 Final Viva Master Guide (Sinhala)</title>
+<style>
+  @page {
+    size: A4;
+    margin: 16mm 14mm 16mm 14mm;
+  }
+  body {
+    font-family: "Nirmala UI", "Iskoola Pota", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    color: #1e293b;
+    line-height: 1.65;
+    font-size: 10.5pt;
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+  }
+  .header-card {
+    background: linear-gradient(135deg, #0a2540 0%, #1e3a8a 100%);
+    color: #ffffff;
+    padding: 22px 26px;
+    border-radius: 10px;
+    margin-bottom: 22px;
+  }
+  .header-card h1 {
+    margin: 0 0 6px 0;
+    font-size: 18pt;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+  }
+  .header-card p {
+    margin: 4px 0;
+    font-size: 10pt;
+    opacity: 0.95;
+  }
+  .meta-tag {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.18);
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 9pt;
+    font-weight: 600;
+    margin-right: 6px;
+    margin-top: 6px;
+  }
+  h2 {
+    font-size: 13.5pt;
+    font-weight: 800;
+    color: #0a2540;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 6px;
+    margin-top: 24px;
+    margin-bottom: 12px;
+    page-break-after: avoid;
+  }
+  h3 {
+    font-size: 11.5pt;
+    font-weight: 700;
+    color: #1e3a8a;
+    margin-top: 16px;
+    margin-bottom: 8px;
+    page-break-after: avoid;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0;
+    font-size: 9.5pt;
+  }
+  th, td {
+    padding: 7px 10px;
+    border: 1px solid #cbd5e1;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: #f1f5f9;
+    color: #0f172a;
+    font-weight: 700;
+  }
+  tr:nth-child(even) td {
+    background: #f8fafc;
+  }
+  .member-card {
+    border: 1px solid #e2e8f0;
+    border-left: 5px solid #0056b3;
+    border-radius: 8px;
+    padding: 15px 18px;
+    margin-bottom: 20px;
+    background: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+    page-break-inside: avoid;
+  }
+  .member-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+  }
+  .member-title {
+    font-size: 12.5pt;
+    font-weight: 800;
+    color: #0a2540;
+  }
+  .member-badge {
+    background: #e0f2fe;
+    color: #0369a1;
+    font-size: 8.5pt;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 6px;
+  }
+  .qa-box {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 9px 13px;
+    margin: 8px 0;
+  }
+  .qa-q {
+    font-weight: 700;
+    color: #0a2540;
+    font-size: 9.5pt;
+    margin-bottom: 4px;
+  }
+  .qa-a {
+    color: #334155;
+    font-size: 9pt;
+    line-height: 1.55;
+  }
+  .badge-fail {
+    background: #fee2e2;
+    color: #991b1b;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 8.5pt;
+  }
+  .page-break {
+    page-break-before: always;
+  }
+</style>
+</head>
+<body>
+
+<div class="header-card">
+  <h1>Book & Bloom — SE1020 Final Viva Master Guide</h1>
+  <p><strong>SLIIT — SE1020 Object Oriented Programming Prorata Project (Full 100/100 Marks Preparation)</strong></p>
+  <p>සාමාජිකයින් 6 දෙනාටම Viva එකේදී Full Marks ලබාගැනීම සඳහා විශේෂයෙන් සකස් කළ සිංහල මාර්ගෝපදේශය</p>
+  <div>
+    <span class="meta-tag">ලකුණු 100/100 ඉලක්කය</span>
+    <span class="meta-tag">සාමාජිකයින් 6 දෙනාටම වෙන වෙනම</span>
+    <span class="meta-tag">MySQL 8.0 & Atomic File</span>
+    <span class="meta-tag">GitHub Branches Verified</span>
+  </div>
+</div>
+
+<h2>🏆 1. SLIIT SE1020 නිල Marking Rubric (ලකුණු 100 බෙදී යන ආකාරය)</h2>
+<p>Miss හෝ Evaluation Panel එක ලකුණු ලබාදෙන නිල නිර්ණායක 7 පහත පරිදි වේ:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="width:48%">Assessment Criteria</th>
+      <th style="width:16%">ලකුණු</th>
+      <th style="width:36%">Full Marks ලබාගැනීමට පෙන්විය යුතු දේ</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>1. Functionality of Assigned CRUD Operations</strong></td>
+      <td><strong>30 Marks</strong></td>
+      <td>තමන්ගේ Assigned Module එක Create, Read, Update, Delete වන ආකාරය සහ Data Validation නිවැරදිව පෙන්වීම.</td>
+    </tr>
+    <tr>
+      <td><strong>2. Application of OOP Concepts</strong></td>
+      <td><strong>20 Marks</strong></td>
+      <td>Encapsulation, Inheritance, Polymorphism, Abstraction, Information Hiding තමන්ගේ code එකෙන් පැහැදිලි කිරීම.</td>
+    </tr>
+    <tr>
+      <td><strong>3. File Handling & Persistence Implementation</strong></td>
+      <td><strong>10 Marks</strong></td>
+      <td>Atomic File Persistence (`bookstore.txt`) සහ MySQL Relational Persistence (`book_bloom`) නිවැරදිව ක්‍රියාත්මක වීම.</td>
+    </tr>
+    <tr>
+      <td><strong>4. Correct use of User Interface Design</strong></td>
+      <td><strong>10 Marks</strong></td>
+      <td>පිරිසිදු responsive UI එක, අවම UI states 3ක්, error toasts, dynamic forms සහ modals පෙන්වීම.</td>
+    </tr>
+    <tr>
+      <td><strong>5. Individual Contribution & GitHub Commits</strong></td>
+      <td><strong>10 Marks</strong></td>
+      <td>තමන්ගේ Student ID branch එක සහ SLIIT email එකෙන් තැබූ Commit history එක GitHub එකෙන් පෙන්වීම.</td>
+    </tr>
+    <tr>
+      <td><strong>6. Presentation & Viva Performance</strong></td>
+      <td><strong>10 Marks</strong></td>
+      <td>ප්‍රශ්න වලට තාක්ෂණිකව පැහැදිලිව උත්තර දීම සහ Code flow එක විශ්වාසයෙන් යුතුව විස්තර කිරීම.</td>
+    </tr>
+    <tr>
+      <td><strong>7. Documentation & Class Diagrams</strong></td>
+      <td><strong>10 Marks</strong></td>
+      <td>UML Class Diagram එක Java classes සමඟ 100% ගැලපෙන බව සහ වාර්තාවේ නිරවද්‍යතාව පෙන්වීම.</td>
+    </tr>
+    <tr style="background:#f1f5f9;font-weight:bold">
+      <td>මුළු ලකුණු එකතුව</td>
+      <td>100 Marks</td>
+      <td>ඉලක්කය: Grade A+ (100/100)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>🌐 2. සාමාජිකයින් 6 දෙනාම දැනගත යුතු පොදු ප්‍රශ්න (General Architecture)</h2>
+
+<div class="qa-box">
+  <div class="qa-q">ප්‍රශ්නය 1: System එකේ High-Level Architecture එක පැහැදිලි කරන්න.</div>
+  <div class="qa-a"><strong>පිළිතුර:</strong> Book & Bloom පද්ධතිය Object-Oriented Three-Tier MVC Architecture එකක් මත ගොඩනගා ඇත: (1) <strong>Presentation Tier:</strong> JSP පිටු සහ dynamic JavaScript/CSS. (2) <strong>Application Tier:</strong> Jakarta <code>ApiServlet</code> එක Front Controller එකක් ලෙස ක්‍රියා කරමින් Session/CSRF check කර Business Services (<code>UserService</code>, <code>BookService</code>, ආදිය) වෙත delegate කරයි. (3) <strong>Persistence Tier:</strong> <code>StoreRepository</code> interface එක හරහා atomic file persistence (<code>bookstore.txt</code>) සහ relational MySQL persistence (<code>MysqlStoreRepository</code>) යන දෙකම decouple කර ඇත.</div>
+</div>
+
+<div class="qa-box">
+  <div class="qa-q">ප්‍රශ්නය 2: Spring Boot සමඟ explicit Jakarta Servlet එකක් පාවිච්චි කළේ ඇයි?</div>
+  <div class="qa-a"><strong>පිළිතුර:</strong> Spring Boot මඟින් Dependency Injection සහ embedded Tomcat server එක පහසු කරයි. නමුත් අපි <code>HttpServlet</code> subclass එකක් ලෙස explicit <code>ApiServlet</code> එකක් ලිව්වේ core Java Enterprise/Servlet මූලධර්ම (Manual HTTP routing, Jackson JSON parsing, HTTP status codes, explicit session rotation) අපට මනාව අවබෝධ වී ඇති බව පෙන්වීමටයි.</div>
+</div>
+
+<div class="qa-box">
+  <div class="qa-q">ප්‍රශ්නය 3: මිල ගණන් වලට `double` හෝ `float` වෙනුවට `BigDecimal` දැම්මේ ඇයි?</div>
+  <div class="qa-a"><strong>පිළිතුර:</strong> Binary floating-point types (<code>double</code>/<code>float</code>) වල base-2 නිරූපණය නිසා binary rounding errors ඇතිවේ (උදා: 0.1 + 0.2 = 0.30000000000000004). මූල්‍ය ගනුදෙනු වලදී ශතයක්වත් වැරදිය නොහැකි බැවින් Java හි <code>BigDecimal</code> යොදාගෙන සියලුම ගණනය කිරීම් සිදුකර ඇත.</div>
+</div>
+
+<div class="qa-box">
+  <div class="qa-q">ප්‍රශ්නය 4: Concurrency සහ Data Safety ආරක්ෂා කරන්නේ කොහොමද?</div>
+  <div class="qa-a"><strong>පිළිතුර:</strong> සෑම mutation එකක්ම <code>StoreRepository.transaction()</code> එක තුළ thread-synchronized වේ. File mode එකේදී OS-level <code>FileLock</code> (<code>store.lock</code>) භාවිතා කර තාවකාලික <code>.tmp</code> file එකකට ලියා පසුව <code>ATOMIC_MOVE</code> මඟින් replace කරයි. MySQL mode එකේදී InnoDB ACID transactions ක්‍රියාත්මක වේ.</div>
+</div>
+
+<div class="page-break"></div>
+
+<h2>👥 3. සාමාජිකයින් 6 දෙනාට අදාළ Module විස්තර සහ Viva ප්‍රශ්නෝත්තර</h2>
+
+<!-- MEMBER 1 -->
+<div class="member-card">
+  <div class="member-header">
+    <span class="member-title">Member 1 (IT25102131) — User Management & Authentication</span>
+    <span class="member-badge">Branch: feature/user-management-IT25102131</span>
+  </div>
+  <p><strong>අදාළ Java Classes:</strong> <code>User.java</code>, <code>Customer.java</code>, <code>AdminUser.java</code>, <code>UserService.java</code>, <code>Passwords.java</code></p>
+  
+  <p><strong>Assigned CRUD Operations:</strong></p>
+  <ul>
+    <li><strong>Create:</strong> Customer account registration (<code>/register</code> ➔ <code>UserService.register()</code>).</li>
+    <li><strong>Read:</strong> Customer profile view (<code>/account</code>), Admin customer table (<code>/admin</code> ➔ Users tab).</li>
+    <li><strong>Update:</strong> Address, name, සහ contact details update කිරීම (<code>UserService.updateProfile()</code>).</li>
+    <li><strong>Delete:</strong> Customer account delete කිරීම (Orders නොමැති නම් පමණි).</li>
+  </ul>
+
+  <p><strong>පෙන්විය යුතු UI States 3:</strong> (1) Registration Page, (2) Profile Editor (<code>/account</code>), (3) Admin Users List.</p>
+  <p><strong><span class="badge-fail">⛔ Fail වන Action එකක් (Rejected Action)</span>:</strong> කලින් ඇති Email එකකින් (උදා: <code>admin@bookbloom.lk</code>) නැවත Register වෙන්න උත්සාහ කරන්න. System එක <em>"A customer with this email already exists"</em> කියා reject කරයි.</p>
+
+  <div class="qa-box">
+    <div class="qa-q">ප්‍රශ්නය: ඔබේ Module එකේ Inheritance සහ Information Hiding තියෙන්නේ කොහෙද?</div>
+    <div class="qa-a"><code>Customer</code> සහ <code>AdminUser</code> දෙකම <code>abstract class User</code> එකෙන් inherit වෙනවා. Overridden <code>user.role()</code> එකෙන් polymorphically Role එක return වෙනවා. Information Hiding තියෙන්නේ <code>User.publicProfile()</code> එකේ; එයින් frontend එකට යවද්දී sensitive <code>passwordHash</code> එක සඟවා ඉවත් කරයි.</div>
+  </div>
+  <div class="qa-box">
+    <div class="qa-q">ප්‍රශ්නය: Passwords ආරක්ෂා කරන්නේ කොහොමද?</div>
+    <div class="qa-a"><code>Passwords.java</code> මඟින් <strong>PBKDF2WithHmacSHA256</strong> algorithm එක random 16-byte salt එකක් සහ 210,000 iterations සහිතව භාවිතා කරයි. Plaintext passwords කවදාවත් database එකේ හෝ memory එකේ save නොවේ.</div>
+  </div>
+</div>
+
+<!-- MEMBER 2 -->
+<div class="member-card">
+  <div class="member-header">
+    <span class="member-title">Member 2 (IT25102114) — Book & Inventory Management</span>
+    <span class="member-badge">Branch: feature/book-management-IT25102114</span>
+  </div>
+  <p><strong>අදාළ Java Classes:</strong> <code>Book.java</code>, <code>PrintedBook.java</code>, <code>EBook.java</code>, <code>BookService.java</code></p>
+  
+  <p><strong>Assigned CRUD Operations:</strong></p>
+  <ul>
+    <li><strong>Create:</strong> Printed Book හෝ Digital E-Book ඇතුළත් කිරීම (<code>/admin</code> ➔ Books ➔ "+ Add Book").</li>
+    <li><strong>Read:</strong> Catalog Search (<code>/catalog</code>), Book Detail Page (<code>/book?id=...</code>), Admin Inventory table.</li>
+    <li><strong>Update:</strong> පොතේ මිල, stock, description, format, සහ theme color වෙනස් කිරීම.</li>
+    <li><strong>Delete:</strong> පොත් අයින් කිරීම (Orders වල නැති පොත් පමණි).</li>
+  </ul>
+
+  <p><strong>පෙන්විය යුතු UI States 3:</strong> (1) Catalog grid & filters, (2) Book detail + <strong>"📖 Look Inside / Sample Read"</strong> modal, (3) Admin book form.</p>
+  <p><strong><span class="badge-fail">⛔ Fail වන Action එකක් (Rejected Action)</span>:</strong> මිලට සෘණ අගයක් (Negative Price, උදා: <code>-500</code>) දමා Save කරන්න හදන්න. <code>Rules.positive()</code> මඟින් එය block කරයි.</p>
+
+  <div class="qa-box">
+    <div class="qa-q">ප්‍රශ්නය: Book module එකේ Polymorphism තියෙන්නේ කොහෙද?</div>
+    <div class="qa-a"><code>Book.requiresShipping()</code> method එකේ. <code>PrintedBook</code> එකේ physical delivery අවශ්‍ය නිසා <code>true</code> return වෙනවා. <code>EBook</code> එකේ physical courier අවශ්‍ය නැති නිසා <code>false</code> return වෙනවා. <code>OrderService</code> එක delivery fee calculate කරද්දී polymorphic dispatch සිදුවේ.</div>
+  </div>
+</div>
+
+<!-- MEMBER 3 -->
+<div class="member-card">
+  <div class="member-header">
+    <span class="member-title">Member 3 (IT25102130) — Order, Checkout & Delivery Management</span>
+    <span class="member-badge">Branch: feature/order-management-IT25102130</span>
+  </div>
+  <p><strong>අදාළ Java Classes:</strong> <code>Order.java</code>, <code>OrderLine.java</code>, <code>OrderService.java</code>, <code>DeliveryFeePolicy.java</code></p>
+  
+  <p><strong>Assigned CRUD Operations:</strong></p>
+  <ul>
+    <li><strong>Create:</strong> Shopping bag එකෙන් Checkout කර Order එකක් දැමීම (<code>/cart</code> ➔ <code>OrderService.create()</code>).</li>
+    <li><strong>Read:</strong> Customer order history (<code>/orders</code>), Admin orders table (<code>/admin</code> ➔ Orders tab).</li>
+    <li><strong>Update:</strong> Status වෙනස් කිරීම: <code>PLACED</code> ➔ <code>PROCESSING</code> ➔ <code>COMPLETED</code> හෝ <code>CANCELLED</code>.</li>
+    <li><strong>Delete:</strong> Cancelled orders database එකෙන් ඉවත් කිරීම.</li>
+  </ul>
+
+  <p><strong>පෙන්විය යුතු UI States 3:</strong> (1) Cart page + Free Delivery progress bar, (2) Order history + live courier stepper, (3) <strong>Print Official Tax Invoice</strong>.</p>
+  <p><strong><span class="badge-fail">⛔ Fail වන Action එකක් (Rejected Action)</span>:</strong> Stock එකට වඩා වැඩි quantity එකක් order කරන්න හදන්න. <em>"Insufficient stock"</em> කියා reject වේ.</p>
+
+  <div class="qa-box">
+    <div class="qa-q">ප්‍රශ්නය: Order එකක් Cancel කළ විට Stock එක ආපසු restore වෙන්නේ කොහොමද?</div>
+    <div class="qa-a"><code>OrderService.updateStatus()</code> එකේදී status එක <code>CANCELLED</code> වන විට order lines වල ඇති quantities නැවත <code>b.setStock(b.getStock() + line.getQuantity())</code> හරහා inventory එකට restore වේ. මෙය synchronized transaction එකක් තුළ atomic ලෙස සිදුවේ.</div>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- MEMBER 4 -->
+<div class="member-card" style="border-left-color:#b45309">
+  <div class="member-header">
+    <span class="member-title">Member 4 (IT25101966) — Author Management (Miss විශේෂයෙන් ඉල්ලූ කොටස!)</span>
+    <span class="member-badge" style="background:#fef3c7;color:#92400e">Branch: feature/author-management-IT25101966</span>
+  </div>
+  <p><strong>අදාළ Java Classes:</strong> <code>Author.java</code>, <code>AuthorService.java</code>, <code>MysqlStoreRepository.java</code></p>
+  
+  <p><strong>Assigned CRUD Operations:</strong></p>
+  <ul>
+    <li><strong>Create:</strong> නව attributes සහිතව Author කෙනෙක් ඇතුළත් කිරීම (Name, Era, Nationality, Genre, Accolades, Photo URL, Bio).</li>
+    <li><strong>Read:</strong> Admin author table; Book detail "Author Spotlight" card; Catalog filter by author.</li>
+    <li><strong>Update:</strong> Author bio, accolades (සම්මාන), nationality, genre, era, photo URL edit කිරීම.</li>
+    <li><strong>Delete:</strong> Author ඉවත් කිරීම (පොත් නොමැති නම් පමණි).</li>
+  </ul>
+
+  <p><strong>පෙන්විය යුතු UI States 3:</strong> (1) Admin 2-column Author modal, (2) Admin Author table (badges, era), (3) Book Detail <strong>"About the Author · ලේඛකයා පිළිබඳ විස්තරය" Spotlight Box</strong>.</p>
+  <p><strong><span class="badge-fail">⛔ Fail වන Action එකක් (Rejected Action)</span>:</strong> දැනට පොත් ලියා ඇති Author කෙනෙක් (උදා: මාර්ටින් වික්‍රමසිංහ) Delete කරන්න හදන්න. System එක <em>"Reassign or remove this author's books first"</em> කියා block කරයි.</p>
+
+  <div class="qa-box">
+    <div class="qa-q">ප්‍රශ්නය: Miss කලින් දුන්න feedback එකට ඔයා කළ වෙනස්කම් මොනවද?</div>
+    <div class="qa-a"><em>"කලින් Author ට තිබුණේ Name සහ Bio පමණයි. Miss කිව්වා ඒක basic වැඩියි තව fields දාන්න කියලා. ඒ නිසා මම OOP Model එකට <code>nationality</code>, <code>primaryGenre</code>, <code>accolades</code> (සම්මාන), <code>bornYear</code> (යුගය), සහ <code>photoUrl</code> එක් කර, Admin එකට 2-column responsive grid එකක් සහ Book Detail පිටුවේ 'About the Author' Spotlight Card එකක් නිර්මාණය කළා."</em></div>
+  </div>
+  <div class="qa-box">
+    <div class="qa-q">ප්‍රශ්නය: Author model එකේ Encapsulation පෙන්වන්න.</div>
+    <div class="qa-a">සියලුම attributes <code>private</code> කර ඇත. ඒවාට access කරන්නේ public getters/setters හරහා වන අතර null values වලින් system එක crash නොවීමට null-safe defensive checks යොදා ඇත.</div>
+  </div>
+</div>
+
+<!-- MEMBER 5 -->
+<div class="member-card">
+  <div class="member-header">
+    <span class="member-title">Member 5 (IT25102132) — Category Management & Navigation</span>
+    <span class="member-badge">Branch: feature/category-management-IT25102132</span>
+  </div>
+  <p><strong>අදාළ Java Classes:</strong> <code>Category.java</code>, <code>CategoryService.java</code></p>
+  
+  <p><strong>Assigned CRUD Operations:</strong></p>
+  <ul>
+    <li><strong>Create:</strong> නව Category එකතු කිරීම (<code>/admin</code> ➔ Categories ➔ "+ Add Category").</li>
+    <li><strong>Read:</strong> Homepage Category cards, Catalog chips, Admin Category table.</li>
+    <li><strong>Update:</strong> Category Name සහ Description Edit කිරීම.</li>
+    <li><strong>Delete:</strong> Category එක ඉවත් කිරීම (පොත් 0ක් තිබිය යුතුය).</li>
+  </ul>
+
+  <p><strong>පෙන්විය යුතු UI States 3:</strong> (1) Homepage Category Cards, (2) Catalog category filter chips, (3) Admin categories table.</p>
+  <p><strong><span class="badge-fail">⛔ Fail වන Action එකක් (Rejected Action)</span>:</strong> දැනට පොත් ඇති "Fiction" category එක delete කරන්න හදන්න. System එක <em>"Reassign or remove books in this category first"</em> කියා block කරයි.</p>
+
+  <div class="qa-box">
+    <div class="qa-q">ප්‍රශ්නය: Category සහ Book අතර OOP Relationship එක කුමක්ද?</div>
+    <div class="qa-a">එය <strong>One-to-Many Association</strong> එකක් (<code>Category</code> 1 ──── * <code>Book</code>). එක් Category එකකට පොත් රාශියක් තිබිය හැක, නමුත් පොතකට අයිති වන්නේ එක් Category එකක් පමණි (<code>b.getCategoryId()</code>).</div>
+  </div>
+</div>
+
+<!-- MEMBER 6 -->
+<div class="member-card">
+  <div class="member-header">
+    <span class="member-title">Member 6 (IT25102519) — Review & Rating Management</span>
+    <span class="member-badge">Branch: feature/review-management-IT25102519</span>
+  </div>
+  <p><strong>අදාළ Java Classes:</strong> <code>Review.java</code>, <code>ReviewService.java</code></p>
+  
+  <p><strong>Assigned CRUD Operations:</strong></p>
+  <ul>
+    <li><strong>Create:</strong> පොතකට තරු 1-5 rating එකක් සහ review එකක් දැමීම (<code>/book?id=...</code> ➔ <code>ReviewService.submit()</code>).</li>
+    <li><strong>Read:</strong> පොත යටින් ඇති Verified reader reviews සහ Average star calculation.</li>
+    <li><strong>Update:</strong> තමන් දැමූ review එකේ තරු ගණන සහ comment එක edit කිරීම.</li>
+    <li><strong>Delete:</strong> තමන්ගේ review එක delete කිරීම, හෝ Admin විසින් inappropriate reviews moderate කර delete කිරීම.</li>
+  </ul>
+
+  <p><strong>පෙන්විය යුතු UI States 3:</strong> (1) Star rating selector, (2) Customer review cards, (3) Admin Review moderation list.</p>
+  <p><strong><span class="badge-fail">⛔ Fail වන Action එකක් (Rejected Action)</span>:</strong> එකම පොතට එකම account එකෙන් දෙවැනි review එකක් දාන්න හදන්න. System එක <em>"You have already reviewed this title"</em> කියා reject කරයි.</p>
+
+  <div class="qa-box">
+    <div class="qa-q">ප්‍රශ්නය: Customer කෙනෙක් සහ Admin කෙනෙක් අතර Review permissions වෙනස් වෙන්නේ කොහොමද?</div>
+    <div class="qa-a"><code>ReviewService.delete()</code> එකේදී Admin කෙනෙකුට content moderation වෙනුවෙන් ඕනෑම review එකක් delete කළ හැක. නමුත් Customer කෙනෙකුට edit හෝ delete කළ හැක්කේ තමන්ගේම <code>userId</code> එකට අදාළ review පමණි.</div>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<h2>🎯 4. Live Presentation Walkthrough Sequence (ප්‍රසන්ටේෂන් එක පෙන්වන පිළිවෙළ)</h2>
+
+<ol style="font-size:10pt;line-height:1.75">
+  <li><strong>Server Start කිරීම:</strong> Desktop එකේ ඇති <code>start-bookstore.cmd</code> double-click කරන්න. තත්පර 5කට අඩු කාලයකින් Tomcat port 8080 හි ධාවනය වන බව පෙන්වන්න.</li>
+  <li><strong>Customer Flow:</strong> Browser එකේ <code>http://127.0.0.1:8080</code> open කරන්න. Cinematic hero banner එක, cursor animation එක, සහ popular categories පෙන්වන්න.</li>
+  <li><strong>Look Inside Demo:</strong> <em>Gamperaliya</em> හෝ <em>Atomic Habits</em> click කර ➔ <strong>"📖 Look Inside / Sample Read"</strong> modal එක open කර පෙන්වන්න.</li>
+  <li><strong>Cart & Free Delivery Demo:</strong> පොත් එකතු කර LKR 5,000 ඉක්මවන්න. Free Delivery progress meter එක 100% පිරී delivery fee එක LKR 0.00 වන හැටි පෙන්වා Checkout කරන්න.</li>
+  <li><strong>Tax Invoice Demo:</strong> Order confirmation එකේ <strong>"🖨️ Print Official Tax Invoice"</strong> click කර barcode සහිත මුද්‍රණ බිල්පත පෙන්වන්න.</li>
+  <li><strong>Courier Stepper:</strong> <code>/orders</code> වල live courier tracking stepper එක පෙන්වන්න.</li>
+  <li><strong>Admin Dashboard:</strong> <code>admin@bookbloom.lk</code> / <code>BloomAdmin!2026</code> මඟින් login වී Books, Categories, Orders, Users, Reviews කළමනාකරණය පෙන්වන්න.</li>
+  <li><strong>Author Spotlight (Miss ගේ කොටස):</strong> Authors tab එකේ 2-column modal එක (Era, Nationality, Genre, Accolades) පෙන්වා, Book Detail පිටුවේ ඇති <strong>"About the Author" Spotlight Box</strong> එක පෙන්වන්න!</li>
+  <li><strong>Live MySQL Database Proof:</strong> MySQL Workbench හෝ Command Prompt එකෙන් <code>USE book_bloom; SELECT * FROM authors;</code> run කර සජීවීව data save වී ඇති බව පෙන්වන්න!</li>
+  <li><strong>GitHub Branches Proof:</strong> <code>github.com/IT25102131/book-and-bloom-se1020</code> open කර සාමාජිකයින් 6 දෙනාගේම branches 6 සහ commits පෙන්වන්න.</li>
+</ol>
+
+<div style="background:#f1f5f9;border:1px solid #cbd5e1;padding:12px;border-radius:8px;margin-top:16px;font-size:9.5pt">
+  <strong>💡 Grade A+ සඳහා රහස:</strong> බය නොවී සන්සුන්ව කතා කරන්න. තමන්ගේ module එකේ UI එකෙන් Action එකක් කරද්දී Backend code එකේ API Servlet ➔ Service ➔ Repository ➔ MySQL දක්වා data ගලායන ආකාරය (Trace Flow) පැහැදිලි කරන්න. Full Marks සහතිකයි!
+</div>
+
+</body>
+</html>
