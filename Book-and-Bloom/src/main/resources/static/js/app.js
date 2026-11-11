@@ -42,7 +42,7 @@ const esc = (v) =>
     /[&<>"']/g,
     (c) =>
       ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[
-        c
+      c
       ],
   );
 
@@ -99,14 +99,14 @@ function readCart() {
     const c = JSON.parse(localStorage.getItem("bookbloom-cart") || "[]");
     return Array.isArray(c)
       ? c
-          .filter(
-            (x) =>
-              typeof x.bookId === "string" &&
-              Number.isInteger(x.quantity) &&
-              x.quantity > 0 &&
-              x.quantity <= 20,
-          )
-          .slice(0, 50)
+        .filter(
+          (x) =>
+            typeof x.bookId === "string" &&
+            Number.isInteger(x.quantity) &&
+            x.quantity > 0 &&
+            x.quantity <= 20,
+        )
+        .slice(0, 50)
       : [];
   } catch {
     return [];
@@ -278,7 +278,7 @@ function card(b) {
   const origPrice = (Number(b.price) * 1.15).toFixed(2);
   const discountPercent = "15% OFF";
   const displayTitle = sanitizeSinhalaTitle(b.title);
-  return `<article class="book-card reveal-item">
+  return `<article class="book-card">
     <a href="${url("/book?id=" + encodeURIComponent(b.id))}" class="book-scene" aria-label="View ${esc(displayTitle)}">
       ${b.featured ? '<span class="badge">BESTSELLER</span>' : b.type === "EBOOK" ? '<span class="badge" style="background:#0284c7">E-BOOK</span>' : '<span class="badge" style="background:#16a34a">NEW</span>'}
       <span class="badge-discount">${discountPercent}</span>
@@ -362,8 +362,8 @@ function home() {
     const bVal = bScore === -1 ? 999 : bScore;
     return aVal - bVal;
   });
-  const displayFeatured = featuredBooks.length ? featuredBooks.slice(0, 8) : books.slice(0, 8);
-  const newArrivals = books.slice(-8).reverse();
+  const displayFeatured = featuredBooks.length ? featuredBooks.slice(0, 4) : books.slice(0, 4);
+  const newArrivals = books.slice(-4).reverse();
 
   // Category visual metadata map
   const catMeta = {
@@ -591,48 +591,10 @@ function home() {
       </div>
     </section>
 
-    <!-- Main Content Container -->
+    <!-- Main Content Container (Essential Library & Bookstore Shelves Only) -->
     <div class="container">
-      <!-- Live Library Archive Telemetry Strip (Animated Count-Up Metrics) -->
-      <div class="library-telemetry-bar">
-        <div class="telemetry-live-badge">
-          <span class="live-pulse-dot"></span>
-          <span>LIVE LIBRARY ARCHIVE</span>
-        </div>
-        <div class="telemetry-metrics">
-          <div class="telemetry-item">
-            <span class="telemetry-num" data-countup="${books.length}">${books.length}</span>
-            <span class="telemetry-label">Curated Volumes</span>
-          </div>
-          <div class="telemetry-sep"></div>
-          <div class="telemetry-item">
-            <span class="telemetry-num" data-countup="${state.categories.length}">${state.categories.length}</span>
-            <span class="telemetry-label">Subject Shelves</span>
-          </div>
-          <div class="telemetry-sep"></div>
-          <div class="telemetry-item">
-            <span class="telemetry-num" data-countup="${state.authors.length}">${state.authors.length}</span>
-            <span class="telemetry-label">Eminent Authors</span>
-          </div>
-          <div class="telemetry-sep"></div>
-          <div class="telemetry-item">
-            <span class="telemetry-num" data-countup="${books.filter((b) => b.type === "EBOOK").length}">${books.filter((b) => b.type === "EBOOK").length}</span>
-            <span class="telemetry-label">Digital E-Books</span>
-          </div>
-          <div class="telemetry-sep"></div>
-          <div class="telemetry-item telemetry-highlight">
-            <span class="telemetry-num">4.9 ★</span>
-            <span class="telemetry-label">Reader Rating</span>
-          </div>
-        </div>
-        <a href="${url("/catalog")}" class="telemetry-action">
-          <span>Full Shelf Index</span>
-          <span class="btn-arrow">→</span>
-        </a>
-      </div>
-
       <!-- Popular Categories Grid -->
-      <section class="section" style="padding-top:16px">
+      <section class="section scroll-section" style="padding-top:14px">
         <div class="section-heading">
           <div class="section-title-wrap">
             <span class="eyebrow">EXPLORE COLLECTIONS • ප්‍රවර්ග</span>
@@ -646,18 +608,18 @@ function home() {
         </div>
         <div class="category-row">
           ${[...state.categories]
-            .sort((a, b) => {
-              const order = ["CAT-1", "CAT-2", "CAT-4", "CAT-3", "CAT-5d06be3c-fca"];
-              const ia = order.indexOf(a.id);
-              const ib = order.indexOf(b.id);
-              return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
-            })
-            .slice(0, 5)
-            .map((c) => {
-              const m = catMeta[c.id] || { name: c.name, sub: "Featured Collection", iconName: "book", img: "covers/gamperaliya.jpg", grad: "rgba(11, 60, 53, 0.88)" };
-              const count = state.books.filter((b) => b.categoryId === c.id).length;
-              return `
-              <a class="category-card-v2" href="${url("/catalog?category=" + encodeURIComponent(c.id))}" style="background-image:url('${url("/images/" + m.img)}');--cat-grad:${m.grad}">
+      .sort((a, b) => {
+        const order = ["CAT-1", "CAT-2", "CAT-4", "CAT-3", "CAT-5d06be3c-fca"];
+        const ia = order.indexOf(a.id);
+        const ib = order.indexOf(b.id);
+        return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
+      })
+      .slice(0, 5)
+      .map((c, idx) => {
+        const m = catMeta[c.id] || { name: c.name, sub: "Featured Collection", iconName: "book", img: "covers/gamperaliya.jpg", grad: "rgba(11, 60, 53, 0.88)" };
+        const count = state.books.filter((b) => b.categoryId === c.id).length;
+        return `
+              <a class="category-card-v2" style="--stagger-col:${idx};background-image:url('${url("/images/" + m.img)}');--cat-grad:${m.grad}" href="${url("/catalog?category=" + encodeURIComponent(c.id))}">
                 <div class="category-card-content">
                   <strong>${esc(m.name)}</strong>
                   <span class="category-sub">${esc(m.sub)}</span>
@@ -667,60 +629,41 @@ function home() {
                   </div>
                 </div>
               </a>`;
-            })
-            .join("")}
+      })
+      .join("")}
         </div>
       </section>
 
-      <!-- Bestsellers Section (Sarasavi Best Sellers) -->
-      <section class="section">
+      <!-- Bestsellers Section -->
+      <section class="section scroll-section">
         <div class="section-heading">
           <div class="section-title-wrap">
-            <span class="eyebrow">Top Recommendations · ජනප්‍රියම පොත්</span>
-            <h2>Sarasavi &amp; Book &amp; Bloom Best Sellers</h2>
-            <p>The most celebrated reads loved by book lovers across the island.</p>
+            <span class="eyebrow">TOP RECOMMENDATIONS · ජනප්‍රියම පොත්</span>
+            <div class="section-title-row">
+              <h2>Best Sellers</h2>
+              <div class="heading-divider-line"></div>
+              <a class="view-all-link" href="${url("/catalog?filter=featured")}">View All Best Sellers <span class="btn-arrow">→</span></a>
+            </div>
+            <p class="section-subtext">The most celebrated reads loved by book lovers across the island.</p>
           </div>
-          <a class="view-all-link" href="${url("/catalog?filter=featured")}">View All Best Sellers ↗</a>
         </div>
         <div class="book-grid">
           ${displayFeatured.map(card).join("")}
         </div>
       </section>
 
-      <!-- Sarasavi Promotional Banners Grid -->
-      <div class="promo-banners-grid">
-        <div class="promo-banner promo-banner-heritage">
-          <div class="promo-banner-content">
-            <span class="promo-pill-tag">🇱🇰 HERITAGE CLASSICS · සිංහල සාහිත්‍යය</span>
-            <h3>Martin Wickramasinghe Commemorative Collection</h3>
-            <p>Rediscover the immortal masterpieces of Sinhala literature — <em>Gamperaliya</em>, <em>Madol Doova</em>, and <em>Ape Gama</em> in official commemorative prints.</p>
-            <a href="${url("/catalog?category=CAT-1")}" class="promo-btn-action">
-              Explore Sinhala Classics <span>→</span>
-            </a>
-          </div>
-        </div>
-
-        <div class="promo-banner promo-banner-savings">
-          <div class="promo-banner-content">
-            <span class="promo-pill-tag tag-crimson">⚡ SPECIAL DISCOUNT · 15% OFF</span>
-            <h3>Global Non-Fiction &amp; Mastery Bestsellers</h3>
-            <p>Transform your habits and financial psychology with <em>Atomic Habits</em>, <em>The Psychology of Money</em>, and <em>Clean Code</em> with islandwide cash on delivery.</p>
-            <a href="${url("/catalog?filter=featured")}" class="promo-btn-action">
-              Shop Bestsellers <span>→</span>
-            </a>
-          </div>
-        </div>
-      </div>
-
       <!-- New Arrivals Section -->
-      <section class="section">
+      <section class="section scroll-section">
         <div class="section-heading">
           <div class="section-title-wrap">
-            <span class="eyebrow">Just Landed · අලුත්ම පොත්</span>
-            <h2>New Arrivals On Our Shelves</h2>
-            <p>Freshly printed editions and new releases ready for immediate dispatch.</p>
+            <span class="eyebrow">JUST LANDED · අලුත්ම පොත්</span>
+            <div class="section-title-row">
+              <h2>New Arrivals On Our Shelves</h2>
+              <div class="heading-divider-line"></div>
+              <a class="view-all-link" href="${url("/catalog?filter=new")}">View All New Arrivals <span class="btn-arrow">→</span></a>
+            </div>
+            <p class="section-subtext">Freshly printed editions and new releases ready for immediate dispatch.</p>
           </div>
-          <a class="view-all-link" href="${url("/catalog?filter=new")}">View All New Arrivals ↗</a>
         </div>
         <div class="book-grid">
           ${newArrivals.map(card).join("")}
@@ -728,108 +671,48 @@ function home() {
       </section>
 
       <!-- Featured Authors Showcase -->
-      <section class="section">
+      <section class="section scroll-section">
         <div class="section-heading">
           <div class="section-title-wrap">
-            <span class="eyebrow">Distinguished Writers · ප්‍රවීණ ලේඛකයින්</span>
-            <h2>Featured Authors</h2>
-            <p>Celebrating the distinguished voices enriching Sri Lankan and world literature.</p>
+            <span class="eyebrow">DISTINGUISHED WRITERS · ප්‍රවීණ ලේඛකයින්</span>
+            <div class="section-title-row">
+              <h2>Featured Authors</h2>
+              <div class="heading-divider-line"></div>
+              <a class="view-all-link" href="${url("/catalog")}">Browse All Authors <span class="btn-arrow">→</span></a>
+            </div>
+            <p class="section-subtext">Celebrating the distinguished voices enriching Sri Lankan and world literature.</p>
           </div>
-          <a class="view-all-link" href="${url("/catalog")}">Browse All Authors ↗</a>
         </div>
         <div class="authors-grid">
           ${displayAuthors.map((a) => {
-            const count = state.books.filter((b) => b.authorId === a.id).length;
-            const accolade = a.accolades || authorAccolades[a.name] || a.primaryGenre || (a.bio ? a.bio.split(".")[0] : "Renowned Author");
-            const authorImg = a.photoUrl
-              ? `<img src="${esc(a.photoUrl)}" alt="${esc(a.name)}" class="author-avatar-img-v2" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`
-              : "";
-            return `
+        const count = state.books.filter((b) => b.authorId === a.id).length;
+        const cleanAcc = (s) => String(s || "").replace(/\u00c2\u00b7|\u00c3\u00b7|\u00e2\u0080[\u0093\u0094]|÷|·/g, " · ").replace(/[^\x20-\x7E\u00B7]/g, "").replace(/\s+·\s+/g, " · ").trim();
+        const rawAcc = authorAccolades[a.name] || cleanAcc(a.accolades) || a.primaryGenre || (a.bio ? a.bio.split(".")[0] : "Renowned Author");
+        const accolade = cleanAcc(rawAcc) || authorAccolades[a.name] || "Distinguished Author";
+        const authorImg = a.photoUrl
+          ? `<img src="${esc(a.photoUrl)}" alt="" class="author-avatar-img-v2" style="display:none" onload="this.style.display='block';this.nextElementSibling.style.display='none'" onerror="this.remove()">`
+          : "";
+        return `
             <a href="${url("/catalog?search=" + encodeURIComponent(a.name))}" class="author-card-v2" title="Browse books by ${esc(a.name)}">
               <div class="author-avatar-v2">
                 ${authorImg}
                 <span class="author-avatar-initial-v2">${esc(a.name.charAt(0))}</span>
               </div>
               <strong>${esc(a.name)}</strong>
-              ${a.nationality ? `<span class="author-card-flag">🇱🇰 ${esc(a.nationality)}</span>` : ""}
+              ${a.nationality ? `<span class="author-card-flag">${esc(a.nationality)}</span>` : ""}
               <p class="author-sub-v2">${esc(accolade)}</p>
-              <span class="author-count-v2">${count} Books Available</span>
+              <span class="author-count-v2">${count} ${count === 1 ? "Book" : "Books"} Available</span>
             </a>`;
-          }).join("")}
+      }).join("")}
         </div>
       </section>
-
-      <!-- Verified Reader Testimonials Section -->
-      <section class="section">
-        <div class="section-heading">
-          <div class="section-title-wrap">
-            <span class="eyebrow">Islandwide Reader Feedback · පාඨක අදහස්</span>
-            <h2>Loved by Readers Across Sri Lanka</h2>
-            <p>Real experiences from book lovers ordering from Colombo, Kandy, Galle, and beyond.</p>
-          </div>
-          <span class="verified-badge">
-            <svg style="width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-            100% Genuine Reader Reviews
-          </span>
-        </div>
-        <div class="testimonials-grid">
-          <div class="testimonial-card">
-            <div class="testimonial-stars">★★★★★</div>
-            <p class="testimonial-quote">“Ordered 'Gamperaliya' and 'Atomic Habits' on Tuesday; both arrived in Kandy by Thursday noon! Pristine print quality, authentic publisher stamps, and polite courier delivery.”</p>
-            <div class="testimonial-author-row">
-              <div class="testimonial-avatar">KJ</div>
-              <div class="testimonial-info">
-                <strong>Dr. Kalinga Jayasuriya</strong>
-                <small>Senior Lecturer · Peradeniya</small>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial-card">
-            <div class="testimonial-stars">★★★★★</div>
-            <p class="testimonial-quote">“Best online bookstore experience in Sri Lanka. Cash on delivery was seamless, and the customer helpline guided me to find rare Sinhala translations. Highly recommended!”</p>
-            <div class="testimonial-author-row">
-              <div class="testimonial-avatar">DW</div>
-              <div class="testimonial-info">
-                <strong>Dilani Wickramasinghe</strong>
-                <small>Architect · Colombo 07</small>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial-card">
-            <div class="testimonial-stars">★★★★★</div>
-            <p class="testimonial-quote">“Sybil Wettasinghe’s children’s classics arrived in immaculate packaging for my children in Galle. Finding genuine original editions online has never been this easy.”</p>
-            <div class="testimonial-author-row">
-              <div class="testimonial-avatar">RF</div>
-              <div class="testimonial-info">
-                <strong>Ruchira Fernando</strong>
-                <small>Parent &amp; Educator · Galle Fort</small>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- VIP Reader Club Newsletter Banner -->
-      <div class="newsletter-club-strip">
-        <div class="newsletter-copy">
-          <span class="hero-slide-badge gold" style="margin-bottom:10px">✧ SARASAVI READERS' CLUB</span>
-          <h3>Join Over 25,000 Book Lovers in Sri Lanka</h3>
-          <p>Subscribe for exclusive 15% discount vouchers, author interview digests, and notifications on limited hardcover reprint releases.</p>
-        </div>
-        <form class="newsletter-form" id="newsletter-club-form" onsubmit="event.preventDefault();toast('✓ Welcome to Book &amp; Bloom Readers Club! Your 15% discount voucher has been emailed.');this.reset();">
-          <input type="email" class="newsletter-input" placeholder="Enter your email address..." required aria-label="Email address for book club">
-          <button type="submit" class="newsletter-btn">Join Club</button>
-        </form>
-      </div>
     </div>
   `;
 
   initHeroSlider();
   init3DBookTilt();
   initScrollReveal();
-  initCountUps(main);
+  initScrollParallax();
 }
 
 /* ==========================================================================
@@ -910,14 +793,14 @@ function catalog() {
 
     document.querySelector("#catalog-grid").innerHTML = list.length
       ? list
-          .slice((p - 1) * 8, p * 8)
-          .map(card)
-          .join("")
+        .slice((p - 1) * 8, p * 8)
+        .map(card)
+        .join("")
       : empty(
-          "No books match your search.",
-          "Try adjusting your search terms or select a different category.",
-          null,
-        );
+        "No books match your search.",
+        "Try adjusting your search terms or select a different category.",
+        null,
+      );
 
     document.querySelector("#catalog-grid").style.display = list.length
       ? ""
@@ -1263,17 +1146,15 @@ function bookDetail() {
           <h3 style="font-size:18px;margin:28px 0 10px 0;font-weight:800;color:var(--sarasavi-navy)">About this Book</h3>
           <p style="line-height:1.7;color:var(--text-main)">${esc(b.description)}</p>
 
-          ${
-            authObj
-              ? `
+          ${authObj
+      ? `
           <div class="author-spotlight-card">
             <div class="author-spotlight-header">
               <div class="author-spotlight-avatar-wrap">
-                ${
-                  authObj.photoUrl
-                    ? `<img src="${esc(authObj.photoUrl)}" alt="${esc(authObj.name)}" class="author-spotlight-avatar" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`
-                    : ""
-                }
+                ${authObj.photoUrl
+        ? `<img src="${esc(authObj.photoUrl)}" alt="${esc(authObj.name)}" class="author-spotlight-avatar" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`
+        : ""
+      }
                 <span class="author-spotlight-avatar-fallback">${esc((authObj.name || "A").split(" ").filter(Boolean).map((w) => w[0]).slice(0, 2).join("").toUpperCase())}</span>
               </div>
               <div class="author-spotlight-meta">
@@ -1286,11 +1167,10 @@ function bookDetail() {
                 </div>
               </div>
             </div>
-            ${
-              authObj.accolades
-                ? `<div class="author-spotlight-accolade">🏆 <strong>Honors & Awards:</strong> ${esc(authObj.accolades)}</div>`
-                : ""
-            }
+            ${authObj.accolades
+        ? `<div class="author-spotlight-accolade">🏆 <strong>Honors & Awards:</strong> ${esc(authObj.accolades)}</div>`
+        : ""
+      }
             <p class="author-spotlight-bio">${esc(authObj.bio)}</p>
             <div class="author-spotlight-footer">
               <a href="${url("/catalog?search=" + encodeURIComponent(authObj.name))}" class="btn secondary" style="padding:9px 20px;font-size:13.5px;width:fit-content;display:inline-flex;align-items:center;gap:8px">
@@ -1298,8 +1178,8 @@ function bookDetail() {
               </a>
             </div>
           </div>`
-              : ""
-          }
+      : ""
+    }
         </div>
       </div>
 
@@ -1310,9 +1190,9 @@ function bookDetail() {
           <p style="color:var(--text-muted);font-size:13.5px">Honest feedback from readers across Sri Lanka.</p>
           <div class="review-list">
             ${rs.length
-              ? rs
-                  .map(
-                    (r) => `
+      ? rs
+        .map(
+          (r) => `
               <article class="review">
                 <div class="review-header">
                   <strong>${esc(r.name)}</strong>
@@ -1320,29 +1200,27 @@ function bookDetail() {
                 </div>
                 <p>${esc(r.comment)}</p>
                 <small>${date(r.createdAt)}</small>
-                ${
-                  state.user?.id === r.userId
-                    ? `<div style="margin-top:10px;display:flex;gap:12px">
+                ${state.user?.id === r.userId
+              ? `<div style="margin-top:10px;display:flex;gap:12px">
                         <button class="plain-button" data-edit-review="${r.id}">Edit Review</button>
                         <button class="plain-button" data-delete-review="${r.id}">Delete Review</button>
                       </div>`
-                    : ""
-                }
+              : ""
+            }
               </article>`,
-                  )
-                  .join("")
-              : '<p style="color:var(--text-muted);font-style:italic">No reviews yet for this title. Share your thoughts below!</p>'}
+        )
+        .join("")
+      : '<p style="color:var(--text-muted);font-style:italic">No reviews yet for this title. Share your thoughts below!</p>'}
           </div>
         </section>
 
         <aside class="panel">
           <h3>Share Your Review</h3>
           <p style="color:var(--text-muted);font-size:13px;margin-bottom:18px">Have you read this book? Help fellow book lovers discover it.</p>
-          ${
-            state.user
-              ? `<button class="btn secondary full" id="write-review">${rs.some((r) => r.userId === state.user.id) ? "Edit Your Review" : "Write a Review"}</button>`
-              : `<a class="btn secondary full" href="${url("/login")}">Sign In to Review</a>`
-          }
+          ${state.user
+      ? `<button class="btn secondary full" id="write-review">${rs.some((r) => r.userId === state.user.id) ? "Edit Your Review" : "Write a Review"}</button>`
+      : `<a class="btn secondary full" href="${url("/login")}">Sign In to Review</a>`
+    }
         </aside>
       </div>
 
@@ -1356,10 +1234,10 @@ function bookDetail() {
         </div>
         <div class="book-grid">
           ${state.books
-            .filter((x) => x.id !== id)
-            .slice(0, 4)
-            .map(card)
-            .join("")}
+      .filter((x) => x.id !== id)
+      .slice(0, 4)
+      .map(card)
+      .join("")}
         </div>
       </section>
     </div>
@@ -1376,26 +1254,26 @@ function bookDetail() {
 
   main.querySelectorAll("[data-edit-review]").forEach(
     (btn) =>
-      (btn.onclick = () =>
-        editReview(
-          id,
-          rs.find((r) => r.id === btn.dataset.editReview),
-        )),
+    (btn.onclick = () =>
+      editReview(
+        id,
+        rs.find((r) => r.id === btn.dataset.editReview),
+      )),
   );
 
   main.querySelectorAll("[data-delete-review]").forEach(
     (btn) =>
-      (btn.onclick = () =>
-        confirmAction(
-          "Delete your review?",
-          "This will remove your review permanently.",
-          async () => {
-            await api("/reviews/" + btn.dataset.deleteReview, "DELETE");
-            await refreshCatalog();
-            bookDetail();
-            toast("Review deleted successfully.");
-          },
-        )),
+    (btn.onclick = () =>
+      confirmAction(
+        "Delete your review?",
+        "This will remove your review permanently.",
+        async () => {
+          await api("/reviews/" + btn.dataset.deleteReview, "DELETE");
+          await refreshCatalog();
+          bookDetail();
+          toast("Review deleted successfully.");
+        },
+      )),
   );
 }
 
@@ -1466,15 +1344,14 @@ function auth(register = false) {
             </a>
           </p>
 
-          ${
-            !register
-              ? `<div class="demo-box">
+          ${!register
+      ? `<div class="demo-box">
                   <strong>Academic Demo Logins</strong><br>
                   <button class="plain-button" id="demo-reader" style="color:var(--sarasavi-blue);font-weight:700">Reader: reader@bookbloom.lk</button> &nbsp; · &nbsp;
                   <button class="plain-button" id="demo-admin" style="color:var(--sarasavi-blue);font-weight:700">Admin: admin@bookbloom.lk</button>
                 </div>`
-              : ""
-          }
+      : ""
+    }
         </div>
       </div>
     </div>
@@ -1537,15 +1414,15 @@ function cartPage() {
   }
 
   let subtotal =
-      cart.reduce(
-        (n, x) =>
-          n +
-          Math.round(
-            Number(state.books.find((b) => b.id === x.bookId).price) * 100,
-          ) *
-            x.quantity,
-        0,
-      ) / 100,
+    cart.reduce(
+      (n, x) =>
+        n +
+        Math.round(
+          Number(state.books.find((b) => b.id === x.bookId).price) * 100,
+        ) *
+        x.quantity,
+      0,
+    ) / 100,
     ships = cart.some(
       (x) => state.books.find((b) => b.id === x.bookId).type === "PRINTED",
     ),
@@ -1558,10 +1435,10 @@ function cartPage() {
       <!-- Free Islandwide Delivery Progress Meter -->
       <div class="cart-delivery-meter ${subtotal >= 5000 ? "meter-unlocked" : ""}">
         <div class="meter-text">
-          ${subtotal >= 5000 
-            ? `<span>🎉 <strong>Congratulations!</strong> Your order qualifies for <strong>FREE Express Islandwide Delivery!</strong></span>`
-            : `<span>🚚 Add <strong>${money(5000 - subtotal)}</strong> more of books to unlock <strong>FREE Islandwide Delivery!</strong></span>`
-          }
+          ${subtotal >= 5000
+      ? `<span>🎉 <strong>Congratulations!</strong> Your order qualifies for <strong>FREE Express Islandwide Delivery!</strong></span>`
+      : `<span>🚚 Add <strong>${money(5000 - subtotal)}</strong> more of books to unlock <strong>FREE Islandwide Delivery!</strong></span>`
+    }
           <span class="threshold-pill">${money(subtotal)} / ${money(5000)}</span>
         </div>
         <div class="meter-track">
@@ -1572,9 +1449,9 @@ function cartPage() {
       <div class="two-columns">
         <section>
           ${cart
-            .map((x) => {
-              let b = state.books.find((b) => b.id === x.bookId);
-              return `
+      .map((x) => {
+        let b = state.books.find((b) => b.id === x.bookId);
+        return `
               <article class="cart-line">
                 ${cover(b)}
                 <div>
@@ -1595,8 +1472,8 @@ function cartPage() {
                   <div style="font-size:11px;color:var(--text-light)">${money(b.price)} each</div>
                 </div>
               </article>`;
-            })
-            .join("")}
+      })
+      .join("")}
           
           <p style="margin-top:20px">
             <a class="text-link" href="${url("/catalog")}">← Continue Shopping</a>
@@ -1622,9 +1499,8 @@ function cartPage() {
             ${ships && subtotal < 5000 ? `Add <strong>${money(5000 - subtotal)}</strong> more to qualify for <strong>FREE DELIVERY</strong>!` : '✓ Congratulations! You qualified for <strong>FREE DELIVERY</strong>.'}
           </div>
 
-          ${
-            state.user
-              ? `<form id="checkout">
+          ${state.user
+      ? `<form id="checkout">
                   ${textarea("address", ships ? "Delivery Address (Islandwide)" : "Order Note (Optional)", state.user.address, `${ships ? 'required minlength="10"' : ""} maxlength="350" placeholder="Street Address, City, Postal Code"`)}
                   <div class="field-note" style="margin:14px 0;font-size:12px;color:var(--text-muted)">
                     <strong>Payment Method:</strong> ${ships ? "Cash on Delivery (Pay when package arrives)" : "Digital Order (Recorded)"}<br>
@@ -1633,8 +1509,8 @@ function cartPage() {
                   <div class="form-error" role="alert"></div>
                   <button class="btn full" style="padding:14px" type="submit">Place Order (Cash on Delivery) →</button>
                 </form>`
-              : `<a class="btn full" style="padding:14px" href="${url("/login")}">Sign In to Checkout →</a>`
-          }
+      : `<a class="btn full" style="padding:14px" href="${url("/login")}">Sign In to Checkout →</a>`
+    }
         </aside>
       </div>
     </div>
@@ -1642,31 +1518,31 @@ function cartPage() {
 
   main.querySelectorAll("[data-remove]").forEach(
     (btn) =>
-      (btn.onclick = () => {
-        saveCart(readCart().filter((x) => x.bookId !== btn.dataset.remove));
-        cartPage();
-      }),
+    (btn.onclick = () => {
+      saveCart(readCart().filter((x) => x.bookId !== btn.dataset.remove));
+      cartPage();
+    }),
   );
 
   main.querySelectorAll("[data-quantity]").forEach(
     (input) =>
-      (input.onchange = () => {
-        let value = Number(input.value),
-          b = state.books.find((b) => b.id === input.dataset.quantity);
-        if (
-          !Number.isInteger(value) ||
-          value < 1 ||
-          value > Math.min(20, b.stock)
-        ) {
-          toast("Please enter a valid quantity within available stock.", true);
-          cartPage();
-          return;
-        }
-        let c = readCart();
-        c.find((x) => x.bookId === b.id).quantity = value;
-        saveCart(c);
+    (input.onchange = () => {
+      let value = Number(input.value),
+        b = state.books.find((b) => b.id === input.dataset.quantity);
+      if (
+        !Number.isInteger(value) ||
+        value < 1 ||
+        value > Math.min(20, b.stock)
+      ) {
+        toast("Please enter a valid quantity within available stock.", true);
         cartPage();
-      }),
+        return;
+      }
+      let c = readCart();
+      c.find((x) => x.bookId === b.id).quantity = value;
+      saveCart(c);
+      cartPage();
+    }),
   );
 
   if (state.user)
@@ -1710,15 +1586,14 @@ async function accountPage() {
             </div>
           </form>
 
-          ${
-            u.role !== "ADMIN"
-              ? `<div style="margin-top:35px;padding-top:20px;border-top:1px solid var(--border-light)">
+          ${u.role !== "ADMIN"
+      ? `<div style="margin-top:35px;padding-top:20px;border-top:1px solid var(--border-light)">
                   <h3 style="font-size:15px;color:var(--sarasavi-red)">Delete Account</h3>
                   <p class="small-print">Accounts with active order history cannot be deleted. Deleting your account also removes your reviews.</p>
                   <button class="plain-button" id="delete-account">Permanently Close Account</button>
                 </div>`
-              : ""
-          }
+      : ""
+    }
         </section>
 
         <aside class="panel summary">
@@ -1955,14 +1830,14 @@ function orderCard(o, isAdmin = false) {
       </div>
 
       ${o.lines
-        .map(
-          (l) => `
+      .map(
+        (l) => `
         <div class="order-line">
           <span>${esc(l.title)} × ${l.quantity}</span>
           <strong>${money(Number(l.unitPrice) * l.quantity)}</strong>
         </div>`,
-        )
-        .join("")}
+      )
+      .join("")}
 
       <div class="order-line" style="color:var(--text-muted)">
         <span>Islandwide Delivery</span>
@@ -1979,23 +1854,20 @@ function orderCard(o, isAdmin = false) {
           <button class="btn secondary small btn-print-invoice" data-print-order="${o.id}">
             📄 Print Tax Invoice
           </button>
-          ${
-            o.status === "PLACED"
-              ? `<button class="btn secondary small" data-status="${o.id}" data-next="CANCELLED">Cancel Order</button>
+          ${o.status === "PLACED"
+      ? `<button class="btn secondary small" data-status="${o.id}" data-next="CANCELLED">Cancel Order</button>
                  ${isAdmin ? `<button class="btn small" data-status="${o.id}" data-next="PROCESSING">Process Order</button>` : ""}`
-              : ""
-          }
-          ${
-            o.status === "PROCESSING" && isAdmin
-              ? `<button class="btn secondary small" data-status="${o.id}" data-next="CANCELLED">Cancel</button>
+      : ""
+    }
+          ${o.status === "PROCESSING" && isAdmin
+      ? `<button class="btn secondary small" data-status="${o.id}" data-next="CANCELLED">Cancel</button>
                  <button class="btn small" data-status="${o.id}" data-next="COMPLETED">Mark Completed</button>`
-              : ""
-          }
-          ${
-            o.status === "CANCELLED"
-              ? `<button class="plain-button" data-delete-order="${o.id}">Delete Record</button>`
-              : ""
-          }
+      : ""
+    }
+          ${o.status === "CANCELLED"
+      ? `<button class="plain-button" data-delete-order="${o.id}">Delete Record</button>`
+      : ""
+    }
         </div>
       </div>
     </article>
@@ -2005,23 +1877,23 @@ function orderCard(o, isAdmin = false) {
 function bindOrders(refresh) {
   main.querySelectorAll("[data-status]").forEach(
     (btn) =>
-      (btn.onclick = () =>
-        confirmAction(
-          btn.dataset.next === "CANCELLED"
-            ? "Cancel this order?"
-            : "Update order status?",
-          btn.dataset.next === "CANCELLED"
-            ? "All book quantities will be restored back to warehouse stock."
-            : "Update this order status to " + btn.dataset.next.toLowerCase() + ".",
-          async () => {
-            await api("/orders/" + btn.dataset.status, "PUT", {
-              status: btn.dataset.next,
-            });
-            await refreshCatalog();
-            await refresh();
-            toast("Order status updated.");
-          },
-        )),
+    (btn.onclick = () =>
+      confirmAction(
+        btn.dataset.next === "CANCELLED"
+          ? "Cancel this order?"
+          : "Update order status?",
+        btn.dataset.next === "CANCELLED"
+          ? "All book quantities will be restored back to warehouse stock."
+          : "Update this order status to " + btn.dataset.next.toLowerCase() + ".",
+        async () => {
+          await api("/orders/" + btn.dataset.status, "PUT", {
+            status: btn.dataset.next,
+          });
+          await refreshCatalog();
+          await refresh();
+          toast("Order status updated.");
+        },
+      )),
   );
 
   main.querySelectorAll("[data-print-order]").forEach((btn) => {
@@ -2030,16 +1902,16 @@ function bindOrders(refresh) {
 
   main.querySelectorAll("[data-delete-order]").forEach(
     (btn) =>
-      (btn.onclick = () =>
-        confirmAction(
-          "Delete cancelled order record?",
-          "This will remove the cancelled order from your history.",
-          async () => {
-            await api("/orders/" + btn.dataset.deleteOrder, "DELETE");
-            await refresh();
-            toast("Order record deleted.");
-          },
-        )),
+    (btn.onclick = () =>
+      confirmAction(
+        "Delete cancelled order record?",
+        "This will remove the cancelled order from your history.",
+        async () => {
+          await api("/orders/" + btn.dataset.deleteOrder, "DELETE");
+          await refresh();
+          toast("Order record deleted.");
+        },
+      )),
   );
 }
 
@@ -2093,11 +1965,11 @@ async function adminPage(tab = state.adminTab) {
         <h3 style="color:#FFFFFF;font-size:16px;margin:0 0 16px 0">Sarasavi Desk</h3>
         <nav class="admin-tabs" aria-label="Administration Navigation">
           ${adminModules
-            .map(
-              ([id, i, title]) =>
-                `<button class="admin-tab ${tab === id ? "active" : ""}" data-tab="${id}">${icon(i)}<span>${title}</span></button>`,
-            )
-            .join("")}
+      .map(
+        ([id, i, title]) =>
+          `<button class="admin-tab ${tab === id ? "active" : ""}" data-tab="${id}">${icon(i)}<span>${title}</span></button>`,
+      )
+      .join("")}
         </nav>
         <div style="margin-top:30px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.1);font-size:11px;color:#94A3B8">
           Logged in as <strong>${esc(state.user.name)}</strong><br>
@@ -2111,8 +1983,8 @@ async function adminPage(tab = state.adminTab) {
 
   main.querySelectorAll("[data-tab]").forEach(
     (btn) =>
-      (btn.onclick = () =>
-        adminPage(btn.dataset.tab).catch((e) => toast(e.message, true))),
+    (btn.onclick = () =>
+      adminPage(btn.dataset.tab).catch((e) => toast(e.message, true))),
   );
 
   renderAdmin(tab);
@@ -2141,13 +2013,12 @@ function renderAdmin(tab) {
         <h1>${tab === "overview" ? "Library &amp; Bookstore Overview" : title}</h1>
         <p style="color:var(--text-muted);font-size:13px;margin:4px 0 0 0">${descriptions[tab]}</p>
       </div>
-      ${
-        ["books", "authors", "categories", "users"].includes(tab)
-          ? `<button class="btn" id="add-record">+ Add ${tab === "categories" ? "Category" : tab === "users" ? "Customer" : tab.slice(0, -1)}</button>`
-          : tab === "overview"
-            ? `<a class="btn secondary small" href="${url("/")}">View Storefront ↗</a>`
-            : ""
-      }
+      ${["books", "authors", "categories", "users"].includes(tab)
+      ? `<button class="btn" id="add-record">+ Add ${tab === "categories" ? "Category" : tab === "users" ? "Customer" : tab.slice(0, -1)}</button>`
+      : tab === "overview"
+        ? `<a class="btn secondary small" href="${url("/")}">View Storefront ↗</a>`
+        : ""
+    }
     </div>
     <div id="admin-body" class="admin-body-animated"></div>
   `;
@@ -2225,10 +2096,10 @@ function renderAdmin(tab) {
                   <span class="status ${o.status}">${o.status}</span>
                   <strong>${money(o.total)}</strong>
                 </div>`,
-                  )
-                  .join("")
-              : '<p style="color:var(--text-muted)">No orders placed yet.</p>'
-          }
+          )
+          .join("")
+        : '<p style="color:var(--text-muted)">No orders placed yet.</p>'
+      }
         </div>
 
         <div class="panel panel-anim" style="--stagger:1">
@@ -2250,8 +2121,8 @@ function renderAdmin(tab) {
                   <div class="cat-progress-fill" style="--target-w:${pct}%;--bar-delay:${idx * 90}ms"></div>
                 </div>
               </div>`;
-            })
-            .join("")}
+        })
+        .join("")}
         </div>
       </div>
     `;
@@ -2343,8 +2214,8 @@ function renderAdmin(tab) {
             </td>
             <td style="max-width:260px">
               ${x.accolades
-                ? `<span class="badge" style="background:rgba(217,119,6,0.12);color:#b45309;border:1px solid rgba(217,119,6,0.25);font-size:11.5px;font-weight:600;display:inline-block;padding:3px 8px;border-radius:6px;line-height:1.35">🏆 ${esc(x.accolades)}</span>`
-                : `<span style="color:var(--text-muted);font-size:12px">—</span>`}
+              ? `<span class="badge" style="background:rgba(217,119,6,0.12);color:#b45309;border:1px solid rgba(217,119,6,0.25);font-size:11.5px;font-weight:600;display:inline-block;padding:3px 8px;border-radius:6px;line-height:1.35">🏆 ${esc(x.accolades)}</span>`
+              : `<span style="color:var(--text-muted);font-size:12px">—</span>`}
             </td>
             <td>
               <a href="${url("/catalog?search=" + encodeURIComponent(x.name))}" style="text-decoration:none">
@@ -2377,26 +2248,26 @@ function renderAdmin(tab) {
 
     main.querySelectorAll("[data-edit]").forEach(
       (btn) =>
-        (btn.onclick = () =>
-          editRecord(
-            tab,
-            state[tab].find((x) => x.id === btn.dataset.edit),
-          )),
+      (btn.onclick = () =>
+        editRecord(
+          tab,
+          state[tab].find((x) => x.id === btn.dataset.edit),
+        )),
     );
 
     main.querySelectorAll("[data-delete]").forEach(
       (btn) =>
-        (btn.onclick = () =>
-          confirmAction(
-            "Delete record?",
-            "This action is permanent. Records currently referenced by other orders cannot be removed.",
-            async () => {
-              await api("/" + tab + "/" + btn.dataset.delete, "DELETE");
-              await refreshCatalog();
-              await adminPage(tab);
-              toast("Record deleted successfully.");
-            },
-          )),
+      (btn.onclick = () =>
+        confirmAction(
+          "Delete record?",
+          "This action is permanent. Records currently referenced by other orders cannot be removed.",
+          async () => {
+            await api("/" + tab + "/" + btn.dataset.delete, "DELETE");
+            await refreshCatalog();
+            await adminPage(tab);
+            toast("Record deleted successfully.");
+          },
+        )),
     );
   };
 
@@ -2415,26 +2286,26 @@ function editRecord(tab, item) {
       ${select("authorId", "Author", state.authors, x.authorId)}
       ${select("categoryId", "Category", state.categories, x.categoryId)}
       ${select(
-        "type",
-        "Book Format",
-        [
-          { id: "PRINTED", name: "Printed Book (Paperback)" },
-          { id: "EBOOK", name: "Digital E-Book" },
-        ],
-        x.type || "PRINTED",
-      )}
+      "type",
+      "Book Format",
+      [
+        { id: "PRINTED", name: "Printed Book (Paperback)" },
+        { id: "EBOOK", name: "Digital E-Book" },
+      ],
+      x.type || "PRINTED",
+    )}
       ${field("price", "Price (LKR)", x.price || "", "number", 'required min="0.01" max="1000000" step="0.01"')}
       ${field("stock", "Stock Available", x.stock ?? 0, "number", 'required min="0" max="100000" step="1"')}
       ${field("pages", "Pages (Printed)", x.pages || 240, "number", 'min="1" max="10000" step="1"')}
       ${select(
-        "fileFormat",
-        "E-Book Format",
-        [
-          { id: "PDF", name: "PDF" },
-          { id: "EPUB", name: "EPUB" },
-        ],
-        x.fileFormat || "PDF",
-      )}
+      "fileFormat",
+      "E-Book Format",
+      [
+        { id: "PDF", name: "PDF" },
+        { id: "EPUB", name: "EPUB" },
+      ],
+      x.fileFormat || "PDF",
+    )}
       ${field("coverColor", "Cover Theme Color", x.coverColor || "#0A2540", "color", "required")}
       ${textarea("description", "Book Description", x.description, 'required minlength="10" maxlength="2500"')}
       <label style="display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;margin-top:8px">
@@ -2476,11 +2347,11 @@ function editRecord(tab, item) {
     `;
 
   const label =
-      tab === "categories"
-        ? "Category"
-        : tab === "users"
-          ? "Customer"
-          : tab.slice(0, -1),
+    tab === "categories"
+      ? "Category"
+      : tab === "users"
+        ? "Customer"
+        : tab.slice(0, -1),
     dialog = showModal(
       (item ? "Edit " : "Add New ") + label,
       `<form><div class="form-grid">${fields}</div><div class="form-error" role="alert"></div><div class="form-actions"><button class="btn" type="submit">Save ${label}</button></div></form>`,
@@ -2749,35 +2620,84 @@ function initBackToTop() {
   });
 }
 
-// 6. Scroll Reveal Observer
+// 6. Synchronized Editorial Shelf Down-Scroll Reveal Observer + Scroll Failsafe
 function initScrollReveal() {
+  const sections = document.querySelectorAll(".scroll-section");
+  const cards = document.querySelectorAll(".book-card, .author-card-v2, .footer-col");
+  const allTargets = [...sections, ...cards];
+
   if (!("IntersectionObserver" in window)) {
-    document.querySelectorAll(".reveal-item, .feature-strip-card, .category-card-v2, .author-card-v2, .promo-banner-card").forEach((el) => {
-      el.classList.add("revealed");
-    });
+    allTargets.forEach((el) => el.classList.add("in-view", "revealed"));
     return;
   }
 
-  const elements = document.querySelectorAll(".book-card, .author-card-v2, .promo-banner-card");
+  const revealEl = (el, animate = true) => {
+    el.classList.remove("scroll-pending");
+    el.classList.add("in-view", "revealed");
+    if (animate) el.classList.add("scroll-entering");
+  };
+
+  // Assign column cascade index per grid row for staggered left-to-right wave
+  document.querySelectorAll(".book-grid, .authors-grid, .footer-inner").forEach((grid) => {
+    const children = grid.querySelectorAll(".book-card, .author-card-v2, .footer-col");
+    children.forEach((child, idx) => {
+      const cols = grid.classList.contains("authors-grid") ? 6 : 4;
+      child.style.setProperty("--stagger-col", idx % cols);
+    });
+  });
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        entry.target.classList.add("revealed");
+        revealEl(entry.target, true);
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.04, rootMargin: "0px 0px -10px 0px" });
+  }, { threshold: 0.06, rootMargin: "0px 0px -36px 0px" });
 
-  elements.forEach((el, i) => {
+  allTargets.forEach((el) => {
     const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight + 350) {
-      el.classList.add("revealed");
+    if (rect.top < window.innerHeight * 0.96) {
+      revealEl(el, false);
     } else {
-      el.classList.add("reveal-item");
-      el.style.setProperty("--reveal-index", i % 6);
+      el.classList.add("scroll-pending");
       observer.observe(el);
     }
   });
+
+  // Failsafe on rapid down-scroll so cards never stay hidden
+  if (!window.__scrollRevealBound) {
+    window.__scrollRevealBound = true;
+    window.addEventListener("scroll", () => {
+      const limit = window.innerHeight * 0.95;
+      document.querySelectorAll(".scroll-pending").forEach((el) => {
+        if (el.getBoundingClientRect().top <= limit) {
+          revealEl(el, true);
+          observer.unobserve(el);
+        }
+      });
+    }, { passive: true });
+  }
+}
+
+// 6b. Subtle Sunlit Hero Scroll Depth Parallax
+function initScrollParallax() {
+  if (window.__parallaxBound) return;
+  window.__parallaxBound = true;
+  window.addEventListener("scroll", () => {
+    const y = window.scrollY;
+    const hero = document.getElementById("hero-slider");
+    if (!hero || y > 620) return;
+    const visuals = hero.querySelectorAll(".hero-slide.active .hero-slide-visual");
+    const rays = hero.querySelector(".hero-ambient-layer");
+    const offset = Math.min(28, y * 0.07);
+    visuals.forEach((v) => {
+      v.style.transform = `translateY(${offset}px)`;
+    });
+    if (rays) {
+      rays.style.transform = `translateY(${offset * 1.4}px)`;
+    }
+  }, { passive: true });
 }
 
 // 7. Smooth Numeric Count-Up Animator (Library Metrics & Admin KPIs)
@@ -2862,6 +2782,7 @@ async function init() {
     initAnnouncementTicker();
     initBackToTop();
     initScrollReveal();
+    initScrollParallax();
     initReadingProgress();
     initCountUps(main);
   } catch (e) {

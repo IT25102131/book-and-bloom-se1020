@@ -10,8 +10,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css?v=20261111_07">
-  <script src="${pageContext.request.contextPath}/js/app.js?v=20261111_07" defer></script>
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css?v=20261111_09">
+  <script src="${pageContext.request.contextPath}/js/app.js?v=20261111_09" defer></script>
 </head>
 <body data-page="${pageName}" data-base="${pageContext.request.contextPath}">
   <a class="skip" href="#main">Skip to main content</a>
@@ -138,50 +138,8 @@
     </div>
   </main>
 
-  <!-- Sarasavi-Style Comprehensive Mega Footer -->
+  <!-- Forest Green Mega Footer -->
   <footer class="footer">
-    <!-- Value Proposition Banner Above Footer -->
-    <div class="footer-trust-banner">
-      <div class="trust-container">
-        <div class="trust-card">
-          <div class="trust-icon-box">
-            <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-          </div>
-          <div class="trust-text">
-            <strong>Islandwide Delivery</strong>
-            <small>Delivered safely to your doorstep across Sri Lanka</small>
-          </div>
-        </div>
-        <div class="trust-card">
-          <div class="trust-icon-box">
-            <svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-          </div>
-          <div class="trust-text">
-            <strong>Cash on Delivery</strong>
-            <small>Pay upon package arrival with cash or card</small>
-          </div>
-        </div>
-        <div class="trust-card">
-          <div class="trust-icon-box">
-            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
-          </div>
-          <div class="trust-text">
-            <strong>100% Genuine Publications</strong>
-            <small>Guaranteed original books directly from publishers</small>
-          </div>
-        </div>
-        <div class="trust-card">
-          <div class="trust-icon-box">
-            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          </div>
-          <div class="trust-text">
-            <strong>Reader Helpline</strong>
-            <small>Dedicated support: +94 11 282 0820</small>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <!-- Main Footer Grid -->
     <div class="footer-main">
       <div class="footer-inner">
