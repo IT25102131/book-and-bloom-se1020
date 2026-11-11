@@ -655,21 +655,34 @@ function buildA3Diagram() {
     <text x="2690" y="805" font-family="'Segoe UI', Arial" font-size="13" font-weight="bold" fill="#0F172A">0..*</text>
     <text x="1450" y="722" font-family="'Segoe UI', Arial" font-size="11.5" font-style="italic" fill="#64748B">userId</text>
 
-    <!-- 12. DEPENDENCY: ApiServlet routes requests to 6 Services -->
+    <!-- 12. NAVIGABLE ASSOCIATION: OrderLine references Book snapshot (Member 3 to Member 2) -->
+    <path d="M 2180 1010 L 2140 1010 L 2140 1140 L 880 1140" fill="none" stroke="#0F172A" stroke-width="2.2" marker-end="url(#arrow-association)"/>
+    <text x="2150" y="1000" font-family="'Segoe UI', Arial" font-size="13" font-weight="bold" fill="#0F172A">0..*</text>
+    <text x="895" y="1130" font-family="'Segoe UI', Arial" font-size="13" font-weight="bold" fill="#0F172A">0..1</text>
+    <text x="1480" y="1132" font-family="'Segoe UI', Arial" font-size="11.5" font-style="italic" fill="#64748B">historical bookId (catalog snapshot)</text>
+
+    <!-- 13. DEPENDENCY: ApiServlet routes requests to 6 Services -->
     <path d="M 625 460 L 625 540 L 1030 540 L 1030 425" fill="none" stroke="#15803D" stroke-width="2.2" stroke-dasharray="6 4" marker-end="url(#arrow-dependency)"/>
     <path d="M 1030 540 L 1400 540 L 1400 420" fill="none" stroke="#15803D" stroke-width="2.2" stroke-dasharray="6 4" marker-end="url(#arrow-dependency)"/>
     <path d="M 1400 540 L 1770 540 L 1770 420" fill="none" stroke="#15803D" stroke-width="2.2" stroke-dasharray="6 4" marker-end="url(#arrow-dependency)"/>
     <path d="M 1770 540 L 2140 540 L 2140 420" fill="none" stroke="#15803D" stroke-width="2.2" stroke-dasharray="6 4" marker-end="url(#arrow-dependency)"/>
     <path d="M 2140 540 L 2510 540 L 2510 425" fill="none" stroke="#15803D" stroke-width="2.2" stroke-dasharray="6 4" marker-end="url(#arrow-dependency)"/>
     <path d="M 2510 540 L 2880 540 L 2880 425" fill="none" stroke="#15803D" stroke-width="2.2" stroke-dasharray="6 4" marker-end="url(#arrow-dependency)"/>
+    <text x="640" y="532" font-family="'Segoe UI', Arial" font-size="11.5" font-style="italic" fill="#15803D">&laquo;dispatches requests to services&raquo;</text>
 
-    <!-- 13. DEPENDENCY: OrderService uses DeliveryFeePolicy -->
+    <!-- 14. DEPENDENCY: OrderService uses DeliveryFeePolicy -->
     <path d="M 2680 340 L 3080 340" fill="none" stroke="#15803D" stroke-width="2.2" stroke-dasharray="6 4" marker-end="url(#arrow-dependency)"/>
     <text x="2860" y="330" font-family="'Segoe UI', Arial" font-size="11.5" font-style="italic" fill="#15803D">&laquo;uses policy&raquo;</text>
 
-    <!-- 14. ARCHITECTURAL BUS: All 6 Services depend on StoreRepository interface -->
-    <path d="M 1030 425 L 1030 500 L 830 500 L 830 1720" fill="none" stroke="#7E22CE" stroke-width="2.2" stroke-dasharray="6 4" marker-end="url(#arrow-dependency-repo)"/>
-    <text x="840" y="1600" font-family="'Segoe UI', Arial" font-size="12" font-style="italic" fill="#7E22CE">&laquo;invokes repository&raquo;</text>
+    <!-- 15. ARCHITECTURAL BUS: All 6 Services depend on StoreRepository interface -->
+    <path d="M 1030 425 L 1030 480" fill="none" stroke="#7E22CE" stroke-width="2.2" stroke-dasharray="6 4"/>
+    <path d="M 1400 420 L 1400 480" fill="none" stroke="#7E22CE" stroke-width="2.2" stroke-dasharray="6 4"/>
+    <path d="M 1770 420 L 1770 480" fill="none" stroke="#7E22CE" stroke-width="2.2" stroke-dasharray="6 4"/>
+    <path d="M 2140 420 L 2140 480" fill="none" stroke="#7E22CE" stroke-width="2.2" stroke-dasharray="6 4"/>
+    <path d="M 2510 425 L 2510 480" fill="none" stroke="#7E22CE" stroke-width="2.2" stroke-dasharray="6 4"/>
+    <path d="M 2880 425 L 2880 480" fill="none" stroke="#7E22CE" stroke-width="2.2" stroke-dasharray="6 4"/>
+    <path d="M 2880 480 L 830 480 L 830 1720" fill="none" stroke="#7E22CE" stroke-width="2.2" stroke-dasharray="6 4" marker-end="url(#arrow-dependency-repo)"/>
+    <text x="840" y="1600" font-family="'Segoe UI', Arial" font-size="12" font-style="italic" fill="#7E22CE">&laquo;all 6 services invoke repository&raquo;</text>
 
   </g>
   `;
@@ -970,3 +983,4 @@ try {
 } catch (e) {
   console.error("Chrome rendering error:", e);
 }
+
