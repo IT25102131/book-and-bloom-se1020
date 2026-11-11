@@ -30,3 +30,5 @@ Desktop.ini
 
 # Empty legacy duplicate folder
 Book and Bloom/
+*.zip
+**/chat_export/
