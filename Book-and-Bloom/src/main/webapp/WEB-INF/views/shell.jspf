@@ -9,9 +9,9 @@
   <link rel="icon" href="${pageContext.request.contextPath}/images/botanical.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css?v=20261106_06">
-  <script src="${pageContext.request.contextPath}/js/app.js?v=20261106_06" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css?v=20261111_02">
+  <script src="${pageContext.request.contextPath}/js/app.js?v=20261111_02" defer></script>
 </head>
 <body data-page="${pageName}" data-base="${pageContext.request.contextPath}">
   <a class="skip" href="#main">Skip to main content</a>
