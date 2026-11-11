@@ -1,6 +1,11 @@
-# Class diagram
+# Class diagram (UML 2.5)
 
-The companion `class-diagram.svg` is a standalone diagram for the report. The Mermaid source below is also editable and renders on GitHub.
+Print-ready A3 Landscape vector diagrams and documentation assets:
+- **A3 Print PDF**: [`Book-and-Bloom-SE1020-Class-Diagram-A3.pdf`](Book-and-Bloom-SE1020-Class-Diagram-A3.pdf) (High-resolution ISO A3 420mm × 297mm vector PDF for viva presentation)
+- **A3 High-Res PNG**: [`Book-and-Bloom-SE1020-Class-Diagram-A3.png`](Book-and-Bloom-SE1020-Class-Diagram-A3.png)
+- **Vector SVG**: [`class-diagram-A3.svg`](class-diagram-A3.svg)
+
+The editable Mermaid source below renders directly in GitHub previews and markdown viewers.
 
 ```mermaid
 classDiagram
@@ -54,6 +59,11 @@ classDiagram
         -String id
         -String name
         -String bio
+        -String nationality
+        -String primaryGenre
+        -String accolades
+        -String bornYear
+        -String photoUrl
     }
     class Category {
         -String id
@@ -103,10 +113,25 @@ classDiagram
         +transaction(Function) T
         +close()
     }
+    class MysqlStoreRepository {
+        -DataSource dataSource
+        -StoreState cachedState
+        +snapshot() StoreState
+        +transaction(Function) T
+        +close()
+    }
     StoreRepository <|.. FileStoreRepository
+    StoreRepository <|.. MysqlStoreRepository
     FileStoreRepository --> StoreState
+    MysqlStoreRepository --> StoreState
+    class DeliveryFeePolicy {
+        +calculateFee(lines, deliveryMethod) BigDecimal
+    }
     class ApiServlet {
         +service(request,response)
+    }
+    class PageController {
+        +doGet(request,response)
     }
     ApiServlet --> UserService
     ApiServlet --> BookService
@@ -114,6 +139,7 @@ classDiagram
     ApiServlet --> CategoryService
     ApiServlet --> OrderService
     ApiServlet --> ReviewService
+    OrderService --> DeliveryFeePolicy
     UserService --> StoreRepository
     BookService --> StoreRepository
     AuthorService --> StoreRepository

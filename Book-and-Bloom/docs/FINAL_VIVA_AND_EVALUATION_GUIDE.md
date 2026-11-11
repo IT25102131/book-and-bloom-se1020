@@ -262,3 +262,4 @@ flowchart LR
 ## 🛡️ 10. Fail-Safe Viva Tips
 * **If Miss asks "Is this file-based or MySQL?":** Answer: *"Our architecture implements the Repository Pattern (`StoreRepository`). By default it connects to our relational MySQL database `book_bloom`. However, if MySQL is ever down, it has an atomic fallback to `bookstore.txt`, ensuring maximum system reliability."*
 * **If asked about team contribution:** Show the GitHub branches table. Every member has their own branch and distinct commit history linked to their student ID and SLIIT email.
+
