@@ -401,6 +401,16 @@ function home() {
   main.innerHTML = `
     <!-- Sarasavi Luxury Editorial Hero Slider -->
     <section class="hero-slider-section" id="hero-slider">
+      <!-- Ambient Sunlit Library Layer (Dust Motes & Brass Lamp Breathing Aura) -->
+      <div class="hero-ambient-layer" aria-hidden="true">
+        <div class="hero-lamp-glow"></div>
+        <div class="hero-sunbeam-rays"></div>
+        <div class="hero-motes">
+          <span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+
       <div class="hero-slides-wrapper">
         <!-- Slide 1: Atomic Habits -->
         <div class="hero-slide active" data-slide="0">
@@ -429,6 +439,7 @@ function home() {
               </div>
             </div>
             <div class="hero-slide-visual">
+              <div class="hero-desk-shadow" aria-hidden="true"></div>
               <a href="${url("/book?id=" + encodeURIComponent(b1.id || "BK-4137526d-0c4"))}" class="hero-spotlight-card" aria-label="View Atomic Habits">
                 <span class="spotlight-tag">★ SARASAVI CHOICE</span>
                 ${cover(b1, "hero-spotlight-cover")}
@@ -446,7 +457,7 @@ function home() {
           <div class="container hero-slide-inner">
             <div class="hero-slide-content">
               <div class="hero-slide-badge gold">
-                <span>🇱🇰</span> CEYLON LITERARY HERITAGE · MARTIN WICKRAMASINGHE
+                <span class="badge-star">★</span> CEYLON LITERARY HERITAGE · MARTIN WICKRAMASINGHE
               </div>
               <h1 class="hero-slide-title">
                 Gamperaliya
@@ -454,24 +465,23 @@ function home() {
               </h1>
               <p class="hero-slide-desc">Step into the rich tapestry of southern Sri Lankan life with the pioneering masterpiece that heralded modern Sinhala realistic literature. Official Sarasavi commemorative edition.</p>
               <div class="hero-slide-features">
-                <span>✓ Authentic Sarasavi Edition</span>
-                <span>✓ Commemorative Print</span>
-                <span>✓ Delivered Islandwide</span>
+                <span><svg viewBox="0 0 24 24" class="feat-icon"><polyline points="20 6 9 17 4 12"/></svg> Authentic Sarasavi Edition</span>
+                <span><svg viewBox="0 0 24 24" class="feat-icon"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Commemorative Print</span>
+                <span><svg viewBox="0 0 24 24" class="feat-icon"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> Delivered Islandwide</span>
               </div>
               <div class="hero-slide-actions">
                 <a class="btn-hero-primary" href="${url("/book?id=" + encodeURIComponent(b2.id || "BK-d135d5d8-aeb"))}">
-                  ${icon("bag")} Order Classic · ${money(b2.price || 1450)}
+                  ${icon("bag")} Order Classic – ${money(b2.price || 1450)} <span class="btn-arrow">→</span>
                 </a>
                 <a class="btn-hero-secondary" href="${url("/catalog?category=CAT-1")}">
-                  ${icon("book")} Sinhala Fiction &amp; Classics ↗
+                  ${icon("book")} Sinhala Fiction &amp; Classics <span class="btn-arrow">→</span>
                 </a>
               </div>
             </div>
             <div class="hero-slide-visual">
-              <div class="hero-spotlight-halo gold"></div>
-              <div class="hero-spotlight-pedestal"></div>
+              <div class="hero-desk-shadow" aria-hidden="true"></div>
               <a href="${url("/book?id=" + encodeURIComponent(b2.id || "BK-d135d5d8-aeb"))}" class="hero-spotlight-card" aria-label="View Gamperaliya">
-                <span class="spotlight-tag tag-heritage">NATIONAL TREASURE</span>
+                <span class="spotlight-tag tag-heritage">★ NATIONAL TREASURE</span>
                 ${cover(b2, "hero-spotlight-cover")}
                 <div class="spotlight-card-footer">
                   <div class="spotlight-rating">★★★★★ <span>(5.0 · Timeless Classic)</span></div>
@@ -487,7 +497,7 @@ function home() {
           <div class="container hero-slide-inner">
             <div class="hero-slide-content">
               <div class="hero-slide-badge booker">
-                <span>🏆</span> THE 2022 BOOKER PRIZE WINNER
+                <span class="badge-star">★</span> THE 2022 BOOKER PRIZE WINNER
               </div>
               <h1 class="hero-slide-title">
                 The Seven Moons of Maali Almeida
@@ -495,24 +505,23 @@ function home() {
               </h1>
               <p class="hero-slide-desc">Winner of the prestigious Booker Prize. A searing, brilliant afterlife mystery that unfolds amidst the magical realism and turbulent history of Sri Lanka. An unforgettable triumph of storytelling.</p>
               <div class="hero-slide-features">
-                <span>✓ Booker Prize Winner</span>
-                <span>✓ Original International Print</span>
-                <span>✓ Cash on Delivery Available</span>
+                <span><svg viewBox="0 0 24 24" class="feat-icon"><polyline points="20 6 9 17 4 12"/></svg> Booker Prize Winner</span>
+                <span><svg viewBox="0 0 24 24" class="feat-icon"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Original International Print</span>
+                <span><svg viewBox="0 0 24 24" class="feat-icon"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg> Cash on Delivery Available</span>
               </div>
               <div class="hero-slide-actions">
                 <a class="btn-hero-primary" href="${url("/book?id=" + encodeURIComponent(b3.id || "BK-eb7f9215-19c"))}">
-                  ${icon("bag")} Read Booker Winner · ${money(b3.price || 2650)}
+                  ${icon("bag")} Read Booker Winner – ${money(b3.price || 2650)} <span class="btn-arrow">→</span>
                 </a>
                 <a class="btn-hero-secondary" href="${url("/catalog")}">
-                  ${icon("book")} Browse Bookstore Catalog ↗
+                  ${icon("book")} Browse Bookstore Catalog <span class="btn-arrow">→</span>
                 </a>
               </div>
             </div>
             <div class="hero-slide-visual">
-              <div class="hero-spotlight-halo crimson"></div>
-              <div class="hero-spotlight-pedestal"></div>
+              <div class="hero-desk-shadow" aria-hidden="true"></div>
               <a href="${url("/book?id=" + encodeURIComponent(b3.id || "BK-eb7f9215-19c"))}" class="hero-spotlight-card" aria-label="View The Seven Moons of Maali Almeida">
-                <span class="spotlight-tag tag-booker">BOOKER PRIZE WINNER</span>
+                <span class="spotlight-tag tag-booker">★ BOOKER PRIZE WINNER</span>
                 ${cover(b3, "hero-spotlight-cover")}
                 <div class="spotlight-card-footer">
                   <div class="spotlight-rating">★★★★★ <span>(4.9 · Booker Jury Praise)</span></div>
@@ -584,8 +593,46 @@ function home() {
 
     <!-- Main Content Container -->
     <div class="container">
+      <!-- Live Library Archive Telemetry Strip (Animated Count-Up Metrics) -->
+      <div class="library-telemetry-bar">
+        <div class="telemetry-live-badge">
+          <span class="live-pulse-dot"></span>
+          <span>LIVE LIBRARY ARCHIVE</span>
+        </div>
+        <div class="telemetry-metrics">
+          <div class="telemetry-item">
+            <span class="telemetry-num" data-countup="${books.length}">${books.length}</span>
+            <span class="telemetry-label">Curated Volumes</span>
+          </div>
+          <div class="telemetry-sep"></div>
+          <div class="telemetry-item">
+            <span class="telemetry-num" data-countup="${state.categories.length}">${state.categories.length}</span>
+            <span class="telemetry-label">Subject Shelves</span>
+          </div>
+          <div class="telemetry-sep"></div>
+          <div class="telemetry-item">
+            <span class="telemetry-num" data-countup="${state.authors.length}">${state.authors.length}</span>
+            <span class="telemetry-label">Eminent Authors</span>
+          </div>
+          <div class="telemetry-sep"></div>
+          <div class="telemetry-item">
+            <span class="telemetry-num" data-countup="${books.filter((b) => b.type === "EBOOK").length}">${books.filter((b) => b.type === "EBOOK").length}</span>
+            <span class="telemetry-label">Digital E-Books</span>
+          </div>
+          <div class="telemetry-sep"></div>
+          <div class="telemetry-item telemetry-highlight">
+            <span class="telemetry-num">4.9 ★</span>
+            <span class="telemetry-label">Reader Rating</span>
+          </div>
+        </div>
+        <a href="${url("/catalog")}" class="telemetry-action">
+          <span>Full Shelf Index</span>
+          <span class="btn-arrow">→</span>
+        </a>
+      </div>
+
       <!-- Popular Categories Grid -->
-      <section class="section" style="padding-top:10px">
+      <section class="section" style="padding-top:16px">
         <div class="section-heading">
           <div class="section-title-wrap">
             <span class="eyebrow">EXPLORE COLLECTIONS • ප්‍රවර්ග</span>
@@ -782,6 +829,7 @@ function home() {
   initHeroSlider();
   init3DBookTilt();
   initScrollReveal();
+  initCountUps(main);
 }
 
 /* ==========================================================================
@@ -2086,7 +2134,11 @@ function renderAdmin(tab) {
   el.innerHTML = `
     <div class="admin-heading">
       <div>
-        <h1>${tab === "overview" ? "Bookstore Overview" : title}</h1>
+        <div class="admin-live-pill">
+          <span class="live-pulse-dot"></span>
+          <span>LIBRARY MANAGEMENT · LIVE TELEMETRY</span>
+        </div>
+        <h1>${tab === "overview" ? "Library &amp; Bookstore Overview" : title}</h1>
         <p style="color:var(--text-muted);font-size:13px;margin:4px 0 0 0">${descriptions[tab]}</p>
       </div>
       ${
@@ -2097,7 +2149,7 @@ function renderAdmin(tab) {
             : ""
       }
     </div>
-    <div id="admin-body"></div>
+    <div id="admin-body" class="admin-body-animated"></div>
   `;
 
   document
@@ -2108,37 +2160,64 @@ function renderAdmin(tab) {
 
   if (tab === "overview") {
     let active = state.orders.filter((o) => o.status !== "CANCELLED"),
-      revenue = active.reduce((n, o) => n + Number(o.total), 0);
+      revenue = active.reduce((n, o) => n + Number(o.total), 0),
+      totalStock = state.books.reduce((n, b) => n + Number(b.stock || 0), 0),
+      ebooksCount = state.books.filter((b) => b.type === "EBOOK").length,
+      lowStock = state.books.filter((b) => b.type !== "EBOOK" && Number(b.stock || 0) <= 5).length,
+      readersCount = state.users.filter((u) => u.role === "CUSTOMER").length;
 
     body.innerHTML = `
       <div class="stats">
-        ${[
-          ["Books in Catalog", state.books.length, "Across " + state.categories.length + " categories"],
-          ["Active Orders", active.length, "Placed & processing"],
-          ["Gross Order Value", money(revenue), "Excludes cancelled orders"],
-          ["Registered Readers", state.users.filter((u) => u.role === "CUSTOMER").length, "Active bookstore members"],
-        ]
-          .map(
-            ([label, value, note]) => `
-          <div class="stat">
-            <span>${label}</span>
-            <strong>${value}</strong>
-            <small>${note}</small>
-          </div>`,
-          )
-          .join("")}
+        <div class="stat stat-anim" style="--stagger:0">
+          <div class="stat-top-row">
+            <span>Books in Catalog</span>
+            <div class="stat-icon-pill">${icon("book")}</div>
+          </div>
+          <strong data-countup="${state.books.length}">${state.books.length}</strong>
+          <small>Across ${state.categories.length} shelves · ${ebooksCount} E-Books</small>
+        </div>
+
+        <div class="stat stat-anim" style="--stagger:1">
+          <div class="stat-top-row">
+            <span>Total Shelf Stock</span>
+            <div class="stat-icon-pill pill-gold">${icon("grid")}</div>
+          </div>
+          <strong data-countup="${totalStock}">${totalStock}</strong>
+          <small>${lowStock > 0 ? `<span class="low-stock-pulse">${lowStock} titles running low</span>` : "All shelves well stocked"}</small>
+        </div>
+
+        <div class="stat stat-anim" style="--stagger:2">
+          <div class="stat-top-row">
+            <span>Active Circulation &amp; Orders</span>
+            <div class="stat-icon-pill pill-teal">${icon("truck")}</div>
+          </div>
+          <strong data-countup="${active.length}">${active.length}</strong>
+          <small>Gross Value: ${money(revenue)}</small>
+        </div>
+
+        <div class="stat stat-anim" style="--stagger:3">
+          <div class="stat-top-row">
+            <span>Registered Readers</span>
+            <div class="stat-icon-pill pill-emerald">${icon("user")}</div>
+          </div>
+          <strong data-countup="${readersCount}">${readersCount}</strong>
+          <small>${state.authors.length} featured authors archived</small>
+        </div>
       </div>
 
       <div class="admin-panels">
-        <div class="panel">
-          <h3>Recent Orders</h3>
+        <div class="panel panel-anim" style="--stagger:0">
+          <div class="panel-header-flex">
+            <h3>Recent Orders &amp; Dispatch</h3>
+            <span class="panel-badge">${state.orders.length} Total</span>
+          </div>
           ${
             state.orders.length
               ? state.orders
                   .slice(0, 5)
                   .map(
-                    (o) => `
-                <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border-light)">
+                    (o, idx) => `
+                <div class="admin-order-row" style="--row-delay:${idx * 70}ms">
                   <div>
                     <strong>${esc(o.id)}</strong>
                     <small style="display:block;color:var(--text-muted)">${date(o.createdAt)}</small>
@@ -2152,24 +2231,31 @@ function renderAdmin(tab) {
           }
         </div>
 
-        <div class="panel">
-          <h3>Books by Category</h3>
+        <div class="panel panel-anim" style="--stagger:1">
+          <div class="panel-header-flex">
+            <h3>Library Shelf Distribution</h3>
+            <span class="panel-badge">${state.categories.length} Categories</span>
+          </div>
           ${state.categories
-            .map((c) => {
+            .map((c, idx) => {
               let n = state.books.filter((b) => b.categoryId === c.id).length;
+              let pct = state.books.length ? Math.round((n / state.books.length) * 100) : 0;
               return `
-              <div style="display:flex;justify-content:space-between;font-size:13px;font-weight:600;margin-bottom:4px">
-                <span>${esc(c.name)}</span>
-                <span>${n} titles</span>
-              </div>
-              <div style="background:#E2E8F0;height:6px;border-radius:3px;overflow:hidden;margin-bottom:12px">
-                <div style="background:var(--sarasavi-blue);height:100%;width:${state.books.length ? (n / state.books.length) * 100 : 0}%"></div>
+              <div class="cat-progress-item">
+                <div class="cat-progress-head">
+                  <span>${esc(c.name)}</span>
+                  <span>${n} titles (${pct}%)</span>
+                </div>
+                <div class="cat-progress-track">
+                  <div class="cat-progress-fill" style="--target-w:${pct}%;--bar-delay:${idx * 90}ms"></div>
+                </div>
               </div>`;
             })
             .join("")}
         </div>
       </div>
     `;
+    initCountUps(body);
     return;
   }
 
@@ -2535,12 +2621,15 @@ function initHeroSlider() {
   let timer = null;
 
   function goToSlide(index) {
-    slides[current].classList.remove("active");
+    slides[current].classList.remove("active", "is-entering");
     if (dots[current]) dots[current].classList.remove("active");
 
     current = (index + slides.length) % slides.length;
 
-    slides[current].classList.add("active");
+    const nextSlide = slides[current];
+    nextSlide.classList.add("active");
+    void nextSlide.offsetWidth;
+    nextSlide.classList.add("is-entering");
     if (dots[current]) dots[current].classList.add("active");
   }
 
@@ -2691,6 +2780,44 @@ function initScrollReveal() {
   });
 }
 
+// 7. Smooth Numeric Count-Up Animator (Library Metrics & Admin KPIs)
+function initCountUps(root = document) {
+  const counters = root.querySelectorAll("[data-countup]");
+  counters.forEach((el) => {
+    if (el.__counted) return;
+    el.__counted = true;
+    const target = parseInt(el.dataset.countup, 10) || 0;
+    if (target <= 0) {
+      el.textContent = "0";
+      return;
+    }
+    const duration = 700;
+    const start = performance.now();
+    const tick = (now) => {
+      const t = Math.min(1, (now - start) / duration);
+      const eased = 1 - Math.pow(1 - t, 3);
+      el.textContent = Math.round(eased * target).toLocaleString("en-US");
+      if (t < 1) requestAnimationFrame(tick);
+      else el.textContent = target.toLocaleString("en-US");
+    };
+    requestAnimationFrame(tick);
+  });
+}
+
+// 8. Sticky Header Reading Progress Ribbon
+function initReadingProgress() {
+  const bar = document.getElementById("reading-progress-bar");
+  if (!bar) return;
+  const update = () => {
+    const doc = document.documentElement;
+    const max = Math.max(1, doc.scrollHeight - window.innerHeight);
+    const pct = Math.min(1, Math.max(0, window.scrollY / max));
+    bar.style.transform = `scaleX(${pct})`;
+  };
+  window.addEventListener("scroll", update, { passive: true });
+  update();
+}
+
 async function init() {
   try {
     const session = await api("/session");
@@ -2735,6 +2862,8 @@ async function init() {
     initAnnouncementTicker();
     initBackToTop();
     initScrollReveal();
+    initReadingProgress();
+    initCountUps(main);
   } catch (e) {
     main.innerHTML = `<div class="container section">${empty("Unable to Load Bookstore.", e.message, null)}<p style="text-align:center;margin-top:20px"><button class="btn secondary" id="retry">Try Again</button></p></div>`;
     document.querySelector("#retry")?.addEventListener("click", init);

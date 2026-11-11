@@ -1395,8 +1395,8 @@ svg.icon {
 .store-features-strip {
   background: #F7F5F0;
   border-bottom: 1px solid #EBE5DB;
-  padding: 24px 0;
-  margin-bottom: 30px;
+  padding: 20px 0;
+  margin-bottom: 18px;
 }
 
 .features-strip-inner {
@@ -2919,59 +2919,65 @@ svg.icon {
 }
 
 /* ==========================================================================
-   ADMIN DASHBOARD (Sarasavi Store Manager)
+   ADMIN DASHBOARD (Book & Bloom Animated Library Manager)
    ========================================================================== */
 .admin-layout {
   display: grid;
-  grid-template-columns: 240px 1fr;
-  gap: 30px;
+  grid-template-columns: 250px 1fr;
+  gap: 28px;
   max-width: 1320px;
   margin: 30px auto;
   padding: 0 20px;
 }
 
 .admin-sidebar {
-  background: var(--sarasavi-navy);
+  background: linear-gradient(180deg, #072C24 0%, #051F19 100%);
   border-radius: var(--radius-xl);
   padding: 24px 18px;
   color: #FFFFFF;
   height: fit-content;
+  border: 1px solid rgba(197, 155, 39, 0.25);
+  box-shadow: 0 12px 32px rgba(7, 44, 36, 0.18);
 }
 
 .admin-sidebar .eyebrow {
-  color: var(--sarasavi-amber);
+  color: #F59E0B;
   margin-bottom: 14px;
 }
 
 .admin-tabs {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
 }
 
 .admin-tab {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 10px 14px;
+  padding: 11px 14px;
   color: #CBD5E1;
   font-weight: 600;
   font-size: 13px;
   border-radius: var(--radius-md);
   text-align: left;
-  transition: var(--transition);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   width: 100%;
+  border-left: 3px solid transparent;
 }
 
 .admin-tab:hover {
-  background: rgba(255,255,255,0.08);
+  background: rgba(255, 255, 255, 0.08);
   color: #FFFFFF;
+  transform: translateX(4px);
 }
 
 .admin-tab.active {
-  background: var(--sarasavi-blue);
+  background: #0A5C52;
   color: #FFFFFF;
   font-weight: 700;
+  border-left-color: #C59B27;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .admin-tab .icon {
@@ -2987,12 +2993,30 @@ svg.icon {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.admin-live-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #0B3C35;
+  background: #ECFDF5;
+  border: 1px solid #A7F3D0;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  margin-bottom: 8px;
 }
 
 .admin-heading h1 {
-  font-size: 26px;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 28px;
   font-weight: 800;
-  color: var(--sarasavi-navy);
+  color: #0F172A;
   margin: 0;
 }
 
@@ -3000,41 +3024,248 @@ svg.icon {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 18px;
-  margin-bottom: 30px;
+  margin-bottom: 26px;
 }
 
 .stat {
   background: #FFFFFF;
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-lg);
+  border: 1px solid #EBE5DB;
+  border-radius: 16px;
   padding: 20px;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
   display: flex;
   flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease;
+}
+
+.stat::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #0B3C35, #C59B27);
+  transform: scaleX(0.35);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+}
+
+.stat:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 26px rgba(11, 60, 53, 0.10);
+}
+
+.stat:hover::before {
+  transform: scaleX(1);
+}
+
+.stat-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 6px;
 }
 
 .stat span {
   font-size: 12px;
-  font-weight: 600;
-  color: var(--text-muted);
+  font-weight: 700;
+  color: #64748B;
+}
+
+.stat-icon-pill {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: #F0F7F5;
+  color: #0B3C35;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.stat:hover .stat-icon-pill {
+  transform: scale(1.12) rotate(4deg);
+}
+
+.stat-icon-pill svg {
+  width: 17px;
+  height: 17px;
+}
+
+.stat-icon-pill.pill-gold {
+  background: #FEF9EE;
+  color: #D97706;
+}
+
+.stat-icon-pill.pill-teal {
+  background: #ECFDF5;
+  color: #059669;
+}
+
+.stat-icon-pill.pill-emerald {
+  background: #F0F7F5;
+  color: #0B3C35;
 }
 
 .stat strong {
-  font-size: 24px;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 30px;
   font-weight: 800;
-  color: var(--sarasavi-navy);
-  margin: 4px 0;
+  color: #072C24;
+  margin: 4px 0 6px;
+  line-height: 1.1;
 }
 
 .stat small {
   font-size: 11.5px;
-  color: var(--text-light);
+  color: #64748B;
+}
+
+.low-stock-pulse {
+  color: #B45309;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.low-stock-pulse::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #F59E0B;
+  animation: livePulse 1.8s ease-in-out infinite;
+}
+
+.stat-anim {
+  animation: adminCardRise 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: calc(var(--stagger, 0) * 80ms);
+}
+
+.panel-anim {
+  animation: adminCardRise 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: calc(180ms + var(--stagger, 0) * 110ms);
+}
+
+@keyframes adminCardRise {
+  from {
+    transform: translateY(14px);
+    opacity: 0.92;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .admin-panels {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
+}
+
+.panel {
+  background: #FFFFFF;
+  border: 1px solid #EBE5DB;
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+}
+
+.panel-header-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #F1ECE3;
+}
+
+.panel-header-flex h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 18px;
+  color: #0F172A;
+  margin: 0;
+}
+
+.panel-badge {
+  font-size: 11px;
+  font-weight: 700;
+  color: #0B3C35;
+  background: #F0F7F5;
+  padding: 3px 10px;
+  border-radius: 9999px;
+}
+
+.admin-order-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 8px;
+  border-bottom: 1px solid #F1ECE3;
+  border-radius: 8px;
+  transition: background 0.2s ease, transform 0.2s ease;
+  animation: adminCardRise 0.45s ease both;
+  animation-delay: var(--row-delay, 0ms);
+}
+
+.admin-order-row:hover {
+  background: #FAF8F5;
+  transform: translateX(4px);
+}
+
+.cat-progress-item {
+  margin-bottom: 14px;
+}
+
+.cat-progress-head {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 5px;
+}
+
+.cat-progress-track {
+  background: #EFECE5;
+  height: 8px;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.cat-progress-fill {
+  height: 100%;
+  width: var(--target-w, 0%);
+  background: linear-gradient(90deg, #0B3C35 0%, #0A5C52 60%, #C59B27 100%);
+  border-radius: 9999px;
+  transform-origin: left;
+  animation: barGrowOut 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: var(--bar-delay, 0ms);
+  position: relative;
+}
+
+.cat-progress-fill::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.45), transparent);
+  animation: shimmerSweep 2.6s ease-in-out infinite;
+}
+
+@keyframes barGrowOut {
+  from {
+    transform: scaleX(0.05);
+  }
+  to {
+    transform: scaleX(1);
+  }
 }
 
 .table-wrap {
@@ -4686,4 +4917,523 @@ dialog:has(.form-grid-2col) {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+
+/* ==========================================================================
+   ANIMATED LIBRARY & BOOKSTORE DASHBOARD MOTION SUITE
+   ========================================================================== */
+
+/* 1. Sticky Reading Progress Bar */
+.reading-progress-track {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2.5px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.reading-progress-fill {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, #C59B27 0%, #F59E0B 50%, #10B981 100%);
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition: transform 0.1s linear;
+}
+
+/* 2. Botanical Crest Sway & Top Delivery Pill Sheen */
+.crest-leaf-gold {
+  transform-origin: 20px 15px;
+  animation: leafBreezeGold 4.8s ease-in-out infinite alternate;
+}
+
+.crest-leaf-green {
+  transform-origin: 20px 15px;
+  animation: leafBreezeGreen 5.4s ease-in-out infinite alternate;
+}
+
+.crest-seed {
+  transform-origin: 20px 5px;
+  animation: seedPulse 3.6s ease-in-out infinite;
+}
+
+@keyframes leafBreezeGold {
+  0% { transform: rotate(0deg) scale(1); }
+  100% { transform: rotate(5deg) scale(1.04); }
+}
+
+@keyframes leafBreezeGreen {
+  0% { transform: rotate(0deg) scale(1); }
+  100% { transform: rotate(-4deg) scale(1.03); }
+}
+
+@keyframes seedPulse {
+  0%, 100% { transform: scale(1); opacity: 0.9; }
+  50% { transform: scale(1.22); opacity: 1; }
+}
+
+.top-free-pill {
+  position: relative;
+  overflow: hidden;
+}
+
+.top-free-pill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(100deg, transparent 0%, rgba(255, 255, 255, 0.7) 50%, transparent 100%);
+  animation: shimmerSweep 4.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.top-bar:hover .top-truck-icon {
+  animation: truckDrive 0.65s ease-in-out infinite;
+}
+
+@keyframes shimmerSweep {
+  0% { transform: translateX(0); left: -120%; }
+  45%, 100% { transform: translateX(380%); left: -120%; }
+}
+
+@keyframes truckDrive {
+  0%, 100% { transform: translateX(0) translateY(0); }
+  25% { transform: translateX(2px) translateY(-1px); }
+  75% { transform: translateX(-1px) translateY(0.5px); }
+}
+
+/* 3. Cozy Sunlit Library Hero Ambient Layers (Golden Sunbeam Motes & Lamp Warmth) */
+.hero-ambient-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.hero-lamp-glow {
+  position: absolute;
+  top: -12%;
+  right: 12%;
+  width: 440px;
+  height: 440px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245, 179, 66, 0.28) 0%, rgba(197, 155, 39, 0.12) 45%, transparent 72%);
+  filter: blur(22px);
+  animation: lampBreathe 6.5s ease-in-out infinite alternate;
+}
+
+@keyframes lampBreathe {
+  0% { opacity: 0.45; transform: scale(0.95); }
+  100% { opacity: 0.85; transform: scale(1.08); }
+}
+
+.hero-sunbeam-rays {
+  position: absolute;
+  top: -20%;
+  right: 14%;
+  width: 45%;
+  height: 150%;
+  background: linear-gradient(125deg, rgba(255, 248, 225, 0.25) 0%, rgba(253, 230, 138, 0.12) 45%, transparent 75%);
+  transform: skewX(-18deg);
+  filter: blur(18px);
+  animation: sunbeamShift 9s ease-in-out infinite alternate;
+}
+
+@keyframes sunbeamShift {
+  0% { opacity: 0.4; transform: skewX(-18deg) translateX(-12px); }
+  100% { opacity: 0.72; transform: skewX(-16deg) translateX(18px); }
+}
+
+.hero-motes span {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 246, 200, 0.95) 0%, rgba(245, 158, 11, 0.45) 55%, transparent 100%);
+  box-shadow: 0 0 8px rgba(245, 185, 65, 0.55);
+  animation: sunMoteFloat linear infinite;
+}
+
+.hero-motes span:nth-child(1) { width: 5px; height: 5px; right: 16%; bottom: 12%; animation-duration: 9s; animation-delay: 0s; }
+.hero-motes span:nth-child(2) { width: 4px; height: 4px; right: 24%; bottom: 18%; animation-duration: 12s; animation-delay: -3s; }
+.hero-motes span:nth-child(3) { width: 6px; height: 6px; right: 32%; bottom: 8%; animation-duration: 10.5s; animation-delay: -5s; }
+.hero-motes span:nth-child(4) { width: 3.5px; height: 3.5px; right: 21%; bottom: 25%; animation-duration: 14s; animation-delay: -2s; }
+.hero-motes span:nth-child(5) { width: 5px; height: 5px; right: 10%; bottom: 22%; animation-duration: 11s; animation-delay: -6s; }
+.hero-motes span:nth-child(6) { width: 4.5px; height: 4.5px; right: 39%; bottom: 15%; animation-duration: 13s; animation-delay: -4s; }
+.hero-motes span:nth-child(7) { width: 4px; height: 4px; right: 28%; bottom: 6%; animation-duration: 9.5s; animation-delay: -1.5s; }
+.hero-motes span:nth-child(8) { width: 5.5px; height: 5.5px; right: 14%; bottom: 30%; animation-duration: 12.5s; animation-delay: -7s; }
+
+@keyframes sunMoteFloat {
+  0% { transform: translateY(0) translateX(0) scale(0.8); opacity: 0; }
+  20% { opacity: 0.78; }
+  80% { opacity: 0.55; }
+  100% { transform: translateY(-210px) translateX(28px) scale(1.15); opacity: 0; }
+}
+
+/* 4. Slide Transitions (Triggered ONLY on interactive slide changes — never blurs initial load) */
+.hero-slide.is-entering {
+  animation: heroSlideSwitch 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes heroSlideSwitch {
+  0% { transform: translateX(22px); opacity: 0.45; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+/* Editorial Quote Gold Border Pulse */
+.hero-slide-desc {
+  position: relative;
+}
+
+.hero-slide-desc::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -3.5px;
+  width: 3.5px;
+  height: 36%;
+  background: linear-gradient(180deg, transparent, #FDE68A, #FFFFFF, #C59B27, transparent);
+  animation: quoteGoldFlow 3.8s ease-in-out infinite;
+  border-radius: 2px;
+}
+
+@keyframes quoteGoldFlow {
+  0% { top: 0%; opacity: 0; }
+  25% { opacity: 0.95; }
+  75% { opacity: 0.95; }
+  100% { top: 64%; opacity: 0; }
+}
+
+/* 5. Levitating 3D Book Showcase & Dynamic Desk Shadow */
+.hero-spotlight-card {
+  animation: heroBookBreath 5.2s ease-in-out infinite;
+  will-change: transform;
+}
+
+.hero-spotlight-card:hover {
+  animation-play-state: paused;
+}
+
+@keyframes heroBookBreath {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-9px) rotate(0.55deg); }
+}
+
+.hero-desk-shadow {
+  position: absolute;
+  bottom: 52px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 215px;
+  height: 22px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(25, 18, 12, 0.42) 0%, rgba(25, 18, 12, 0.16) 55%, transparent 80%);
+  filter: blur(7px);
+  pointer-events: none;
+  z-index: 2;
+  animation: deskShadowBreath 5.2s ease-in-out infinite;
+}
+
+@keyframes deskShadowBreath {
+  0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.85; }
+  50% { transform: translateX(-50%) scale(0.84); opacity: 0.55; }
+}
+
+/* Book Cover Diagonal Light Gleam */
+.hero-spotlight-card .book-cover::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: -130%;
+  width: 75%;
+  height: 150%;
+  background: linear-gradient(105deg, transparent 25%, rgba(255, 255, 255, 0.42) 50%, transparent 75%);
+  transform: rotate(15deg);
+  pointer-events: none;
+  z-index: 4;
+  animation: bookCoverGleam 5.5s ease-in-out infinite;
+}
+
+@keyframes bookCoverGleam {
+  0%, 35% { left: -130%; }
+  75%, 100% { left: 165%; }
+}
+
+/* Primary Hero CTA Glossy Shine */
+.btn-hero-primary {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-hero-primary::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -110%;
+  width: 55%;
+  height: 100%;
+  background: linear-gradient(105deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  transition: none;
+}
+
+.btn-hero-primary:hover::after {
+  left: 160%;
+  transition: left 0.65s ease;
+}
+
+/* Slider Active Dot Animated Auto-Play Countdown */
+.slider-dot.active {
+  position: relative;
+  overflow: hidden;
+  width: 34px;
+  background: rgba(11, 60, 53, 0.22);
+}
+
+.slider-dot.active::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #0B3C35, #C59B27);
+  border-radius: var(--radius-full);
+  transform-origin: left;
+  animation: dotCountdown 5.5s linear infinite;
+}
+
+@keyframes dotCountdown {
+  0% { transform: scaleX(0.08); }
+  100% { transform: scaleX(1); }
+}
+
+/* 6. Store Assurance Strip Animated Hover Micro-Interactions */
+.feature-strip-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-strip-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+  right: 20%;
+  height: 2.5px;
+  background: linear-gradient(90deg, transparent, #C59B27, transparent);
+  transform: scaleX(0);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.feature-strip-card:hover::after {
+  transform: scaleX(1);
+}
+
+.feature-strip-card:nth-child(1):hover .feature-strip-icon-box svg {
+  animation: truckDrive 0.65s ease-in-out infinite;
+}
+
+.feature-strip-card:nth-child(2):hover .feature-strip-icon-box svg {
+  transform: scale(1.12) rotate(-6deg);
+  transition: transform 0.25s ease;
+}
+
+.feature-strip-card:nth-child(3):hover .feature-strip-icon-box svg {
+  transform: scale(1.14);
+  transition: transform 0.25s ease;
+}
+
+.feature-strip-card:nth-child(4):hover .feature-strip-icon-box svg {
+  animation: phoneRing 0.55s ease-in-out infinite;
+}
+
+@keyframes phoneRing {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(12deg); }
+  50% { transform: rotate(-10deg); }
+  75% { transform: rotate(8deg); }
+}
+
+/* 7. Category Cards Ken Burns Gentle Zoom & Gold Border Sweep */
+.category-card-v2 {
+  background-size: 106% auto;
+  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.32s ease, background-size 0.8s ease;
+}
+
+.category-card-v2:hover {
+  background-size: 116% auto;
+}
+
+/* 8. 3D Shelf Open-Book Swing on Book Grid Cards */
+.book-card .book-scene {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.book-card:hover .book-cover {
+  box-shadow:
+    -8px 14px 26px rgba(15, 23, 42, 0.22),
+    4px 0 0 #F4EFE6,
+    6px 0 0 #E6DDD0,
+    8px 0 12px rgba(0, 0, 0, 0.14);
+}
+
+/* 9. Live Library Archive Telemetry Bar (Animated Dashboard Strip) */
+.library-telemetry-bar {
+  background: linear-gradient(90deg, #072C24 0%, #0B3C35 55%, #072C24 100%);
+  border: 1px solid rgba(197, 155, 39, 0.42);
+  border-radius: 16px;
+  padding: 13px 24px;
+  margin-top: 0;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  box-shadow: 0 10px 26px rgba(7, 44, 36, 0.14);
+  position: relative;
+  overflow: hidden;
+  animation: adminCardRise 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.library-telemetry-bar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 45%;
+  height: 100%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.06), transparent);
+  animation: shimmerSweep 6.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.telemetry-live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #FDE68A;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.live-pulse-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  animation: livePulse 2s infinite;
+  flex-shrink: 0;
+}
+
+@keyframes livePulse {
+  0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); transform: scale(0.95); }
+  70% { box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); transform: scale(1.05); }
+  100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); transform: scale(0.95); }
+}
+
+.telemetry-metrics {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+.telemetry-item {
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+  transition: transform 0.2s ease;
+}
+
+.telemetry-item:hover {
+  transform: translateY(-2px);
+}
+
+.telemetry-num {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 20px;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.telemetry-highlight .telemetry-num {
+  color: #FBBF24;
+}
+
+.telemetry-label {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #CBD5E1;
+}
+
+.telemetry-sep {
+  width: 1px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.telemetry-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(197, 155, 39, 0.16);
+  border: 1px solid #C59B27;
+  color: #FDE68A;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 7px 15px;
+  border-radius: 9999px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: all 0.25s ease;
+}
+
+.telemetry-action:hover {
+  background: #C59B27;
+  color: #072C24;
+  transform: translateY(-1px);
+}
+
+.telemetry-action:hover .btn-arrow {
+  transform: translateX(3px);
+}
+
+@media (max-width: 1024px) {
+  .category-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .library-telemetry-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .telemetry-metrics {
+    justify-content: flex-start;
+    gap: 14px;
+  }
+  .telemetry-sep {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .category-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
