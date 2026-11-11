@@ -367,12 +367,12 @@ function home() {
 
   // Category visual metadata map
   const catMeta = {
-    "CAT-1": { name: "Fiction & Novels", sub: "ප්‍රබන්ධ සාහිත්‍යය · Classics & Mystery", iconName: "book", bg: "#EFF6FF", accent: "#1D4ED8" },
-    "CAT-2": { name: "Personal Growth", sub: "පුද්ගල සංවර්ධන · Habits & Mastery", iconName: "leaf", bg: "#FEF3C7", accent: "#B45309" },
-    "CAT-3": { name: "Nature & Travel", sub: "ස්වභාවධර්ම · Ceylon Wildlife & Hills", iconName: "compass", bg: "#ECFDF5", accent: "#047857" },
-    "CAT-4": { name: "Design & Technology", sub: "තාක්ෂණය · Architecture & Code", iconName: "code", bg: "#EEF2FF", accent: "#4338CA" },
-    "CAT-5d06be3c-fca": { name: "Children's & YA", sub: "ළමා සාහිත්‍යය · Sybil Wettasinghe", iconName: "star", bg: "#FFF7ED", accent: "#C2410C" },
-    "CAT-77be722a-b06": { name: "Business & Finance", sub: "ව්‍යාපාර හා මූල්‍ය · Wealth & Mindset", iconName: "shield", bg: "#F1F5F9", accent: "#0A2540" }
+    "CAT-1": { name: "Fiction & Novels", sub: "ප්‍රබන්ධ සාහිත්‍යය · Classics", iconName: "book", img: "covers/a-little-more-wonder.jpg", grad: "rgba(42, 28, 22, 0.88)" },
+    "CAT-2": { name: "Personal Growth", sub: "පුද්ගල සංවර්ධන · Mastery", iconName: "leaf", img: "covers/mindful-living.jpg", grad: "rgba(28, 48, 44, 0.88)" },
+    "CAT-4": { name: "Technology & Innovation", sub: "තාක්ෂණය · Code & Systems", iconName: "code", img: "covers/make-room-for-ideas.jpg", grad: "rgba(25, 39, 52, 0.90)" },
+    "CAT-3": { name: "Nature & Travel", sub: "ස්වභාවධර්ම · Ceylon Wild", iconName: "compass", img: "covers/the-quiet-garden.jpg", grad: "rgba(20, 48, 36, 0.88)" },
+    "CAT-5d06be3c-fca": { name: "Children's Books", sub: "ළමා සාහිත්‍යය · Stories", iconName: "star", img: "covers/kuda-hora.jpg", grad: "rgba(74, 52, 30, 0.88)" },
+    "CAT-77be722a-b06": { name: "Business & Finance", sub: "ව්‍යාපාර · Wealth & Mindset", iconName: "shield", img: "covers/designing-with-purpose.jpg", grad: "rgba(15, 28, 46, 0.88)" }
   };
 
   // Author recognition tags map
@@ -407,7 +407,7 @@ function home() {
           <div class="container hero-slide-inner">
             <div class="hero-slide-content">
               <div class="hero-slide-badge">
-                <span>⭐</span> #1 GLOBAL BESTSELLER · OVER 15M COPIES SOLD
+                <span class="badge-star">★</span> #1 GLOBAL BESTSELLER · OVER 15M COPIES SOLD
               </div>
               <h1 class="hero-slide-title">
                 Atomic Habits
@@ -415,24 +415,22 @@ function home() {
               </h1>
               <p class="hero-slide-desc">No matter your goals, Atomic Habits offers a proven framework for improving every day. Learn how tiny daily adjustments lead to extraordinary transformation with James Clear's worldwide phenomenon.</p>
               <div class="hero-slide-features">
-                <span>✓ 100% Genuine Publications</span>
-                <span>✓ Cash on Delivery Islandwide</span>
-                <span>✓ Express Doorstep Dispatch</span>
+                <span><svg viewBox="0 0 24 24" class="feat-icon"><polyline points="20 6 9 17 4 12"/></svg> 100% Genuine Publications</span>
+                <span><svg viewBox="0 0 24 24" class="feat-icon"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg> Cash on Delivery Islandwide</span>
+                <span><svg viewBox="0 0 24 24" class="feat-icon"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> Express Doorstep Dispatch</span>
               </div>
               <div class="hero-slide-actions">
                 <a class="btn-hero-primary" href="${url("/book?id=" + encodeURIComponent(b1.id || "BK-4137526d-0c4"))}">
-                  ${icon("bag")} Order Best Seller · ${money(b1.price || 2200)}
+                  ${icon("bag")} Order Best Seller – ${money(b1.price || 2200)} <span class="btn-arrow">→</span>
                 </a>
                 <a class="btn-hero-secondary" href="${url("/catalog?filter=featured")}">
-                  ${icon("book")} Explore Best Sellers ↗
+                  ${icon("book")} Explore Best Sellers <span class="btn-arrow">→</span>
                 </a>
               </div>
             </div>
             <div class="hero-slide-visual">
-              <div class="hero-spotlight-halo"></div>
-              <div class="hero-spotlight-pedestal"></div>
               <a href="${url("/book?id=" + encodeURIComponent(b1.id || "BK-4137526d-0c4"))}" class="hero-spotlight-card" aria-label="View Atomic Habits">
-                <span class="spotlight-tag">⭐ SARASAVI CHOICE</span>
+                <span class="spotlight-tag">★ SARASAVI CHOICE</span>
                 ${cover(b1, "hero-spotlight-cover")}
                 <div class="spotlight-card-footer">
                   <div class="spotlight-rating">★★★★★ <span>(4.9 · 1,420 Reviews)</span></div>
@@ -590,30 +588,36 @@ function home() {
       <section class="section" style="padding-top:10px">
         <div class="section-heading">
           <div class="section-title-wrap">
-            <span class="eyebrow">Explore Collections · ප්‍රවර්ග</span>
-            <h2>Popular Book Categories</h2>
-            <p>Select a shelf to explore timeless literature, self-development, technology, and children's stories.</p>
+            <span class="eyebrow">EXPLORE COLLECTIONS • ප්‍රවර්ග</span>
+            <div class="section-title-row">
+              <h2>Popular Book Categories</h2>
+              <div class="heading-divider-line"></div>
+              <a class="view-all-link" href="${url("/catalog")}">All Categories <span class="btn-arrow">→</span></a>
+            </div>
+            <p class="section-subtext">Select a shelf to explore timeless literature, self-development, technology, and children's stories.</p>
           </div>
-          <a class="view-all-link" href="${url("/catalog")}">All Categories ↗</a>
         </div>
         <div class="category-row">
-          ${state.categories
-            .slice(0, 6)
+          ${[...state.categories]
+            .sort((a, b) => {
+              const order = ["CAT-1", "CAT-2", "CAT-4", "CAT-3", "CAT-5d06be3c-fca"];
+              const ia = order.indexOf(a.id);
+              const ib = order.indexOf(b.id);
+              return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
+            })
+            .slice(0, 5)
             .map((c) => {
-              const m = catMeta[c.id] || { name: c.name, sub: "Featured Collection", iconName: "book", bg: "#EFF6FF", accent: "#0A2540" };
+              const m = catMeta[c.id] || { name: c.name, sub: "Featured Collection", iconName: "book", img: "covers/gamperaliya.jpg", grad: "rgba(11, 60, 53, 0.88)" };
               const count = state.books.filter((b) => b.categoryId === c.id).length;
               return `
-              <a class="category-card-v2" href="${url("/catalog?category=" + encodeURIComponent(c.id))}" style="--cat-bg:${m.bg};--cat-accent:${m.accent}">
-                <div class="category-icon-box">
-                  ${icon(m.iconName)}
-                </div>
-                <div>
+              <a class="category-card-v2" href="${url("/catalog?category=" + encodeURIComponent(c.id))}" style="background-image:url('${url("/images/" + m.img)}');--cat-grad:${m.grad}">
+                <div class="category-card-content">
                   <strong>${esc(m.name)}</strong>
                   <span class="category-sub">${esc(m.sub)}</span>
-                </div>
-                <div class="category-meta">
-                  <span class="category-count">${count} Titles</span>
-                  <span class="category-arrow">→</span>
+                  <div class="category-meta">
+                    <span class="category-count">${count} Titles</span>
+                    <span class="category-arrow">→</span>
+                  </div>
                 </div>
               </a>`;
             })
@@ -2665,7 +2669,7 @@ function initScrollReveal() {
     return;
   }
 
-  const elements = document.querySelectorAll(".book-card, .category-card-v2, .author-card-v2, .promo-banner-card, .feature-strip-card, .section-heading");
+  const elements = document.querySelectorAll(".book-card, .author-card-v2, .promo-banner-card");
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
@@ -2673,12 +2677,17 @@ function initScrollReveal() {
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.08, rootMargin: "0px 0px -30px 0px" });
+  }, { threshold: 0.04, rootMargin: "0px 0px -10px 0px" });
 
   elements.forEach((el, i) => {
-    el.classList.add("reveal-item");
-    el.style.setProperty("--reveal-index", i % 8);
-    observer.observe(el);
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight + 350) {
+      el.classList.add("revealed");
+    } else {
+      el.classList.add("reveal-item");
+      el.style.setProperty("--reveal-index", i % 6);
+      observer.observe(el);
+    }
   });
 }
 

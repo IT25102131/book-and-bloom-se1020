@@ -10,36 +10,22 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css?v=20261111_02">
-  <script src="${pageContext.request.contextPath}/js/app.js?v=20261111_02" defer></script>
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css?v=20261111_06">
+  <script src="${pageContext.request.contextPath}/js/app.js?v=20261111_06" defer></script>
 </head>
 <body data-page="${pageName}" data-base="${pageContext.request.contextPath}">
   <a class="skip" href="#main">Skip to main content</a>
 
-  <!-- Sarasavi-Style Top Bar with Dynamic Announcement Ticker -->
+  <!-- Top Bar with Free Delivery Pill and Links -->
   <div class="top-bar">
     <div class="top-bar-inner">
-      <div class="announcement-ticker" id="announcement-ticker" aria-live="polite">
-        <div class="ticker-item active">
-          <span class="ticker-badge ticker-badge-delivery">FREE DELIVERY</span>
-          <span class="ticker-text">Islandwide Express Courier · Free on orders over LKR 5,000</span>
-        </div>
-        <div class="ticker-item">
-          <span class="ticker-badge ticker-badge-heritage">LITERARY HERITAGE</span>
-          <span class="ticker-text">Original Classics by Martin Wickramasinghe, Shehan Karunatilaka &amp; Sybil Wettasinghe</span>
-        </div>
-        <div class="ticker-item">
-          <span class="ticker-badge ticker-badge-discount">15% SAVINGS</span>
-          <span class="ticker-text">Special Offers on Bestsellers, University Textbooks &amp; E-Books</span>
-        </div>
-        <div class="ticker-item">
-          <span class="ticker-badge ticker-badge-payment">CASH ON DELIVERY</span>
-          <span class="ticker-text">Islandwide Doorstep Cash &amp; Card Payments Accepted</span>
-        </div>
-        <div class="ticker-item">
-          <span class="ticker-badge ticker-badge-hotline">24/7 HELPLINE</span>
-          <span class="ticker-text">Direct Hotline: <strong>+94 11 282 0820</strong> · Open 7 Days a Week</span>
-        </div>
+      <div class="top-bar-left">
+        <span class="top-free-pill">
+          <svg viewBox="0 0 24 24" class="top-truck-icon"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          FREE DELIVERY
+        </span>
+        <span class="top-divider">|</span>
+        <span class="top-announcement-text">Islandwide Express Courier · Free on orders over LKR 5,000</span>
       </div>
       <div class="top-bar-right">
         <a href="${pageContext.request.contextPath}/orders" class="top-link"><svg class="top-icon" viewBox="0 0 24 24"><path d="M21 10V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16v-2"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg> Track Order</a>
@@ -49,30 +35,31 @@
     </div>
   </div>
 
-  <!-- Sarasavi-Style Main Header -->
+  <!-- Warm Minimalist Brand Header -->
   <header class="header">
     <div class="nav-wrap">
       <!-- Brand Logo -->
-      <a class="brand" href="${pageContext.request.contextPath}/" aria-label="Book and Bloom Sarasavi Home">
+      <a class="brand" href="${pageContext.request.contextPath}/" aria-label="Book and Bloom Home">
         <div class="brand-crest">
-          <svg viewBox="0 0 36 36" fill="none" class="crest-svg" xmlns="http://www.w3.org/2000/svg">
-            <rect width="36" height="36" rx="8" fill="#0A2540"/>
-            <path d="M18 10C15 8 10 8 8 10V26C10 24 15 24 18 26M18 10C21 8 26 8 28 10V26C26 24 21 24 18 26M18 10V26" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M18 6L18 9" stroke="#E65100" stroke-width="2.5" stroke-linecap="round"/>
-            <circle cx="18" cy="4" r="1.5" fill="#E65100"/>
+          <svg viewBox="0 0 40 40" fill="none" class="crest-svg" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 16C16 12 9 12 5 14V33C9 31 16 31 20 34M20 16C24 12 31 12 35 14V33C31 31 24 31 20 34M20 16V34" stroke="#0B3C35" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M20 15C20 8 27 5 30 6C30 11 25 14 20 15Z" fill="#C59B27"/>
+            <path d="M20 15C20 7 12 5 10 7C11 12 16 14 20 15Z" fill="#0B3C35"/>
+            <circle cx="20" cy="5" r="2.5" fill="#D97706"/>
           </svg>
         </div>
         <div class="brand-text">
           <span class="brand-main">BOOK <i>&amp;</i> BLOOM</span>
-          <span class="brand-sub">THE BOOKSHOP · SRI LANKA</span>
+          <span class="brand-sub">— THE BOOKSHOP · SRI LANKA —</span>
         </div>
       </a>
 
-      <!-- Central Sarasavi Search Bar -->
+      <!-- Central Search Bar -->
       <div class="header-search">
         <form class="header-search-form" id="header-search-form" action="${pageContext.request.contextPath}/catalog" method="GET">
           <div class="search-category-select">
             <span>All Categories</span>
+            <svg class="dropdown-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
           </div>
           <input type="search" name="q" id="header-search-input" placeholder="Search by Book Title, Author, ISBN, Publisher..." aria-label="Search bookstore catalog" autocomplete="off">
           <button type="submit" class="search-submit-btn" aria-label="Search books">
@@ -112,12 +99,12 @@
       </div>
     </div>
 
-    <!-- Sarasavi Navy Category Navigation Bar -->
+    <!-- Forest Green Category Navigation Bar -->
     <div class="category-navbar">
       <div class="category-navbar-inner">
         <a href="${pageContext.request.contextPath}/catalog" class="all-categories-btn">
           <svg class="nav-icon" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-          <span>ALL CATEGORIES</span>
+          <span>All Categories</span>
         </a>
         <nav class="main-nav" aria-label="Main bookstore navigation">
           <a href="${pageContext.request.contextPath}/" class="nav-item ${pageName == 'home' ? 'active' : ''}">Home</a>
@@ -132,7 +119,8 @@
         </nav>
         <div class="navbar-right-promo">
           <a href="${pageContext.request.contextPath}/catalog?filter=featured" class="hotline-tag">
-            <span class="pulse-dot"></span> Special Offers Available
+            <svg class="tag-icon" viewBox="0 0 24 24"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+            <span>Special Offers Available</span>
           </a>
         </div>
       </div>
