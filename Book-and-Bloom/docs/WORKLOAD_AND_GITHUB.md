@@ -15,11 +15,12 @@ Add/edit modals are separate UI states on a common page. The brief says “minim
 
 ## Shared code
 
+- `controller/`: Six module-specific Servlet controllers (`UserController`, `BookController`, `OrderController`, `AuthorController`, `CategoryController`, `ReviewController`) extending `ApiServlet`.
 - `model/`: Java domain classes, private fields, accessors and inheritance.
-- `repository/`: repository abstraction and atomic file persistence.
-- `web/ApiServlet.java`: request parsing, session/CSRF checks and routing.
+- `repository/`: repository abstraction and atomic persistence.
+- `web/ApiServlet.java`: abstract base Jakarta Servlet handling JSON parsing, payload limits, session/CSRF checks and error serialization.
 - `web/PageController.java`: nine JSP route mappings.
-- `web/WebConfiguration.java`: servlet registration and HTTP security headers.
+- `web/WebConfiguration.java`: Servlet registration for all six controllers and HTTP security headers.
 - `static/js/app.js`, `static/css/style.css`, `WEB-INF/views/`: shared UI.
 
 Each student should trace their complete flow: UI event → API request → servlet → service → repository → text file → response → UI. Shared files require team coordination, not six conflicting copies.

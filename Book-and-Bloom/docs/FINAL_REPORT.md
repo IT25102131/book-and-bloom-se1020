@@ -20,7 +20,7 @@ Scope includes catalog discovery, two book formats, customer accounts, a browser
 
 ## 3. Interpretation of the supplied brief
 
-The project description mentions Spring Boot in its technology list and JSP/Servlets in its sample contribution. The user selected **Spring Boot + JSP/Servlets**. Both are present: Spring Boot runs embedded Tomcat, `PageController` resolves JSP views, and `ApiServlet extends HttpServlet` handles API requests.
+The project description mentions Spring Boot in its technology list and JSP/Servlets in its sample contribution. The user selected **Spring Boot + JSP/Servlets**. Both are present: Spring Boot runs embedded Tomcat, `PageController` resolves JSP views, and six module-specific Servlet controllers (`UserController`, `BookController`, `OrderController`, `AuthorController`, `CategoryController`, `ReviewController`) extending the abstract `ApiServlet extends HttpServlet` base handle API requests.
 
 The overview requires file storage, while another line allows MySQL/SQL. This implementation selects **file read/write**, matching the file-handling marking criterion and viva emphasis. No database dependency is present. Executable WAR packaging supports JSP compilation.
 
@@ -46,7 +46,7 @@ The submission package cannot truthfully contain names or commit histories that 
 ```text
 Browser: HTML / CSS / JavaScript
     | page request                  | JSON API + session + CSRF
-PageController -> JSP views      ApiServlet
+PageController -> JSP views      ApiServlet (abstract base) -> 6 *Controller servlets
                                     |
              User / Book / Author / Category / Order / Review services
                                     |
@@ -57,7 +57,7 @@ PageController -> JSP views      ApiServlet
                       data/bookstore.txt (UTF-8)
 ```
 
-`PageController` selects page templates. The templates share a header, footer and accessible dialog structure. JavaScript retrieves data and renders each page; input values are escaped before being inserted into markup. `ApiServlet` reads bounded JSON input, checks CSRF, extracts the server-side session identity, invokes a service and writes a JSON response. Services enforce business rules on every call, regardless of UI controls. The repository alone manages files.
+`PageController` selects page templates. The templates share a header, footer and accessible dialog structure. JavaScript retrieves data and renders each page; input values are escaped before being inserted into markup. `ApiServlet` reads bounded JSON input, checks CSRF, extracts the server-side session identity, dispatches to the six dedicated Servlet controllers (`UserController`, `BookController`, `OrderController`, `AuthorController`, `CategoryController`, `ReviewController`), invokes the matching service and writes a JSON response. Services enforce business rules on every call, regardless of UI controls. The repository alone manages files.
 
 ## 6. OOP implementation
 

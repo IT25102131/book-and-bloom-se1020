@@ -27,12 +27,12 @@
 > **Answer:**  
 > Book & Bloom follows a clean **Three-Tier Object-Oriented MVC Architecture**:
 > 1. **Presentation Tier (UI):** JSP views rendered via `PageController` and dynamic client-side interactions powered by `app.js` and `style.css`.
-> 2. **Controller & Business Tier:** Jakarta `ApiServlet` acts as the Front Controller / API boundary, verifying CSRF tokens and HTTP sessions before delegating business logic to domain service classes (`UserService`, `BookService`, `AuthorService`, `OrderService`, `CategoryService`, `ReviewService`).
+> 2. **Controller & Business Tier:** Abstract Jakarta `ApiServlet` enforces CSRF tokens, 64KB payload limits, and HTTP sessions across six module-specific Servlet controllers (`UserController`, `BookController`, `OrderController`, `AuthorController`, `CategoryController`, `ReviewController`) that delegate business logic to domain service classes (`UserService`, `BookService`, `AuthorService`, `OrderService`, `CategoryService`, `ReviewService`).
 > 3. **Persistence Tier:** Decoupled behind the `StoreRepository` abstraction, supporting both **Atomic File Persistence (`FileStoreRepository`)** and **Relational Persistence (`MysqlStoreRepository`)** via MySQL 8.0.
 
 ### Q2: Why did you use Spring Boot and an explicit Jakarta Servlet together?
 > **Answer:**  
-> Spring Boot provides lightweight dependency injection, configuration management, and the embedded Tomcat web server. However, rather than relying solely on automated magic controllers, we implemented an explicit `ApiServlet` extending `HttpServlet`. This demonstrates our mastery of core Java Enterprise / Servlet fundamentals: manual request routing, JSON parsing via Jackson, HTTP status codes, and manual session and CSRF lifecycle management.
+> Spring Boot provides lightweight dependency injection, configuration management, and the embedded Tomcat web server. However, rather than relying solely on automated magic controllers, we built an abstract `ApiServlet` extending `HttpServlet` as the parent template class for six module controllers (`UserController`, `BookController`, `OrderController`, `AuthorController`, `CategoryController`, `ReviewController`). This demonstrates our mastery of core Java Enterprise / Servlet fundamentals, Template Method OOP inheritance, manual request routing, JSON parsing via Jackson, HTTP status codes, and manual session and CSRF lifecycle management.
 
 ### Q3: Why is the project packaged as an executable WAR rather than a JAR?
 > **Answer:**  

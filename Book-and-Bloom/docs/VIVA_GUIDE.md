@@ -13,12 +13,12 @@
 
 ## හැම member කෙනෙක්ම explain කරන්න ඕන flow එක
 
-**UI event → fetch request → ApiServlet → assigned service → StoreRepository → FileStoreRepository → bookstore.txt → JSON response → UI.**
+**UI event → fetch request → ApiServlet / assigned \*Controller → assigned service → StoreRepository → FileStoreRepository → bookstore.txt → JSON response → UI.**
 
 ## Common questions
 
 **Why Spring Boot and Servlet both?**  
-Spring Boot එක server startup, configuration සහ dependency injection පහසු කරනවා. `ApiServlet` කියන්නේ actual `HttpServlet` subclass එකක්. `WebConfiguration` එකෙන් `/api/*` register කරනවා. JSP pages `PageController` එකෙන් resolve වෙනවා.
+Spring Boot එක server startup, configuration සහ dependency injection පහසු කරනවා. `ApiServlet` කියන්නේ abstract `HttpServlet` base class එකක් වන අතර `UserController`, `BookController`, `OrderController`, `AuthorController`, `CategoryController`, `ReviewController` එය extend කරනවා. `WebConfiguration` එකෙන් `/api/...` routes 6 ම register කරනවා. JSP pages `PageController` එකෙන් resolve වෙනවා.
 
 **Why WAR, not JAR?**  
 මේ project එක JSP භාවිතා කරන නිසා executable WAR packaging තෝරාගෙන තියෙනවා. `java -jar ...war` කියන command එකෙන්ම run කරන්න පුළුවන්.

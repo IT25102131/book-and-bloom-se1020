@@ -128,17 +128,61 @@ classDiagram
         +calculateFee(lines, deliveryMethod) BigDecimal
     }
     class ApiServlet {
+        <<abstract>>
+        #ObjectMapper mapper
         +service(request,response)
+        #dispatch(method,actor,body,request,response,session)* Object
+    }
+    class UserController {
+        +login(body,request,session) Map
+        +register(body) Map
+        +update(actor,id,body) Map
+        +delete(actor,id,session) Map
+    }
+    class BookController {
+        +list() List~Book~
+        +get(id) Book
+        +save(actor,id,body) Book
+        +delete(actor,id) Map
+    }
+    class AuthorController {
+        +list() List~Author~
+        +save(actor,id,body) Author
+        +delete(actor,id) Map
+    }
+    class CategoryController {
+        +list() List~Category~
+        +save(actor,id,body) Category
+        +delete(actor,id) Map
+    }
+    class OrderController {
+        +list(actor) List~Order~
+        +create(actor,body) Order
+        +update(actor,id,body) Order
+        +delete(actor,id) Map
+    }
+    class ReviewController {
+        +list() List~Map~
+        +save(actor,id,body) Review
+        +delete(actor,id) Map
     }
     class PageController {
-        +doGet(request,response)
+        +home() String
+        +catalog() String
+        +admin() String
     }
-    ApiServlet --> UserService
-    ApiServlet --> BookService
-    ApiServlet --> AuthorService
-    ApiServlet --> CategoryService
-    ApiServlet --> OrderService
-    ApiServlet --> ReviewService
+    ApiServlet <|-- UserController
+    ApiServlet <|-- BookController
+    ApiServlet <|-- AuthorController
+    ApiServlet <|-- CategoryController
+    ApiServlet <|-- OrderController
+    ApiServlet <|-- ReviewController
+    UserController --> UserService
+    BookController --> BookService
+    AuthorController --> AuthorService
+    CategoryController --> CategoryService
+    OrderController --> OrderService
+    ReviewController --> ReviewService
     OrderService --> DeliveryFeePolicy
     UserService --> StoreRepository
     BookService --> StoreRepository
